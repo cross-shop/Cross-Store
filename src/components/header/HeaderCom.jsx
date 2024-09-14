@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Home() {
+function HeaderCom() {
   return (
     <div>
-      Home alisher1
+      header
     </div>
   )
 }
 
-export default Home
+export default HeaderCom

@@ -1,9 +1,9 @@
 import React from 'react'
-
+import HomeCom from '../components/Home/HomeCom'
 function Home() {
   return (
     <div>
-      Home alisher1
+      <HomeCom />
     </div>
   )
 }

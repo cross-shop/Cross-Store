@@ -1,0 +1,44 @@
+.header2gg{
+    position: absolute;
+    top: 28px;
+    left: 120px;
+    display: flex;
+    justify-content: space-around;
+    .header2-left{
+        ul { 
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        
+            li {
+                a {
+                    color: rgb(255, 255, 255);
+                    font-family: Inter;
+                    font-size: 12.25px;
+                    font-weight: 400;
+                    line-height: 15px;
+                    letter-spacing: 1%;
+                    text-align: left;
+                    text-decoration: none !important;
+                }
+            }
+            p{
+
+color: white;
+padding-left: 134px;
+padding-top: 3px;
+            }
+        }
+        
+    }
+    .header2-img{
+        width: 105.84px;
+height: 26px;
+display: flex;
+img{
+width: 22.84px;
+height: 21.5px;
+
+}
+    }
+}

@@ -1,12 +1,12 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import Footer from '../../pages/Footer'
+import FooterCom from '../foooter/FooteCom'
 
 function Layout() {
   return (
     <div>
       <Outlet />
-        <Footer />      
+      <FooterCom />
     </div>
   )
 }

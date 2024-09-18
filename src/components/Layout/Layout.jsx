@@ -1,15 +1,12 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import Footer from '../foooter/Footer'
-
+import Footer from '../../pages/Footer'
 
 function Layout() {
   return (
     <div>
       <Outlet />
         <Footer />      
-      
-
     </div>
   )
 }

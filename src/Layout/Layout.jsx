@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Header() {
+function Layout() {
   return (
     <div>
-      header
+      
     </div>
   )
 }
 
-export default Header
+export default Layout

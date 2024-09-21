@@ -1,7 +1,11 @@
-.header2gg{
-    position: absolute;
-    top: 28px;
-    left: 120px;
+
+.eror1{
+    margin: 20px;
+}
+.header2{
+    // position: absolute;
+    // top: 28px;
+    // left: 120px;
     display: flex;
     justify-content: space-around;
     .header2-left{
@@ -12,19 +16,18 @@
         
             li {
                 a {
-                    color: rgb(255, 255, 255);
+                    color: rgb(0, 0, 0);
                     font-family: Inter;
-                    font-size: 12.25px;
+                    font-size: 15px;
                     font-weight: 400;
                     line-height: 15px;
                     letter-spacing: 1%;
                     text-align: left;
-                    text-decoration: none !important;
                 }
             }
             p{
 
-color: white;
+color: rgb(12, 11, 11);
 padding-left: 134px;
 padding-top: 3px;
             }
@@ -32,13 +35,58 @@ padding-top: 3px;
         
     }
     .header2-img{
-        width: 105.84px;
+width: 105.84px;
 height: 26px;
 display: flex;
+gap: 20px;
 img{
 width: 22.84px;
 height: 21.5px;
 
 }
     }
+
+
+}
+.eror2{
+
+   h1{
+    margin-top: 130px;
+    color: rgb(40, 40, 40);
+    font-family: Ruberoid;
+    font-size: 187.67px;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    text-transform: uppercase;    
+   }
+   h6{
+    color: rgb(0, 0, 0);
+    font-family: Ruberoid;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: 0;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+   }
+
+   .buttons{
+margin-left: 630px;
+display: flex;
+gap: 20px;
+    button{
+        padding: 20px 40px;
+        border-radius: 10px;
+
+    }
+    :hover{
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+
+    }
+   }
 }

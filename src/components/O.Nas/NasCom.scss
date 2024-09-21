@@ -1,0 +1,146 @@
+.ONas{
+    width: 1440px;
+    margin: 0 auto;
+    // height: 450px;
+
+.header12{
+    width: 1440px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+
+}
+.header12-left{
+display: flex; 
+justify-content: center;
+align-items: center;
+
+ul{
+display: flex;
+gap: 25px;
+margin-left: 100px;
+color: white;
+
+li{
+    list-style: none;
+    a {
+        color: rgb(255, 255, 255);
+        font-family: Inter;
+        font-size: 12.25px;
+        font-weight: 400;
+        line-height: 15px;
+        letter-spacing: 1%;
+        text-align: left;
+        text-decoration: none !important;
+    }
+
+}
+}
+p{
+    margin-left: 200px;
+    color: white;
+}
+}
+.header1-img{
+display: flex;
+justify-content: c;
+align-items: center;
+gap: 20px;
+margin-right: 100px;
+    img{
+width: 25px ;
+height: 25px;
+    }
+}
+
+
+
+
+
+.dealer2{
+    width: 1440px;
+    // height: 1000px;
+    background-color: black;
+    position: relative;
+    padding: 50px 100px ;
+
+h1{
+    color: white;
+    font-size: 250px;
+}
+}
+.istoria{
+    position: absolute;
+    display: flex;
+    gap: 100px;
+    width: 1440px;
+    background-color: white;
+    box-shadow: 0 3px 6px;
+    padding: 120px 100px;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    top: 380px;
+    .surot{
+        
+
+        img{
+            width: 497px;
+            height: 631px;
+        }
+    }
+
+    .text-onas{
+        width: 590px;
+
+        p{
+            font-size: 22px;
+        }
+    }
+}
+
+.texts{
+    width: 1440px;
+    height: 939px;
+    margin-top: 800px;
+    position: relative;
+
+    p{
+        font-size: 20px;
+    }
+
+    img{
+        width: 1440px;
+    height: 939px;
+    border-radius: none;
+    }
+
+
+    .text1{
+        padding: 85px 100px;
+        position: absolute;
+        z-index: 11;
+        top: 0;
+        color: white;
+        width: 680px;
+    }
+
+
+    .text2{
+        position: absolute;
+        color: white;
+        left: 750px;
+        top: 330px;
+        width: 550px;
+    }
+
+
+    .text3{
+        position: absolute;
+        color: white;
+        top: 600px;
+        width: 500px;
+        left: 100px;
+    }
+}
+}

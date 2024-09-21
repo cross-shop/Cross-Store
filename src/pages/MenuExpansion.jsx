@@ -5,7 +5,6 @@ function MenuExpansion() {
   return (
     <div>
       <Expansion />
-      ali
     </div>
   )
 }

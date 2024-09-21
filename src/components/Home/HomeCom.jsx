@@ -100,40 +100,56 @@ function HomeCom() {
 
       </div>
        
-        <header className='header1'>
+        <header className='header1 container  '>
           <img src={mainimage} alt="" />
           <div className='header1gg'>
-          <div className='header1-left container'>
+          <div className='header1-left   '>
             <ul>
               <li>
+                <Link to={`catalog`}>
                 <a href="">Одежда</a>
+                </Link>
               </li>
               <li>
+                <Link to={`/obuv`}>
                 <a href="">Обувь</a>
+                </Link>
               </li>
               <li>
+                <Link to={`/oformzakaz`}>
                 <a href="">Аксессуары</a>
+                </Link>
               </li>
               <li>
+                <Link to={`proleved`}>
                 <a href="">Сумки</a>
+                </Link>
               </li>
               <li>
+                <Link to={`/0consignment`}>
                 <a href="">Товары для спорта</a>
+                </Link>
               </li>
               <p>DEALER</p>
             </ul>
           </div>
           <div className='header1-img'>
+            <Link to={`/wishlist`}>
           <img src={Like} alt="" />
+            </Link>
           <img src={Magazin} alt="" />
+          <Link to={`/search`}>
           <img src={search} alt="" />
+          </Link>
           </div>
           </div>
 
-          <div className='header1-center'>
+          <div className='header101-center'>
             <h1>распродажа <br />
             товаров для неё</h1>
+            <Link to={`/catalog`}>
             <button>Перейти в каталог</button>
+            </Link>
           </div>
 
           <div className='main1-status'>

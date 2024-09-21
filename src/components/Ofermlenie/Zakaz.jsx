@@ -4,10 +4,11 @@ import Like3 from "../../assets/svg/Like3.svg"
 import Magazin2 from "../../assets/svg/magazin2.svg"
 import search2 from "../../assets/svg/search2.svg"
 import slevazakaz from "../../assets/svg/slevazakaz.svg"
-
-
-
-
+import Magazin from "../../assets/svg/magazin.svg"
+import x from "../../assets/svg/x.svg"
+import Like2 from "../../assets/svg/Like2.svg"
+import kros1 from "../../assets/image/kros1.png"
+import udalit from "../../assets/svg/udalit.svg"
 import { Link } from 'react-router-dom';
 
 function Zakaz() {

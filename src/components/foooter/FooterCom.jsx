@@ -1,15 +1,16 @@
 import React from 'react'
 import "./Footer.scss"
-import dealer from "../../assets/svg/dealerlogo.svg"
+import dealer from "../../assets/svg/dealer.svg"
 import telegram from "../../assets/svg/telegram.svg"
 import wk from "../../assets/svg/wk.svg"
+import { Link } from 'react-router-dom'
 
 function FooterCom() {
   return (
-    <footer className='footer'>
-      <div className='syzyk'></div>
-    <div className='info'>
-      <div className='dealer'>
+    <footer className='footer '>
+      <div className='syzyk '></div>
+    <div className='info container'>
+      <div className='dealer '>
         <img src={dealer} alt="" />
         <p>
           Ваш поставщик в мир лимитированного 
@@ -36,9 +37,13 @@ function FooterCom() {
       <div className='dealer'>
         <h1>Меню</h1>
         <ul>
+          <Link to={"/onas"}>
           <li>О нас</li>
+          </Link>
           <li>Продать свою одежду</li>
-          <li>Продать свою одежду</li>
+          <Link to={"/konserj"}>
+          <li>Консьерж</li>
+          </Link>
           <li>Клиентский сервис</li>
         </ul>
       </div>

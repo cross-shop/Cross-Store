@@ -8,6 +8,7 @@
     
     .top11{
         display: flex;
+        align-items: center;
         gap: 30px;
         position: absolute;
         left: 40%;
@@ -19,7 +20,7 @@
 .header1 {
     width: 1440px; 
     height: 757px;
-    margin: 0 auto; 
+    margin: 20px auto; 
     position: relative;
     img {
         width: 100%; 
@@ -31,7 +32,7 @@
         top: 28px;
         left: 120px;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         .header1-left{
             ul { 
                 display: flex;
@@ -47,7 +48,7 @@
                         line-height: 15px;
                         letter-spacing: 1%;
                         text-align: left;
-                        text-decoration: none !important;
+                        text-decoration: none ;
                     }
                 }
                 p{
@@ -63,6 +64,7 @@
             width: 105.84px;
 height: 26px;
 display: flex;
+margin-left: 400px;
 img{
     width: 22.84px;
 height: 21.5px;
@@ -190,7 +192,7 @@ height: 21.5px;
 
         }
     }
-    .header1-center{
+    .header101-center{
         position: absolute;
         top: 218px;
         left: 120px;
@@ -230,11 +232,11 @@ text-align: center;
     
 }
 .main1-status{
-        margin: 0 auto;
+        // margin: 0 auto;
         position: absolute;
         bottom: -93px;
-        left: 0;
-    width: 1440px;
+        left: -190;
+    width: 1300px;
     display: flex;
     // justify-content: space-between;
     
@@ -403,10 +405,13 @@ font-weight: 400;
 line-height: 20px;
 letter-spacing: 0%;
 text-align: center;
-padding-top: 12px;
+position: absolute;
+bottom: 0;
+left: 120px;
     }
 }
         }
+        // /////
     }
     .main1-brend1-2{
         display: flex;
@@ -780,9 +785,13 @@ color: white;
     letter-spacing: 0%;
     text-align: center;
     padding-top: 12px;
+    position: absolute;
+    bottom: 0;
+    left: 120px;
         }
     }
             }
+             
         }
 
     }

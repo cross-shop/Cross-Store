@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home";
-import Notfound from "./pages/Notfound";
 import MenuExpansion from "./pages/MenuExpansion";
 import Search from "./pages/Search";
 import Catalog from "./pages/Catalog";
@@ -14,6 +13,10 @@ import Proleved from "./pages/Proleved";
 import Istoriarenda from "./pages/Istoriarenda";
 import Oferzakaz from "./pages/Oferzakaz";
 import Oformzakaz from "./pages/Oformzakaz";
+import ONas from "./pages/oNas";
+import Notfound from "./pages/Notfound";
+import Konserj from "./pages/Konserj";
+
 
 export const myRouter = createBrowserRouter([
     {
@@ -75,6 +78,14 @@ export const myRouter = createBrowserRouter([
             {
                 path: "oformzakaz",
                 element: <Oformzakaz />
+            },
+            {
+                path: "onas",
+                element: <ONas />
+            },
+            {
+                path: "konserj",
+                element: <Konserj/>
             }
          
            

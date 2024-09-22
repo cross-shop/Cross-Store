@@ -1,4 +1,14 @@
 .footer{
+
+    // border: 1px solid black;
+    width: 1440px;
+    margin: 0 auto 20px;
+
+.syzyk{
+    border-top: 2px solid #ccc;
+    position: relative;
+    top: 20px;
+
     width: 1440px;
     margin: 20px auto 20px;
 
@@ -10,10 +20,11 @@
 
 .info{
     display: flex;
+    justify-content: space-between;
+    padding: 70px 100px;
     // justify-content: space-between;
     gap: 100px;
     padding: 60px 0;
-    
 
     .dealer{
         width: 260px;
@@ -63,7 +74,6 @@
 
         li{
             margin: 10px 0 5px;
-
         }
             }
         }
@@ -71,6 +81,7 @@
 
 .syzyk2{
     border: 1px solid #ccc;
+    position: relative;
     // position: relative;
     bottom: 10px;
 }

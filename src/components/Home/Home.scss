@@ -71,126 +71,124 @@ height: 21.5px;
 
 }
 
-
-.modal{
-    position: absolute;
-    top: 15px;
-    right: 150px;
-    width: 400px;
-    height: 550px;
-    background-color: white;
-    box-shadow: 1px 3px 6px;
-    padding: 10px;
-    border-radius: 15px;
-
-    .modal2{
-        display: flex;
-        gap: 200px;
-        h2{
-            color: rgb(0, 0, 0);
-            font-family: Ruberoid;
-            font-size: 40px;
-            font-weight: 400;
-            line-height: 54px;
-            letter-spacing: 0%;
-            text-align: left;            
-        }
+.icon2 {
+    position: fixed;
+    top: 10px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-nur {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  .modal2-nur {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .m3-nur {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .bm-nur {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+  }
+  
+  .selected-items {
+    display: flex;
+    flex-direction: column;
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+  
+  .selected-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .selected-item img {
+    height: 100px;
+    width: auto;
+    margin-right: 10px;
+  }
+  
+  .main1 {
+    .main1-kros {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
-
-
-    .m3{
+  
+    .kros1 {
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 10px;
+      width: calc(25% - 20px);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden; // Убираем выход за пределы
+      height: 350px; // Устанавливаем фиксированную высоту для карточки
+  
+      .mm {
+        text-align: center;
+  
+        img {
+          max-width: 100%; // Ширина изображения на 100%
+          height: auto; // Высота автоматически
+        }
+      }
+  
+      .main-top1 {
+        text-align: center;
         margin-top: 10px;
-        display: flex;
-        justify-content: space-between;
-
-        h5{
-            color: rgb(0, 0, 0);
-            font-family: Inter;
-            font-size: 20px;
-            font-weight: 400;
-            line-height: 24px;
-            letter-spacing: 0%;
-            text-align: left;            
+  
+        p {
+          margin: 5px 0;
         }
+      }
+  
+      .pp {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-weight: bold;
+      }
+  
+      .pw1 {
+        cursor: pointer;
+        text-align: center;
+      }
     }
-
-
-    .cart{
-        margin-top: 30px;
-        display:  flex;
-        gap: 20px;
-
-
-        .incart1{
-            border-radius: 10px;
-            border: 1px solid #ccc;
-
-        img{
-            width: 190px;
-            height: 120px;
-        }
-        }
-
-        .incart2{
-            width: 170px;
-
-            .box{
-                display: flex;
-                gap: 60px
-                
-            };
-
-            .c3{
-                button{
-                    color: yellow;
-                    background-color: black;
-                    border-radius: 10px;
-                    padding: 5px;
-                    border: none;
-                    
-                }
-                button:hover{
-                    background-color: gold;
-                    border: none;
-                    color: black;
-                }
-
-            }
-
-            .c4{
-                margin: 5px 0 5px ;
-            }
-
-            .c5{
-                display: flex;
-                gap: 83px;
-            }
-        }
-    }
-
-
-    .bm{
-        display: flex;
-        justify-content: space-between;
-        margin-top: 20px;
-
-
-    .btn{
-
-        button{
-            margin-top: 10px;
-            background-color: black;
-            color: white;
-            border-radius: 5px;
-            padding: 15px 40px;
-        }
-    }
-    }
-    
 }
 
 
+
+
+
         }
+       
     }
     .header101-center{
         position: absolute;
@@ -228,6 +226,7 @@ text-align: center;
             border: none;
         }
     }
+   
 
     
 }

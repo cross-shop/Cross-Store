@@ -12,10 +12,14 @@ import list1 from "../../assets/image/list1.png"
 import list2 from "../../assets/image/list2.png"
 import list3 from "../../assets/image/list3.png"
 
+import { useSelector } from 'react-redux'
+
+
 
 function List() {
     const [minPrice, setMinPrice] = useState(32780);
     const [maxPrice, setMaxPrice] = useState(82780);
+    const { items } = useSelector((state) => state.wishlist);
   
     const [selectedColor, setSelectedColor] = useState("black");
   
@@ -30,6 +34,8 @@ function List() {
     const handleMaxChange = (e) => {
       setMaxPrice(e.target.value);
     };
+
+
   return (
     <div>
        <header className='nurtilek container'>
@@ -85,30 +91,7 @@ function List() {
          
       
         </header>
-        <div className='nurtilek09 container'>
-            <h1>Создайте свои уникальные и стильные кроссовки благодаря <br /> нашей новой услуге — Dealer.Custom</h1>
-
-            <p>Адаптируйте гардероб под вашу индивидуальность. Вы можете выбрать цвет, <br /> материал, детали и даже добавить персонализированную вышивку, принт или <br /> ручной рисунок, а если боитесь прогадать с дизайном, Вы всегда сможете <br />ознакомиться с готовыми решениями в каталоге.</p>
-            <div className='nur09'>
-                <img src={list1} alt="" />
-                <div className='nur-img'>
-                <div className='nur-img1'>
-
-                <img src={list2} alt="" />       
-                </div>
-                <div className='nur-img2'>
-
-                     <img src={list3} alt="" />
-                </div>
-
-                </div>
-            </div>
-            <div className='nur09-left'>
-            <h3>Закастомизировать</h3>
-            <h2>Галерея Custom</h2>
-
-            </div>
-        </div>
+      
         <main className='nurtilek-main container'>
 
 <div className='catalog-1'>
@@ -256,162 +239,23 @@ function List() {
   </div>
 </div>
 <div className='catalog-2'>
-  
-<div className='kros19'>
-      <div className='mm9'>
-    <img src={kros3} alt="" />
-
+    {items.map((item) => (
+      <div key={item.id} className='kros19'>
+        <div className='mm9'>
+          <img src={item.avatar} alt={item.name} />
+        </div>
+        <div className='pp9'>NEW</div>
+        <div className='pw19'>
+          <img src={Like2} alt="" />
+        </div> <br />
+        <div className='main-top19'>
+          <p>{item.name}</p>
+          <p>Le Bambidou</p>
+          <h5>{item.price}</h5>
+        </div>
       </div>
-      <div className='pp9'>NEW</div>
-      <div className='pw19'>
-        <img src={Like2} alt="" />
-      </div> <br />
-
-    <div className='main-top19'>
-      <p>Сумка Jacquemus 
-      </p>
-      <p>Le Bambidou</p>
-      <h5>21 999₽</h5>
-    </div> 
-    </div>
-    {/* ,mnhggggghhhhhhh */}
-    <div className='kros19'>
-      <div className='mm9'>
-    <img src={kros3} alt="" />
-
-      </div>
-      <div className='pp9'>NEW</div>
-      <div className='pw19'>
-        <img src={Like2} alt="" />
-      </div> <br />
-
-    <div className='main-top19'>
-      <p>Сумка Jacquemus 
-      </p>
-      <p>Le Bambidou</p>
-      <h5>21 999₽</h5>
-    </div> 
-    </div>
-    <div className='kros19'>
-      <div className='mm9'>
-    <img src={kros3} alt="" />
-
-      </div>
-      <div className='pp9'>NEW</div>
-      <div className='pw19'>
-        <img src={Like2} alt="" />
-      </div> <br />
-
-    <div className='main-top19'>
-      <p>Сумка Jacquemus 
-      </p>
-      <p>Le Bambidou</p>
-      <h5>21 999₽</h5>
-    </div> 
-    </div>
-    <div className='kros19'>
-      <div className='mm9'>
-    <img src={kros3} alt="" />
-
-      </div>
-      <div className='pp9'>NEW</div>
-      <div className='pw19'>
-        <img src={Like2} alt="" />
-      </div> <br />
-
-    <div className='main-top19'>
-      <p>Сумка Jacquemus 
-      </p>
-      <p>Le Bambidou</p>
-      <h5>21 999₽</h5>
-    </div> 
-    </div>
-    <div className='kros19'>
-      <div className='mm9'>
-    <img src={kros3} alt="" />
-
-      </div>
-      <div className='pp9'>NEW</div>
-      <div className='pw19'>
-        <img src={Like2} alt="" />
-      </div> <br />
-
-    <div className='main-top19'>
-      <p>Сумка Jacquemus 
-      </p>
-      <p>Le Bambidou</p>
-      <h5>21 999₽</h5>
-    </div> 
-    </div>
-    <div className='kros19'>
-      <div className='mm9'>
-    <img src={kros3} alt="" />
-
-      </div>
-      <div className='pp9'>NEW</div>
-      <div className='pw19'>
-        <img src={Like2} alt="" />
-      </div> <br />
-
-    <div className='main-top19'>
-      <p>Сумка Jacquemus 
-      </p>
-      <p>Le Bambidou</p>
-      <h5>21 999₽</h5>
-    </div> 
-    </div>
-    <div className='kros19'>
-      <div className='mm9'>
-    <img src={kros3} alt="" />
-
-      </div>
-      <div className='pp9'>NEW</div>
-      <div className='pw19'>
-        <img src={Like2} alt="" />
-      </div> <br />
-
-    <div className='main-top19'>
-      <p>Сумка Jacquemus 
-      </p>
-      <p>Le Bambidou</p>
-      <h5>21 999₽</h5>
-    </div> 
-    </div>
-    <div className='kros19'>
-      <div className='mm9'>
-    <img src={kros3} alt="" />
-
-      </div>
-      <div className='pp9'>NEW</div>
-      <div className='pw19'>
-        <img src={Like2} alt="" />
-      </div> <br />
-
-    <div className='main-top19'>
-      <p>Сумка Jacquemus 
-      </p>
-      <p>Le Bambidou</p>
-      <h5>21 999₽</h5>
-    </div> 
-    </div>
-    <div className='kros19'>
-      <div className='mm9'>
-    <img src={kros3} alt="" />
-
-      </div>
-      <div className='pp9'>NEW</div>
-      <div className='pw19'>
-        <img src={Like2} alt="" />
-      </div> <br />
-
-    <div className='main-top19'>
-      <p>Сумка Jacquemus 
-      </p>
-      <p>Le Bambidou</p>
-      <h5>21 999₽</h5>
-    </div> 
-    </div>
-</div>
+    ))}
+  </div>
 
 </main>
     </div>

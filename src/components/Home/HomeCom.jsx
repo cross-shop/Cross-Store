@@ -112,6 +112,9 @@ function HomeCom() {
                   <div className='mm'>
                     <img src={item.avatar} alt="" style={{ height: "248px", marginTop: "-60px" }} />
                   </div>
+                  
+                    <button>add to cart</button>
+                  
                   <div className='pp'>NOT</div>
                   <div className='pw1' onClick={() => toggleLike(item)}>
                     <img src={Like2} alt="" />

@@ -7,6 +7,7 @@ import prava from "../../assets/svg/2.svg"
 import mainimage from "../../assets/image/mainimage.png"
 import Like from "../../assets/svg/Like.svg"
 import Like2 from "../../assets/svg/Like2.svg"
+import x from "../../assets/svg/x.svg"
 import Magazin from "../../assets/svg/magazin.svg"
 import search from "../../assets/svg/search.svg"
 import status1 from "../../assets/image/status1.png"
@@ -52,6 +53,24 @@ function HomeCom() {
   const navigate = useNavigate(); // Инициализация useHistory
 
   // ... остальной код ...
+  const [minPrice, setMinPrice] = useState(0); // Начальное значение для minPrice
+  const [maxPrice, setMaxPrice] = useState(100); // Начальное значение для maxPrice
+
+  // Функция для изменения значения minPrice
+  const handleMinChange = (event) => {
+      setMinPrice(event.target.value); // Обновляет состояние minPrice
+  };
+
+  // Функция для изменения значения maxPrice
+  const handleMaxChange = (event) => {
+      setMaxPrice(event.target.value); // Обновляет состояние maxPrice
+  };
+
+ 
+
+
+
+  // ... остальной код ...
 
   const handleAvatarClick = (item) => {
     console.log('Clicked item:', item); // Проверяем нажатый элемент
@@ -80,6 +99,16 @@ function HomeCom() {
     setModalVisible(true);
   };
 
+  };
+
+  useEffect(() => {
+    getProduct();
+  }, []);
+
+  const handleMagazinClick = () => {
+    setModalVisible(true);
+  };
+
   const handleCloseClick = () => {
     setModalVisible(false);
   };
@@ -91,6 +120,17 @@ function HomeCom() {
         return prevSelected.filter(selectedItem => selectedItem !== item);
       }
       // Добавляем продукт в список
+      return [...prevSelected, item];
+    });
+
+  };
+  const toggleLike = (item) => {
+    setSelectedProducts((prevSelected) => {
+      if (prevSelected.includes(item)) {
+        return prevSelected.filter(selectedItem => selectedItem !== item);
+      }
+      // Добавляем продукт в список желаемого
+      dispatch(addWish(item)); // Добавляем действие для Redux
       return [...prevSelected, item];
     });
   };
@@ -107,6 +147,9 @@ function HomeCom() {
   
 
   
+
+  
+
 
 
 

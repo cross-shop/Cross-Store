@@ -7,7 +7,7 @@ import search from "../../assets/svg/search.svg"
 import search3 from "../../assets/svg/search3.svg"
 import Like2 from "../../assets/svg/Like2.svg"
 import kros3 from "../../assets/image/kros3.png"
-
+import Banner from '../Banner/Banner'
 import { Link } from 'react-router-dom'
 
 function CatalogCom() {
@@ -30,7 +30,7 @@ function CatalogCom() {
   return (
     <div>
           <header className='header4 container'>
-          <img src={mainimage} alt="" />
+            <Banner />
           <div className='header4gg'>
           <div className='header4-left '>
             <ul>

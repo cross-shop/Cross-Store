@@ -10,8 +10,16 @@ import Like2 from "../../assets/svg/Like2.svg"
 import kros1 from "../../assets/image/kros1.png"
 import udalit from "../../assets/svg/udalit.svg"
 import { Link } from 'react-router-dom';
+import visa from "../../assets/image/visa.png"
 
 function Zakaz() {
+  const buttonClick = () => {
+    alert("Заказ успешный ")
+    setTimeout(() => {
+      window.location.href = "/"
+
+    }, 2000)
+  }
   return (
     <div>
        <header className='nurtilek0808  '>
@@ -55,11 +63,11 @@ function Zakaz() {
 <img src={slevazakaz} alt="" />
 <h1>Оформление заказа</h1>
 
-<div className='ofer-input'>
+{/* <div className='ofer-input'>
     <p>E-mail</p>
         <input type="text" />
         
-</div>
+</div> */}
 <div className='ofer-input1'>
     <p>Имя</p>
         <input type="text" />
@@ -74,14 +82,14 @@ function Zakaz() {
 
 <div className='ofer-input2'>
     <p>Телефон</p>
-        <input type="text"  placeholder='+7 (999) 999-99-99' />
+        <input type="number"  placeholder='+7 (999) 999-99-99' />
         
 </div>
 <div className='dostavka'>
     <h2>Доставка</h2>
-    <div className='dostavka-input'>
+    {/* <div className='dostavka-input'>
         <p>Населённый пункт</p> <input type="text" placeholder='Населённый пункт' />
-    </div>
+    </div> */}
 </div>
 
 <div className='dostavka-radio'>
@@ -132,12 +140,14 @@ function Zakaz() {
         <div className='radio-top'>
             <div className='radio1'>
     <input type="radio" />
-        <p>Банковской картой</p>
+    <img src={visa} alt="" />
+    <p>****0409</p>
+        <h6>Банковской картой</h6>
       
             </div>
             <div className='radio1'>
     <input type="radio" />
-        <p> При получении картой или наличными</p>
+        <p>наличными</p>
 
             </div>
 
@@ -145,8 +155,8 @@ function Zakaz() {
         </div>
         <div className='ofer-input2'>
     <p>Комментарий <br /> для курьера</p>
-        <input type="text"  placeholder='+7 (999) 999-99-99' />
-        
+        <input type="text"  placeholder='' />
+        <button onClick={buttonClick}>ЗАКАЗАТЬ</button>
 </div>
 
         </div>

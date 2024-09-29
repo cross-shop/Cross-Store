@@ -1,5 +1,5 @@
 import React from 'react'
-import HomeCom from '../components/Home/HomeCom'
+import HomeCom from "../components/Home/HomeCom.jsx";
 function Home() {
   return (
     <div>

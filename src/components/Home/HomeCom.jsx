@@ -34,7 +34,6 @@ import custom1 from "../../assets/image/custom1.png"
 import custom2 from "../../assets/image/custom2.png"
 import catolog from "../../assets/image/catalog.png"
 import catolog2 from "../../assets/image/catolog2.png"
-import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 // import { addWish } from '../../redux/wishSlice';
 import { addWish } from '../../redux/wish2/wishSlice';
@@ -281,37 +280,36 @@ function HomeCom() {
     <button>Перейти</button>
           </div>
           <div className='main1-kros'>
-            {
-                products2.map((item) => (
-                  <div key={item.id} data={item}>
-                  <div className='kros1'>
-                    <div className='mm'>
-                  <img src={item.avatar} alt="" style={{ height: "240px", marginTop: "-60px" }} />
-                  
-                    </div>
-                    <div className='pp'>NOT</div>
-                    <div className='pw1'>
-                      <img src={Like2} alt="" />
-                    </div> <br />
-                  
-                  <div className='main-top1'>
-                    <p>{item.name}</p>
-                    <p>Le Bambidou</p>
-                    <h5>{item.price}</h5>
-                  </div> 
-                    
-                  
+          {
+            products.slice(0, 24).map((item) => (
+              <div key={item.id} data={item}>
+                <div className='kros1'>
+                  <div className='mm'>
+                  <img 
+                      src={item.avatar} 
+                      alt="" 
+                      // style={{ height: "248px", marginTop: "-60px" }} 
+                      onClick={() => handleAvatarClick(item)} // Обработчик клика
+                    /> 
                   </div>
                   
-                                </div>
-
-                ))
-            }
-            
-          
-          
-
-</div>
+                    <button onClick={() => toggleButton(item)}>add to cart</button>
+                  
+                  <div className='pp'>NOT</div>
+                  <div className='pw1' >
+                    <img src={Like2} onClick={() => toggleLike(item)} alt="" />
+                  </div> 
+                  <br />
+                  <div className='main-top1'>
+                    {/* <p>{item.name}</p> */}
+                    <p>{item.name}</p>
+                    <h5>{item.price}</h5>
+                  </div> 
+                </div>
+              </div>
+            ))   
+          }
+          </div>
 
       <div className='main1-odezda1'>
       <div className='odezda-1'>

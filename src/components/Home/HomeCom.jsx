@@ -41,7 +41,6 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const API = "https://66dfd7322fb67ac16f2740dd.mockapi.io/product"
 
-const API2 = "https://66dfd7322fb67ac16f2740dd.mockapi.io/product"
 
 
 function HomeCom() {
@@ -105,6 +104,8 @@ function HomeCom() {
       return [...prevSelected, item];
     });
   };
+  
+
   
 
 

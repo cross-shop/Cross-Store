@@ -1,19 +1,48 @@
-import React, { useState, useEffect } from 'react'; 
-import "./Home.scss"; 
-import mainimage from "../../assets/image/mainimage.png"; 
-import Like from "../../assets/svg/Like.svg"; 
-import Like2 from "../../assets/svg/Like2.svg"; 
-import Magazin from "../../assets/svg/magazin.svg"; 
-import search from "../../assets/svg/search.svg"; 
-import x from "../../assets/svg/delete.svg"; 
-// import { Link } from 'react-router-dom'; 
+import React, { useState, useEffect } from 'react';
+
+import "./Home.scss"
+import Banner from '../Banner/Banner'
+import sleva from "../../assets/svg/1.svg"
+import prava from "../../assets/svg/2.svg"
+import mainimage from "../../assets/image/mainimage.png"
+import Like from "../../assets/svg/Like.svg"
+import Like2 from "../../assets/svg/Like2.svg"
+import x from "../../assets/svg/x.svg"
+import Magazin from "../../assets/svg/magazin.svg"
+import search from "../../assets/svg/search.svg"
+import status1 from "../../assets/image/status1.png"
+import status2 from "../../assets/image/status2.png"
+import status3 from "../../assets/image/status3.png"
+import status4 from "../../assets/image/status4.png"
+import status5 from "../../assets/image/status5.png"
+import status6 from "../../assets/image/status6.png"
+import kros1 from "../../assets/image/kros1.png"
+import kros2 from "../../assets/image/kros2.png"
+import kros3 from "../../assets/image/kros3.png"
+import kros4 from "../../assets/image/kros4.png"
+import odezda from "../../assets/image/odezda.png"
+import odezda2 from "../../assets/image/odezda2.png"
+import odezda3 from "../../assets/image/odezda3.png"
+import odezda4 from "../../assets/image/odezda4.png"
+import odezda5 from "../../assets/image/odezda5.png"
+import sleva1 from "../../assets/svg/sleva.svg"
+import prava1 from "../../assets/svg/prava.svg"
+import mixer1 from "../../assets/image/mixer1.png"
+import mixer2 from "../../assets/image/mixer2.png"
+import mixer3 from "../../assets/image/mixer3.png"
+import spes from "../../assets/image/spes.png"
+import custom1 from "../../assets/image/custom1.png"
+import custom2 from "../../assets/image/custom2.png"
+import catolog from "../../assets/image/catalog.png"
+import catolog2 from "../../assets/image/catolog2.png"
 import { useDispatch } from 'react-redux';
 // import { addWish } from '../../redux/wishSlice';
 import { addWish } from '../../redux/wish2/wishSlice';
 import { Link, useNavigate } from 'react-router-dom';
 
+const API = "https://66dfd7322fb67ac16f2740dd.mockapi.io/product"
 
-const API = "https://66dfd7322fb67ac16f2740dd.mockapi.io/product";
+
 
 function HomeCom() {
   const [products, setProducts] = useState([]);
@@ -24,6 +53,21 @@ function HomeCom() {
   const navigate = useNavigate(); // Инициализация useHistory
 
   // ... остальной код ...
+  const [minPrice, setMinPrice] = useState(0); // Начальное значение для minPrice
+  const [maxPrice, setMaxPrice] = useState(100); // Начальное значение для maxPrice
+
+  // Функция для изменения значения minPrice
+  const handleMinChange = (event) => {
+      setMinPrice(event.target.value); // Обновляет состояние minPrice
+  };
+
+  // Функция для изменения значения maxPrice
+  const handleMaxChange = (event) => {
+      setMaxPrice(event.target.value); // Обновляет состояние maxPrice
+  };
+
+ 
+
 
   const handleAvatarClick = (item) => {
     console.log('Clicked item:', item); // Проверяем нажатый элемент
@@ -78,17 +122,62 @@ function HomeCom() {
   };
   
 
+  
+
+
+
   return (
     <div>
-      <header className='header1 container'>
-        <img src={mainimage} alt="" />
-        <div className='header1gg'>
+      <div className='top1'>
+      <div className='top11'>
+        <Link to={`/menuexpansion`}>
+            <img src={sleva} alt="" />
+        
+        </Link>
+            <p>Гарантия лучшей цены</p>
+            <img src={prava} alt="" />
+        </div>
+
+      </div>
+       
+        <header className='header1 container  '>
+          <img src={mainimage} alt="" />
+          <div className='header1gg'>
+          <div className='header1-left   '>
+            <ul>
+              <li>
+                <Link to={`catalog`}>
+                <a href="">Одежда</a>
+                </Link>
+              </li>
+              <li>
+                <Link to={`/obuv`}>
+                <a href="">Обувь</a>
+                </Link>
+              </li>
+              <li>
+                <Link to={`/oformzakaz`}>
+                <a href="">Аксессуары</a>
+                </Link>
+              </li>
+              <li>
+                <Link to={`proleved`}>
+                <a href="">Сумки</a>
+                </Link>
+              </li>
+              <li>
+                <Link to={`/0consignment`}>
+                <a href="">Товары для спорта</a>
+                </Link>
+              </li>
+              <p>DEALER</p>
+            </ul>
+          </div>
           <div className='header1-img'>
             <Link to={`/wishlist`}>
-              <img src={Like} alt="" />
+          <img src={Like} alt="" />
             </Link>
-            <img src={Magazin} alt="" onClick={handleMagazinClick} />
-
+            <img src={Magazin} alt="" onClick={handleMagazinClick} /> 
             {isModalVisible && (
               <div className='icon2'>
                 <div className='modal-nur'>
@@ -122,17 +211,54 @@ function HomeCom() {
                   </div>
                 </div>
               </div>
-            )}
-            <Link to={`/search`}>
-              <img src={search} alt="" />
+            )}      
+               <Link to={`/search`}>
+          <img src={search} alt="" />
+          </Link>
+          </div>
+          </div>
+
+          <div className='header101-center'>
+            <h1>распродажа <br />
+            товаров для неё</h1>
+            <Link to={`/catalog`}>
+            <button>Перейти в каталог</button>
             </Link>
           </div>
-        </div>
 
-      </header>
+          <div className='main1-status'>
+          <div className='status'>
+        <div className='status1'>
+              <img src={status1} alt="" />
+              <p>покупка</p>
+            </div> <div className='status1'>
+              <img src={status2} alt="" />
+              <p>покупка</p>
+            </div> <div className='status1'>
+              <img src={status3} alt="" />
+              <p>покупка</p>
+            </div> <div className='status1'>
+              <img src={status4} alt="" />
+              <p>покупка</p>
+            </div> <div className='status1'>
+              <img src={status5} alt="" />
+              <p>покупка</p>
+            </div> <div className='status1'>
+              <img src={status6} alt="" />
+              <p>покупка</p>
+            </div>
+            </div>
 
-      <main className='main1 container'>
-        <div className='main1-kros'>
+          </div>
+      
+        </header>
+
+        <main className='main1 container'>
+          <div className='main1-brend1'>
+    <h1>Cамое популярное сейчас</h1>
+    <button>Перейти</button>
+          </div>
+          <div className='main1-kros'>
           {
             products.slice(0, 24).map((item) => (
               <div key={item.id} data={item}>
@@ -162,8 +288,47 @@ function HomeCom() {
               </div>
             ))   
           }
-        </div>
-        <div className='main1-odezda1'>
+          </div>
+         
+            {/* .... */}
+
+<div className='main1-brend1-2'>
+    <h1>Новинки</h1>
+    <button>Перейти</button>
+          </div>
+          <div className='main1-kros'>
+          {
+            products.slice(0, 24).map((item) => (
+              <div key={item.id} data={item}>
+                <div className='kros1'>
+                  <div className='mm'>
+                  <img 
+                      src={item.avatar} 
+                      alt="" 
+                      // style={{ height: "248px", marginTop: "-60px" }} 
+                      onClick={() => handleAvatarClick(item)} // Обработчик клика
+                    /> 
+                  </div>
+                  
+                    <button onClick={() => toggleButton(item)}>add to cart</button>
+                  
+                  <div className='pp'>NOT</div>
+                  <div className='pw1' >
+                    <img src={Like2} onClick={() => toggleLike(item)} alt="" />
+                  </div> 
+                  <br />
+                  <div className='main-top1'>
+                    {/* <p>{item.name}</p> */}
+                    <p>{item.name}</p>
+                    <h5>{item.price}</h5>
+                  </div> 
+                </div>
+              </div>
+            ))   
+          }
+          </div>
+
+      <div className='main1-odezda1'>
       <div className='odezda-1'>
         <img src={odezda} alt="" />
         <p>одежда</p>
@@ -582,9 +747,10 @@ function HomeCom() {
   </div>
 
           
-      </main>
+
+        </main>
     </div>
-  );
+  )
 }
 
-export default HomeCom;
+export default HomeCom

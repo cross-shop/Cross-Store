@@ -6,7 +6,12 @@ import Like2 from "../../assets/svg/Like2.svg";
 import Magazin from "../../assets/svg/magazin.svg"; 
 import search from "../../assets/svg/search.svg"; 
 import x from "../../assets/svg/delete.svg"; 
-import { Link } from 'react-router-dom'; 
+// import { Link } from 'react-router-dom'; 
+import { useDispatch } from 'react-redux';
+// import { addWish } from '../../redux/wishSlice';
+import { addWish } from '../../redux/wish2/wishSlice';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 const API = "https://66dfd7322fb67ac16f2740dd.mockapi.io/product";
 
@@ -14,6 +19,18 @@ function HomeCom() {
   const [products, setProducts] = useState([]);
   const [isModalVisible, setModalVisible] = useState(false);
   const [selectedProducts, setSelectedProducts] = useState([]);
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate(); // Инициализация useHistory
+
+  // ... остальной код ...
+
+  const handleAvatarClick = (item) => {
+    console.log('Clicked item:', item); // Проверяем нажатый элемент
+    navigate('/obuv', { state: { selectedProduct: item } });
+  };
+  
+
 
   // Функция для получения данных
   const getProduct = async () => {
@@ -39,7 +56,7 @@ function HomeCom() {
     setModalVisible(false);
   };
 
-  const toggleLike = (item) => {
+  const toggleButton = (item) => {
     setSelectedProducts((prevSelected) => {
       // Убираем продукт, если он уже в списке
       if (prevSelected.includes(item)) {
@@ -49,6 +66,17 @@ function HomeCom() {
       return [...prevSelected, item];
     });
   };
+  const toggleLike = (item) => {
+    setSelectedProducts((prevSelected) => {
+      if (prevSelected.includes(item)) {
+        return prevSelected.filter(selectedItem => selectedItem !== item);
+      }
+      // Добавляем продукт в список желаемого
+      dispatch(addWish(item)); // Добавляем действие для Redux
+      return [...prevSelected, item];
+    });
+  };
+  
 
   return (
     <div>
@@ -106,24 +134,29 @@ function HomeCom() {
       <main className='main1 container'>
         <div className='main1-kros'>
           {
-            products.slice(0, 4).map((item) => (
+            products.slice(0, 24).map((item) => (
               <div key={item.id} data={item}>
                 <div className='kros1'>
                   <div className='mm'>
-                    <img src={item.avatar} alt="" style={{ height: "248px", marginTop: "-60px" }} />
+                  <img 
+                      src={item.avatar} 
+                      alt="" 
+                      // style={{ height: "248px", marginTop: "-60px" }} 
+                      onClick={() => handleAvatarClick(item)} // Обработчик клика
+                    /> 
                   </div>
                   
-                    <button>add to cart</button>
+                    <button onClick={() => toggleButton(item)}>add to cart</button>
                   
                   <div className='pp'>NOT</div>
-                  <div className='pw1' onClick={() => toggleLike(item)}>
-                    <img src={Like2} alt="" />
+                  <div className='pw1' >
+                    <img src={Like2} onClick={() => toggleLike(item)} alt="" />
                   </div> 
                   <br />
                   <div className='main-top1'>
+                    {/* <p>{item.name}</p> */}
                     <p>{item.name}</p>
-                    <p>Le Bambidou</p>
-                    <h5>{item.price}₽</h5>
+                    <h5>{item.price}</h5>
                   </div> 
                 </div>
               </div>

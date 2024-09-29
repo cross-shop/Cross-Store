@@ -12,6 +12,7 @@ import list1 from "../../assets/image/list1.png"
 import list2 from "../../assets/image/list2.png"
 import list3 from "../../assets/image/list3.png"
 
+
 import { useSelector } from 'react-redux'
 
 
@@ -20,6 +21,7 @@ function List() {
     const [minPrice, setMinPrice] = useState(32780);
     const [maxPrice, setMaxPrice] = useState(82780);
     const { items } = useSelector((state) => state.wishlist);
+    
   
     const [selectedColor, setSelectedColor] = useState("black");
   
@@ -76,7 +78,7 @@ function List() {
 
           <div className='nur-center'>
 
-            <h1>Custom</h1>
+            <h1>wishlist</h1>
         
             
           </div>

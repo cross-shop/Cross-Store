@@ -8,7 +8,7 @@ function FooterCom() {
   return (
     <footer className='footer'>
       <div className='syzyk'></div>
-    <div className='info'>
+    <div className='info1'>
       <div className='dealer'>
         <img src={dealer} alt="" />
         <p>

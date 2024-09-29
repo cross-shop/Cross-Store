@@ -69,6 +69,9 @@ function HomeCom() {
  
 
 
+
+  // ... остальной код ...
+
   const handleAvatarClick = (item) => {
     console.log('Clicked item:', item); // Проверяем нажатый элемент
     navigate('/obuv', { state: { selectedProduct: item } });
@@ -96,6 +99,16 @@ function HomeCom() {
     setModalVisible(true);
   };
 
+  };
+
+  useEffect(() => {
+    getProduct();
+  }, []);
+
+  const handleMagazinClick = () => {
+    setModalVisible(true);
+  };
+
   const handleCloseClick = () => {
     setModalVisible(false);
   };
@@ -107,6 +120,17 @@ function HomeCom() {
         return prevSelected.filter(selectedItem => selectedItem !== item);
       }
       // Добавляем продукт в список
+      return [...prevSelected, item];
+    });
+
+  };
+  const toggleLike = (item) => {
+    setSelectedProducts((prevSelected) => {
+      if (prevSelected.includes(item)) {
+        return prevSelected.filter(selectedItem => selectedItem !== item);
+      }
+      // Добавляем продукт в список желаемого
+      dispatch(addWish(item)); // Добавляем действие для Redux
       return [...prevSelected, item];
     });
   };
@@ -123,6 +147,9 @@ function HomeCom() {
   
 
   
+
+  
+
 
 
 

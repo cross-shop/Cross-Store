@@ -6,8 +6,6 @@ import search2 from "../../assets/svg/search2.svg";
 import search3 from "../../assets/svg/search3.svg";
 import Like2 from "../../assets/svg/Like2.svg";
 import { Link } from 'react-router-dom';
-
-
 import kros3 from "../../assets/image/kros3.png"
 import { div } from 'framer-motion/m';
 

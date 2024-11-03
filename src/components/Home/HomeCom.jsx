@@ -36,7 +36,6 @@ import custom2 from "../../assets/image/custom2.png"
 import catolog from "../../assets/image/catalog.png"
 import catolog2 from "../../assets/image/catolog2.png"
 import { useDispatch } from 'react-redux';
-// import { addWish } from '../../redux/wishSlice';
 import { addWish } from '../../redux/wish2/wishSlice';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -95,11 +94,6 @@ function HomeCom() {
     getProduct();
   }, []);
 
-  const handleMagazinClick = () => {
-    setModalVisible(true);
-  };
-
-  };
 
   useEffect(() => {
     getProduct();
@@ -124,6 +118,7 @@ function HomeCom() {
     });
 
   };
+
   const toggleLike = (item) => {
     setSelectedProducts((prevSelected) => {
       if (prevSelected.includes(item)) {
@@ -134,17 +129,7 @@ function HomeCom() {
       return [...prevSelected, item];
     });
   };
-  const toggleLike = (item) => {
-    setSelectedProducts((prevSelected) => {
-      if (prevSelected.includes(item)) {
-        return prevSelected.filter(selectedItem => selectedItem !== item);
-      }
-      // Добавляем продукт в список желаемого
-      dispatch(addWish(item)); // Добавляем действие для Redux
-      return [...prevSelected, item];
-    });
-  };
-  
+
 
   
 
@@ -157,10 +142,11 @@ function HomeCom() {
     <div>
       <div className='top1'>
       <div className='top11'>
-        <Link to={`/menuexpansion`}>
-            <img src={sleva} alt="" />
-        
-        </Link>
+      <div className='top11'>
+      <Link to={`/menuexpansion`}>
+        <img src={sleva} alt="" />
+      </Link>
+    </div>
             <p>Гарантия лучшей цены</p>
             <img src={prava} alt="" />
         </div>
@@ -294,7 +280,6 @@ function HomeCom() {
                   <img 
                       src={item.avatar} 
                       alt="" 
-                      // style={{ height: "248px", marginTop: "-60px" }} 
                       onClick={() => handleAvatarClick(item)} // Обработчик клика
                     /> 
                   </div>
@@ -307,7 +292,6 @@ function HomeCom() {
                   </div> 
                   <br />
                   <div className='main-top1'>
-                    {/* <p>{item.name}</p> */}
                     <p>{item.name}</p>
                     <h5>{item.price}</h5>
                   </div> 
@@ -317,7 +301,6 @@ function HomeCom() {
           }
           </div>
          
-            {/* .... */}
 
 <div className='main1-brend1-2'>
     <h1>Новинки</h1>
@@ -332,7 +315,6 @@ function HomeCom() {
                   <img 
                       src={item.avatar} 
                       alt="" 
-                      // style={{ height: "248px", marginTop: "-60px" }} 
                       onClick={() => handleAvatarClick(item)} // Обработчик клика
                     /> 
                   </div>
@@ -345,7 +327,6 @@ function HomeCom() {
                   </div> 
                   <br />
                   <div className='main-top1'>
-                    {/* <p>{item.name}</p> */}
                     <p>{item.name}</p>
                     <h5>{item.price}</h5>
                   </div> 
@@ -404,7 +385,6 @@ function HomeCom() {
               
 
             </div>
-            {/* .... */}
             <div className='kros1'>
               <div className='mm'>
             <img src={kros2} alt="" />
@@ -424,7 +404,6 @@ function HomeCom() {
               
 
             </div>
-            {/* // */}
             <div className='kros1'>
               <div className='mm'>
             <img src={kros1} alt="" />
@@ -444,7 +423,6 @@ function HomeCom() {
               
 
             </div>
-            {/* // */}
             <div className='kros1'>
               <div className='mm'>
             <img src={kros4} alt="" />
@@ -587,7 +565,6 @@ function HomeCom() {
               
 
             </div>
-            {/* .... */}
             <div className='krros1'>
               <div className='mmm'>
             <img src={kros2} alt="" />
@@ -778,6 +755,7 @@ function HomeCom() {
         </main>
     </div>
   )
-}
 
+
+};
 export default HomeCom

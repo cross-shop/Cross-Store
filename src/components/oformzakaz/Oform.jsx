@@ -7,7 +7,6 @@ import Like from "../../assets/svg/Like.svg"
 import kros3 from "../../assets/image/kros3.png"
 import Like2 from "../../assets/svg/Like2.svg"
 import alibek from "../../assets/image/alibek.png"
-
 import { Link } from 'react-router-dom'
 
 

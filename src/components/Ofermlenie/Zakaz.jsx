@@ -63,11 +63,6 @@ function Zakaz() {
 <img src={slevazakaz} alt="" />
 <h1>Оформление заказа</h1>
 
-{/* <div className='ofer-input'>
-    <p>E-mail</p>
-        <input type="text" />
-        
-</div> */}
 <div className='ofer-input1'>
     <p>Имя</p>
         <input type="text" />
@@ -87,9 +82,6 @@ function Zakaz() {
 </div>
 <div className='dostavka'>
     <h2>Доставка</h2>
-    {/* <div className='dostavka-input'>
-        <p>Населённый пункт</p> <input type="text" placeholder='Населённый пункт' />
-    </div> */}
 </div>
 
 <div className='dostavka-radio'>

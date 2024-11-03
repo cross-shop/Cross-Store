@@ -11,8 +11,6 @@ import kros3 from "../../assets/image/kros3.png"
 import list1 from "../../assets/image/list1.png"
 import list2 from "../../assets/image/list2.png"
 import list3 from "../../assets/image/list3.png"
-
-
 import { useSelector } from 'react-redux'
 
 

@@ -8,18 +8,12 @@ import negr2 from "../../assets/image/negr2.png"
 import negr3 from "../../assets/image/negr3.png"
 import negr4 from "../../assets/image/negr4.png"
 import nostroy from "../../assets/svg/nostroy.svg"
-
-
 import sleva1 from "../../assets/svg/sleva.svg"
 import prava1 from "../../assets/svg/prava.svg"
 import mixer1 from "../../assets/image/mixer1.png"
 import mixer2 from "../../assets/image/mixer2.png"
 import mixer3 from "../../assets/image/mixer3.png"
-
-
 import catolog2 from "../../assets/image/catolog2.png"
-
-
 import { Link } from 'react-router-dom';
 
 

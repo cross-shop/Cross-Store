@@ -5,9 +5,7 @@ import Magazin from "../../assets/svg/magazin.svg"
 import search from "../../assets/svg/search.svg"
 import Like from "../../assets/svg/Like.svg"
 import kros3 from "../../assets/image/kros3.png"
-import Like2 from "../../assets/svg/Like2.svg"
 import alibek from "../../assets/image/alibek.png"
-
 import { Link } from 'react-router-dom'
 
 
@@ -41,7 +39,6 @@ function Oform() {
             </ul>
           </div>
           <div className='header1709-img'>
-            <img src={Like} alt="" />
 
           <img src={Magazin} alt="" />
           <Link to={`/search`}>

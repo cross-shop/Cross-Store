@@ -31,46 +31,15 @@ function CatalogCom() {
     <div>
           <header className='header4 container'>
             <Banner />
-          <div className='header4gg'>
-          <div className='header4-left '>
-            <ul>
-              <li>
-                <a href="">Одежда</a>
-              </li>
-              <li>
-              <Link to={`/obuv`}>
-                <a href="">Обувь</a>
-                </Link>
-              </li>
-              <li>
-                <a href="">Аксессуары</a>
-              </li>
-              <li>
-                <a href="">Сумки</a>
-              </li>
-              <li>
-                <a href="">Товары для спорта</a>
-              </li>
-              <p>DEALER</p>
-            </ul>
-          </div>
-          <div className='header4-img'>
-          <img src={Like} alt="" />
-          <img src={Magazin} alt="" />
-          <Link to={`/search`}>
-          <img src={search} alt="" />
-          </Link>
-          </div>
-          </div>
 
           <div className='header4-center'>
             <div className='header4-p4'>
                 <Link to={`/`}>
-            <p>Главная|| </p>
+            <p>Главная</p>
                 </Link>
-            <h4>Каталог||</h4>
+            <h4>Каталог</h4>
             <Link to={`/istoria`}>
-            <h5>История||</h5>
+            <h5>История</h5>
             </Link>
             <Link to={`/help`}>
             <h6>Поддержка </h6>
@@ -78,7 +47,7 @@ function CatalogCom() {
 
 
             </div>
-            <h1>одежда</h1>
+            <h1>Каталог</h1>
           </div>
 
           <div className='recomen1 container '>
@@ -155,6 +124,7 @@ function CatalogCom() {
 
          
           </div>
+
           <div className='catolog-1-2'>
             <h1>Фильтры</h1>
             <div className="price-range1">
@@ -262,7 +232,6 @@ function CatalogCom() {
               <h5>21 999₽</h5>
             </div> 
             </div>
-            {/* ,mnhggggghhhhhhh */}
             <div className='kros19'>
               <div className='mm9'>
             <img src={kros3} alt="" />

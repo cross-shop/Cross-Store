@@ -1,21 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 import "./Home.scss"
-import Banner from '../Banner/Banner'
 import sleva from "../../assets/svg/1.svg"
 import prava from "../../assets/svg/2.svg"
-import mainimage from "../../assets/image/mainimage.png"
-import Like from "../../assets/svg/Like.svg"
 import Like2 from "../../assets/svg/Like2.svg"
-import x from "../../assets/svg/x.svg"
-import Magazin from "../../assets/svg/magazin.svg"
-import search from "../../assets/svg/search.svg"
-import status1 from "../../assets/image/status1.png"
-import status2 from "../../assets/image/status2.png"
-import status3 from "../../assets/image/status3.png"
-import status4 from "../../assets/image/status4.png"
-import status5 from "../../assets/image/status5.png"
-import status6 from "../../assets/image/status6.png"
 import kros1 from "../../assets/image/kros1.png"
 import kros2 from "../../assets/image/kros2.png"
 import kros3 from "../../assets/image/kros3.png"
@@ -36,7 +24,6 @@ import custom2 from "../../assets/image/custom2.png"
 import catolog from "../../assets/image/catalog.png"
 import catolog2 from "../../assets/image/catolog2.png"
 import { useDispatch } from 'react-redux';
-// import { addWish } from '../../redux/wishSlice';
 import { addWish } from '../../redux/wish2/wishSlice';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -95,11 +82,6 @@ function HomeCom() {
     getProduct();
   }, []);
 
-  const handleMagazinClick = () => {
-    setModalVisible(true);
-  };
-
-  };
 
   useEffect(() => {
     getProduct();
@@ -124,6 +106,7 @@ function HomeCom() {
     });
 
   };
+
   const toggleLike = (item) => {
     setSelectedProducts((prevSelected) => {
       if (prevSelected.includes(item)) {
@@ -134,17 +117,7 @@ function HomeCom() {
       return [...prevSelected, item];
     });
   };
-  const toggleLike = (item) => {
-    setSelectedProducts((prevSelected) => {
-      if (prevSelected.includes(item)) {
-        return prevSelected.filter(selectedItem => selectedItem !== item);
-      }
-      // Добавляем продукт в список желаемого
-      dispatch(addWish(item)); // Добавляем действие для Redux
-      return [...prevSelected, item];
-    });
-  };
-  
+
 
   
 
@@ -157,128 +130,17 @@ function HomeCom() {
     <div>
       <div className='top1'>
       <div className='top11'>
-        <Link to={`/menuexpansion`}>
-            <img src={sleva} alt="" />
-        
-        </Link>
+      <div className='top11'>
+      <Link to={`/menuexpansion`}>
+        <img src={sleva} alt="" />
+      </Link>
+    </div>
             <p>Гарантия лучшей цены</p>
             <img src={prava} alt="" />
         </div>
 
       </div>
-       
-        <header className='header1 container  '>
-          <img src={mainimage} alt="" />
-          <div className='header1gg'>
-          <div className='header1-left   '>
-            <ul>
-              <li>
-                <Link to={`catalog`}>
-                <a href="">Одежда</a>
-                </Link>
-              </li>
-              <li>
-                <Link to={`/obuv`}>
-                <a href="">Обувь</a>
-                </Link>
-              </li>
-              <li>
-                <Link to={`/oformzakaz`}>
-                <a href="">Аксессуары</a>
-                </Link>
-              </li>
-              <li>
-                <Link to={`proleved`}>
-                <a href="">Сумки</a>
-                </Link>
-              </li>
-              <li>
-                <Link to={`/0consignment`}>
-                <a href="">Товары для спорта</a>
-                </Link>
-              </li>
-              <p>DEALER</p>
-            </ul>
-          </div>
-          <div className='header1-img'>
-            <Link to={`/wishlist`}>
-          <img src={Like} alt="" />
-            </Link>
-            <img src={Magazin} alt="" onClick={handleMagazinClick} /> 
-            {isModalVisible && (
-              <div className='icon2'>
-                <div className='modal-nur'>
-                  <div className='modal2-nur'>
-                    <h2>Корзина</h2>
-                    <img src={x} alt="" onClick={handleCloseClick} />
-                  </div>
-                  <div className='m3-nur'>
-                    <h5>{selectedProducts.length} товара</h5>
-                    <h5>Очистить</h5>
-                  </div>
-                  <div className='bm-nur'>
-                    <div className='bm2-nur'>
-                      <h2>Итого</h2>
-                      <h2 style={{display: "flex", gap: "10px"}}>{selectedProducts.reduce((total, product) => total + product.price, 0)}</h2>
-                    </div>
-                    <div className='btn-nur'>
-                      <button>Оформить</button>
-                    </div>
-                  </div>
-                  <div className='selected-items'>
-                    {selectedProducts.map((item) => (
-                      <div key={item.id} className='selected-item'>
-                        <img src={item.avatar} alt={item.name} style={{ height: "200px", width: "200px" }} />
-                        <div>
-                          <p>{item.name}</p>
-                          <h5>{item.price}₽</h5>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}      
-               <Link to={`/search`}>
-          <img src={search} alt="" />
-          </Link>
-          </div>
-          </div>
-
-          <div className='header101-center'>
-            <h1>распродажа <br />
-            товаров для неё</h1>
-            <Link to={`/catalog`}>
-            <button>Перейти в каталог</button>
-            </Link>
-          </div>
-
-          <div className='main1-status'>
-          <div className='status'>
-        <div className='status1'>
-              <img src={status1} alt="" />
-              <p>покупка</p>
-            </div> <div className='status1'>
-              <img src={status2} alt="" />
-              <p>покупка</p>
-            </div> <div className='status1'>
-              <img src={status3} alt="" />
-              <p>покупка</p>
-            </div> <div className='status1'>
-              <img src={status4} alt="" />
-              <p>покупка</p>
-            </div> <div className='status1'>
-              <img src={status5} alt="" />
-              <p>покупка</p>
-            </div> <div className='status1'>
-              <img src={status6} alt="" />
-              <p>покупка</p>
-            </div>
-            </div>
-
-          </div>
       
-        </header>
 
         <main className='main1 container'>
           <div className='main1-brend1'>
@@ -294,7 +156,6 @@ function HomeCom() {
                   <img 
                       src={item.avatar} 
                       alt="" 
-                      // style={{ height: "248px", marginTop: "-60px" }} 
                       onClick={() => handleAvatarClick(item)} // Обработчик клика
                     /> 
                   </div>
@@ -307,7 +168,6 @@ function HomeCom() {
                   </div> 
                   <br />
                   <div className='main-top1'>
-                    {/* <p>{item.name}</p> */}
                     <p>{item.name}</p>
                     <h5>{item.price}</h5>
                   </div> 
@@ -317,7 +177,6 @@ function HomeCom() {
           }
           </div>
          
-            {/* .... */}
 
 <div className='main1-brend1-2'>
     <h1>Новинки</h1>
@@ -332,7 +191,6 @@ function HomeCom() {
                   <img 
                       src={item.avatar} 
                       alt="" 
-                      // style={{ height: "248px", marginTop: "-60px" }} 
                       onClick={() => handleAvatarClick(item)} // Обработчик клика
                     /> 
                   </div>
@@ -345,7 +203,6 @@ function HomeCom() {
                   </div> 
                   <br />
                   <div className='main-top1'>
-                    {/* <p>{item.name}</p> */}
                     <p>{item.name}</p>
                     <h5>{item.price}</h5>
                   </div> 
@@ -404,7 +261,6 @@ function HomeCom() {
               
 
             </div>
-            {/* .... */}
             <div className='kros1'>
               <div className='mm'>
             <img src={kros2} alt="" />
@@ -424,7 +280,6 @@ function HomeCom() {
               
 
             </div>
-            {/* // */}
             <div className='kros1'>
               <div className='mm'>
             <img src={kros1} alt="" />
@@ -444,7 +299,6 @@ function HomeCom() {
               
 
             </div>
-            {/* // */}
             <div className='kros1'>
               <div className='mm'>
             <img src={kros4} alt="" />
@@ -587,7 +441,6 @@ function HomeCom() {
               
 
             </div>
-            {/* .... */}
             <div className='krros1'>
               <div className='mmm'>
             <img src={kros2} alt="" />
@@ -698,7 +551,6 @@ function HomeCom() {
             <img src={kros1} alt="" />
     
               </div>
-              <div className='pp'>NEW</div>
               <div className='pw1'>
                 <img src={Like2} alt="" />
               </div> <br />
@@ -718,7 +570,6 @@ function HomeCom() {
             <img src={kros2} alt="" />
     
               </div>
-              <div className='pp'>NEW</div>
               <div className='pw1'>
                 <img src={Like2} alt="" />
               </div> <br />
@@ -738,7 +589,6 @@ function HomeCom() {
             <img src={kros4} alt="" />
     
               </div>
-              <div className='pp'>NEW</div>
               <div className='pw1'>
                 <img src={Like2} alt="" />
               </div> <br />
@@ -778,6 +628,7 @@ function HomeCom() {
         </main>
     </div>
   )
-}
 
+
+};
 export default HomeCom

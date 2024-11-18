@@ -1,0 +1,101 @@
+.main1-kros {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 1rem;
+    overflow-x: scroll;
+    scrollbar-color: transparent transparent;
+    width: 100%;
+    position: relative;  /* Стрелкаларды орнотуу үчүн контейнердин позициясы керек */
+  
+    &::-webkit-scrollbar {
+      display: none; /* Скролл сызыгын жасыруу */
+    }
+  
+    .kros1 {
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 10px;
+      min-width: 250px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      height: 350px;
+      overflow: hidden;
+  
+      button {
+        background-color: rgb(5, 84, 255);
+        padding: 3px 10px;
+        color: white;
+        margin: 10px 0 0 0;
+        border-radius: 5px;
+        width: 177px;
+      }
+  
+      button:hover {
+        background-color: blue;
+      }
+  
+      .mm {
+        text-align: center;
+  
+        img {
+          width: 100%;
+          height: 180px;
+        }
+      }
+  
+      .main-top1 {
+        text-align: center;
+        margin-top: 10px;
+  
+        p {
+          margin: 5px 0;
+        }
+      }
+  
+      .pp {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-weight: bold;
+      }
+  
+      .pw1 {
+        cursor: pointer;
+        text-align: center;
+      }
+    }
+  
+    /* Стрелкалардын стилдери */
+    .scroll-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+  
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+    }
+  
+    .left-arrow {
+      left: 10px;  /* Сол жакка жайгаштыруу */
+    }
+  
+    .right-arrow {
+      right: 10px;  /* Оң жакка жайгаштыруу */
+    }
+  }
+  
+  .icon-like {
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  

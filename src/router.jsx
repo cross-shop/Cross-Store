@@ -16,7 +16,7 @@ import Oformzakaz from "./pages/Oformzakaz";
 import ONas from "./pages/oNas";
 import Notfound from "./pages/Notfound";
 import Konserj from "./pages/Konserj";
-
+import Home2 from "./components/HomePage/Home";
 
 export const myRouter = createBrowserRouter([
     {
@@ -25,6 +25,10 @@ export const myRouter = createBrowserRouter([
         children: [
             {
                 path: "/",
+                element: <Home2 />
+            }, 
+            {
+                path: "/home2",
                 element: <Home />
             },
             {

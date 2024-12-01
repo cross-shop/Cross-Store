@@ -5,7 +5,7 @@ import mainimage from "../../assets/image/mainimage.png";
 
 function Banner() {
   return (
-    <div className="banner-carousel">
+    <div className="banner-carousel container">
       <Carousel>
         <Carousel.Item>
           <img className="main-image" src={mainimage} alt="Main banner image" />

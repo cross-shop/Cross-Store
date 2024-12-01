@@ -17,6 +17,7 @@ import ONas from "./pages/oNas";
 import Notfound from "./pages/Notfound";
 import Konserj from "./pages/Konserj";
 import Home2 from "./components/HomePage/Home";
+import Basket from "./pages/Basket";
 
 export const myRouter = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ export const myRouter = createBrowserRouter([
             {
                 path: "/home2",
                 element: <Home />
+            },
+            {
+                path: "/basket",
+                element: <Basket />
             },
             {
                 path: "*",

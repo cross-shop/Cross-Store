@@ -600,5 +600,5 @@ function HomeCom() {
         </main>
     </div>
   )
-
-export default HomeCom
+}
+export default HomeCom 

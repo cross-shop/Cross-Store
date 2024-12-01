@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect} from 'react'
 import "./List.scss"
 import wishlist from "../../assets/image/wishlist.png"
@@ -11,8 +12,6 @@ import kros3 from "../../assets/image/kros3.png"
 import list1 from "../../assets/image/list1.png"
 import list2 from "../../assets/image/list2.png"
 import list3 from "../../assets/image/list3.png"
-
-
 import { useSelector } from 'react-redux'
 
 
@@ -20,7 +19,8 @@ import { useSelector } from 'react-redux'
 function List() {
     const [minPrice, setMinPrice] = useState(32780);
     const [maxPrice, setMaxPrice] = useState(82780);
-    const { items } = useSelector((state) => state.wishlist);
+    const { items } = useSelector((state) =>  
+       state.wishlist);
     
   
     const [selectedColor, setSelectedColor] = useState("black");

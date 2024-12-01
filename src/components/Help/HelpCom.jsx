@@ -1,7 +1,6 @@
 import React from 'react'
 import "./Help.scss"
 import help from "../../assets/image/help.png"
-
 import Magazin from "../../assets/svg/magazin.svg"
 import search from "../../assets/svg/search.svg"
 import { Link } from 'react-router-dom'

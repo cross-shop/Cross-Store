@@ -1,21 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 import "./Home.scss"
-import Banner from '../Banner/Banner'
 import sleva from "../../assets/svg/1.svg"
 import prava from "../../assets/svg/2.svg"
-import mainimage from "../../assets/image/mainimage.png"
-import Like from "../../assets/svg/Like.svg"
 import Like2 from "../../assets/svg/Like2.svg"
-import x from "../../assets/svg/x.svg"
-import Magazin from "../../assets/svg/magazin.svg"
-import search from "../../assets/svg/search.svg"
-import status1 from "../../assets/image/status1.png"
-import status2 from "../../assets/image/status2.png"
-import status3 from "../../assets/image/status3.png"
-import status4 from "../../assets/image/status4.png"
-import status5 from "../../assets/image/status5.png"
-import status6 from "../../assets/image/status6.png"
 import kros1 from "../../assets/image/kros1.png"
 import kros2 from "../../assets/image/kros2.png"
 import kros3 from "../../assets/image/kros3.png"
@@ -36,7 +24,6 @@ import custom2 from "../../assets/image/custom2.png"
 import catolog from "../../assets/image/catalog.png"
 import catolog2 from "../../assets/image/catolog2.png"
 import { useDispatch } from 'react-redux';
-// import { addWish } from '../../redux/wishSlice';
 import { addWish } from '../../redux/wish2/wishSlice';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -94,6 +81,7 @@ function HomeCom() {
     getProduct();
   }, []);
 
+
   const handleMagazinClick = () => {
     setModalVisible(true);
   };
@@ -103,6 +91,7 @@ function HomeCom() {
   };
   const toggleButton = (item) => {
     setSelectedProducts((prevSelected) => {
+
       if (prevSelected.includes(item)) {
         return prevSelected.filter(selectedItem => selectedItem !== item);
       }
@@ -145,10 +134,11 @@ function HomeCom() {
     <div>
       <div className='top1'>
       <div className='top11'>
-        <Link to={`/menuexpansion`}>
-            <img src={sleva} alt="" />
-        
-        </Link>
+      <div className='top11'>
+      <Link to={`/menuexpansion`}>
+        <img src={sleva} alt="" />
+      </Link>
+    </div>
             <p>Гарантия лучшей цены</p>
             <img src={prava} alt="" />
         </div>
@@ -338,6 +328,7 @@ function HomeCom() {
                   </div>
                 ))   
               }
+
               </div>
               <div className='main1-odezda1'>
       <div className='odezda-1'>
@@ -397,6 +388,7 @@ function HomeCom() {
                   </div>
 
                 </div>
+
               </div>
             ))   
           }
@@ -523,6 +515,7 @@ function HomeCom() {
                     <h5>price: {item.price}</h5>
                   </div>
                 </div>
+
               </div>
             ))
           }
@@ -581,6 +574,7 @@ function HomeCom() {
             ))   
           }
 
+
 </div>
 
 <div className='main1-catolog'>
@@ -606,6 +600,5 @@ function HomeCom() {
         </main>
     </div>
   )
-}
 
 export default HomeCom

@@ -2,12 +2,16 @@ import React, { useState, useEffect, useRef } from 'react';
 import './Products.scss';
 import Like2 from '../../assets/svg/Like3.svg';
 import { Link } from 'react-router-dom';
+import { addCart } from '../../redux/cart/cartSlice';
+import { useDispatch } from 'react-redux'
 
 const API = "https://66dfd7322fb67ac16f2740dd.mockapi.io/product";
 
 function Products() {
   const [products, setProducts] = useState([]);
   const containerRef = useRef(null);  // Скролл контейнерине жетүү үчүн
+
+  const dispatch = useDispatch()
 
   useEffect(() => {
     fetch(API)
@@ -63,7 +67,7 @@ function Products() {
                 </Link>
               </div>
               <div>
-                <button onClick={() => toggleButton(item)}>Add to cart</button>
+                <button onClick={() => dispatch(addCart(item))}>Add to cart</button>
                 <img className='icon-like'
                   src={Like2} 
                   onClick={() => toggleLike(item)} 

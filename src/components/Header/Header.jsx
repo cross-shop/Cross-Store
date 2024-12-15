@@ -6,23 +6,10 @@ import { ImSearch as Search} from "react-icons/im";
 import "./Header.scss";
 
 function Header() {
-  const [selectedProducts, setSelectedProducts] = useState([]);
-  const [isCartVisible, setCartVisible] = useState(false); // Корзина көрүүчү абал
-
-  const addProductToCart = (product) => {
-    setSelectedProducts(prev => [...prev, product]);
-  };
-
-  const removeProductFromCart = (productId) => {
-    setSelectedProducts(prev => prev.filter(product => product.id !== productId));
-  };
-
-  const totalPrice = selectedProducts.reduce((total, product) => total + product.price, 0);
-  const productCount = selectedProducts.length;
-
   return (
+    <header>
     <div className="header">
-      <div className="header__left container">
+      <div className="header__left ">
         <div className='logo'>
           <Link to="/">
             <strong>DEALER</strong>
@@ -38,23 +25,22 @@ function Header() {
       </div>
       <div className="header__right">
         <Link to="/wishlist">
-        <Heart />
+        <Heart className='header-icon'/>
         </Link>
 
-        {/* Корзина иконкасы, аны басканда корзина көрүнөт */}
         <Link to="/basket">
           <Cart 
-            className='header__icon header__cart-icon' 
-            onClick={() => setCartVisible(!isCartVisible)} // Корзинанын көрүнүүсүн которуу
+          className='header-icon'
           />
         </Link>
 
         <Link to="/search">
-          <Search />
+          <Search className='header-icon'/>
         </Link>
 
       </div>
     </div>
+    </header>
   );
 }
 

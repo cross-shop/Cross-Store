@@ -1,11 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { FaHeart, FaRegHeart } from "react-icons/fa";
+import { useSelector, useDispatch } from 'react-redux';
+import { removeCart, updateCart, toggleLike } from '../../redux/cart/cartSlice';
+import { Link } from 'react-router-dom';
 import "./Basket.scss";
-import { useSelector } from 'react-redux';
 
 function BasketPage() {
     const { ali } = useSelector((state) => state.carts);
-    
-    const [quantities, setQuantities] = useState(ali.map(() => 1)); 
+    const dispatch = useDispatch();
+    const [quantities, setQuantities] = useState(ali.map(() => 1));
+
+    // Баракча жүктөлгөндө LocalStorage'дан товарларды калыбына келтирүү
+    useEffect(() => {
+        const savedCart = JSON.parse(localStorage.getItem('cartItems')) || [];
+        dispatch(updateCart(savedCart)); // Redux store'го орнотуу
+    }, [dispatch]);
+
     const calculateTotalPrice = () => {
         return ali.reduce((total, item, index) => {
             return total + item.price * quantities[index];
@@ -26,6 +36,26 @@ function BasketPage() {
         setQuantities(newQuantities);
     };
 
+    const handleDelete = (id) => {
+        dispatch(removeCart(id)); // Продуктту Redux store'дон жана LocalStorage'дан өчүрүү
+    };
+
+    const handleToggleLike = (id) => {
+        dispatch(toggleLike(id)); // Лайк статусун өзгөртүү
+    };
+
+    // Корзина бош болсо билдирүүнү көрсөтүү
+    if (ali.length === 0) {
+        return (
+            <section className='empty-basket'>
+                <h2>Ваша корзина пуста</h2>
+                <Link to={"/"}>
+                <button className='cart-btn'>Добавьте товары в корзину</button>
+                </Link>
+            </section>
+        );
+    }
+
     return (
         <section className='basket-page'>
             <div className='basket-container container'>
@@ -39,25 +69,31 @@ function BasketPage() {
                                 <div className='detile'>
                                     <span>25-october</span>
                                     <div className='icons'>
-                                        <img
-                                            src="https://static-00.iconduck.com/assets.00/wishlist-icon-2048x1952-13b2gake.png"
-                                            alt="like-icon"
-                                            loading='lazy'
-                                        />
-                                        <img
-                                            src="https://cdn-icons-png.flaticon.com/512/1345/1345874.png"
-                                            alt="delete-icon"
-                                            loading='lazy'
-                                        />
+                                        <div
+                                            className="like-icon"
+                                            onClick={() => handleToggleLike(item.id)}
+                                        >
+                                            {item.isLiked ? (
+                                                <FaHeart color="red" size={20} />
+                                            ) : (
+                                                <FaRegHeart color="gray" size={20} />
+                                            )}
+                                        </div>
+                                        <div
+                                            className="delete-icon"
+                                            onClick={() => handleDelete(item.id)}
+                                        >
+                                            🗑️
+                                        </div>
                                     </div>
-                                </div>      
+                                </div>
                             </div>
                             <div className='box2'>
                                 <button onClick={() => decreaseQuantity(index)}>-</button>
                                 <span>{quantities[index]}</span>
                                 <button onClick={() => increaseQuantity(index)}>+</button>
                             </div>
-                            <span className='price'>{item.price * quantities[index]}</span>
+                            <span className='price'>{item.price * quantities[index]}c</span>
                         </div>
                     </div>
                 ))}
@@ -70,7 +106,7 @@ function BasketPage() {
                 </div>
                 <div className='info-2'>
                     <h3>Total</h3>
-                    <span>{calculateTotalPrice()}</span>
+                    <span>{calculateTotalPrice()}c</span>
                 </div>
                 <button>Order</button>
             </div>
@@ -87,6 +123,5 @@ function BasketPage() {
         </section>
     );
 }
-
 
 export default BasketPage;

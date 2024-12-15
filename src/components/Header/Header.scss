@@ -133,3 +133,16 @@
   }
 
 }
+
+.header-icon {
+  font-size: 1.5rem;
+}
+
+.cart-count {
+  position: absolute;
+  top: 13px;
+  right: 83px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+}

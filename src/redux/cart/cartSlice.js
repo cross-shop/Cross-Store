@@ -1,42 +1,42 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
+
+// LocalStorage'дан товарларды жана лайктарды алуу
+const loadFromLocalStorage = () => {
+    const data = localStorage.getItem('cartItems');
+    return data ? JSON.parse(data) : [];
+};
+
+// LocalStorage'га товарларды жана лайктарды сактоо
+const saveToLocalStorage = (data) => {
+    localStorage.setItem('cartItems', JSON.stringify(data));
+};
 
 const cartSlice = createSlice({
-    name: "cart",
-    initialState: { ali: [] }, // Баштапкы абал туура орнотулган
-    reducers: {
-        // Товарды корзинага кошуу
-        addCart: (state, action) => {
-            const findProduct = state.ali?.find((x) => x.id === action.payload.id);
-            if (!findProduct) {
-                state.ali.push({ ...action.payload, quantity: 1 }); // Quantity кошулду
-            } else {
-                findProduct.quantity += 1; // Эгер товар бар болсо, санын көбөйт
-            }
-        },
-        // Корзинадан товарды өчүрүү
-        removeCart: (state, action) => {
-            state.ali = state.ali?.filter((item) => item.id !== action.payload);
-        },
-        // Товардын санын азайтуу
-        decreaseQuantity: (state, action) => {
-            const findProduct = state.ali?.find((x) => x.id === action.payload);
-            if (findProduct && findProduct.quantity > 1) {
-                findProduct.quantity -= 1;
-            } else {
-                state.ali = state.ali?.filter((item) => item.id !== action.payload);
-            }
-        },
-        // LocalStorage'ден жүктөө
-        setCartFromStorage: (state, action) => {
-            state.ali = action.payload || []; // Эгерде payload бош болсо, али массивин бош кылып койобуз
-        },
-        // Бардык товарларды тазалоо
-        clearCart: (state) => {
-            state.ali = []; // Бардык товарларды тазалайт
-        },
+    name: 'carts',
+    initialState: {
+        ali: loadFromLocalStorage() // Жүктөлгөн товарларды баштапкы абалга орнотуу
     },
+    reducers: {
+        addCart: (state, action) => {
+            state.ali.push({ ...action.payload, isLiked: false }); // isLiked'ти башында false кылып кошобуз
+            saveToLocalStorage(state.ali); // LocalStorage'га сактоо
+        },
+        removeCart: (state, action) => {
+            state.ali = state.ali.filter(item => item.id !== action.payload);
+            saveToLocalStorage(state.ali); // LocalStorage'га сактоо
+        },
+        toggleLike: (state, action) => {
+            state.ali = state.ali.map(item =>
+                item.id === action.payload ? { ...item, isLiked: !item.isLiked } : item
+            );
+            saveToLocalStorage(state.ali); // Лайк өзгөргөндө да LocalStorage'га сактайбыз
+        },
+        updateCart: (state, action) => {
+            state.ali = action.payload;
+            saveToLocalStorage(state.ali); // LocalStorage'га сактоо
+        }
+    }
 });
 
-export const { addCart, removeCart, decreaseQuantity, setCartFromStorage, clearCart } = cartSlice.actions;
-
+export const { addCart, removeCart, toggleLike, updateCart } = cartSlice.actions;
 export default cartSlice.reducer;

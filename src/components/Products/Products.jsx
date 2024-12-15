@@ -3,27 +3,26 @@ import './Products.scss';
 import { Link } from 'react-router-dom';
 import { addCart } from '../../redux/cart/cartSlice';
 import { useDispatch } from 'react-redux';
-import { FaHeart, FaRegHeart } from "react-icons/fa"; // React Icons
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 const API = "https://66dfd7322fb67ac16f2740dd.mockapi.io/product";
 
 function Products() {
   const [products, setProducts] = useState([]);
+  const [cartMessage, setCartMessage] = useState(""); // Билдирүү үчүн state
   const dispatch = useDispatch();
   const containerRef = useRef(null);
 
-  // Лайкталган продукттардын ID'ларын localStorage'дан алуу
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const response = await fetch(API);
         const data = await response.json();
 
-        // LocalStorage'дан лайкталган ID'ларды алуу
         const likedItems = JSON.parse(localStorage.getItem("likedItems")) || [];
         const updatedProducts = data.map((item) => ({
           ...item,
-          isLiked: likedItems.includes(item.id), // Лайк абалын белгилөө
+          isLiked: likedItems.includes(item.id), 
         }));
 
         setProducts(updatedProducts);
@@ -41,7 +40,6 @@ function Products() {
         item.id === id ? { ...item, isLiked: !item.isLiked } : item
       );
 
-      // Лайкталган продукттардын ID'ларын localStorage'га сактоо
       const likedItems = updatedProducts
         .filter((item) => item.isLiked)
         .map((item) => item.id);
@@ -69,22 +67,33 @@ function Products() {
     }
   };
 
+  const handleAddToCart = (item) => {
+    dispatch(addCart(item));
+    setCartMessage("Товар добавлен в корзину"); // Билдирүүнү коюу
+
+    setTimeout(() => {
+      setCartMessage(""); // 2 секундтан кийин билдирүүнү өчүрүү
+    }, 2000);
+  };
+
   return (
     <div className='ali container'>
+      {cartMessage && (
+        <div className="cart-message">
+          {cartMessage} {/* Корзинага кошулган билдирүү */}
+        </div>
+      )}
+
       <div className='main1-kros' ref={containerRef}>
         {products.slice(0, 24).map((item) => (
           <div key={item.id}>
             <div className='kros1'>
               <div className='mm'>
                 <Link to={"/obuv"}>
-                  <img
-                    src={item.avatar}
-                    alt=""
-                  />
+                  <img src={item.avatar} alt="" />
                 </Link>
               </div>
 
-              <div className='pp'>{item.isAvailable}</div>
               <div className='pw1'></div>
               <br />
               <div className='main-top1'>
@@ -92,14 +101,13 @@ function Products() {
                 <h5>{item.price}</h5>
               </div>
               <div className='product-bottom'>
-                <button onClick={() => dispatch(addCart(item))}>Add to cart</button>
+                <button onClick={() => handleAddToCart(item)}>Add to cart</button>
 
-                {/* Лайк иконкасы */}
                 <div className='icon-like' onClick={() => toggleLike(item.id)}>
                   {item.isLiked ? (
-                    <FaHeart color="red" size={24} /> // Толтурулган жүрөк
+                    <FaHeart color="red" size={24} />
                   ) : (
-                    <FaRegHeart color="gray" size={24} /> // Бош жүрөк
+                    <FaRegHeart color="gray" size={24} />
                   )}
                 </div>
               </div>

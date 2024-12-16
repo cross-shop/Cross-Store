@@ -1,63 +1,115 @@
-import React from 'react'
-import "./Basket.scss"
-import { useSelector } from 'react-redux'
+import React, { useState, useEffect } from 'react';
+import { FaHeart, FaRegHeart } from "react-icons/fa";
+import { useSelector, useDispatch } from 'react-redux';
+import { removeCart, updateCart, toggleLike } from '../../redux/cart/cartSlice';
+import { Link } from 'react-router-dom';
+import "./Basket.scss";
 
 function BasketPage() {
+    const { ali } = useSelector((state) => state.carts);
+    const dispatch = useDispatch();
+    const [quantities, setQuantities] = useState(ali.map(() => 1));
 
-    const { ali } = useSelector((state) => state.carts)
+    // Баракча жүктөлгөндө LocalStorage'дан товарларды калыбына келтирүү
+    useEffect(() => {
+        const savedCart = JSON.parse(localStorage.getItem('cartItems')) || [];
+        dispatch(updateCart(savedCart)); // Redux store'го орнотуу
+    }, [dispatch]);
+
+    const calculateTotalPrice = () => {
+        return ali.reduce((total, item, index) => {
+            return total + item.price * quantities[index];
+        }, 0);
+    };
+
+    const increaseQuantity = (index) => {
+        const newQuantities = [...quantities];
+        newQuantities[index] += 1;
+        setQuantities(newQuantities);
+    };
+
+    const decreaseQuantity = (index) => {
+        const newQuantities = [...quantities];
+        if (newQuantities[index] > 1) {
+            newQuantities[index] -= 1;
+        }
+        setQuantities(newQuantities);
+    };
+
+    const handleDelete = (id) => {
+        dispatch(removeCart(id)); // Продуктту Redux store'дон жана LocalStorage'дан өчүрүү
+    };
+
+    const handleToggleLike = (id) => {
+        dispatch(toggleLike(id)); // Лайк статусун өзгөртүү
+    };
+
+    // Корзина бош болсо билдирүүнү көрсөтүү
+    if (ali.length === 0) {
+        return (
+            <section className='empty-basket'>
+                <h2>Ваша корзина пуста</h2>
+                <Link to={"/"}>
+                <button className='cart-btn'>Добавьте товары в корзину</button>
+                </Link>
+            </section>
+        );
+    }
 
     return (
         <section className='basket-page'>
             <div className='basket-container container'>
-                {
-                    ali.map((item) => (
-                        <div className='box-left'>
-                            <h3>Basket</h3>
-                            <p>1 product</p>
-                            <div className='box1'>
-                                <div className='inbox'>
-                                    <img className='img-product' src={item.avatar} alt="product" loading='lazy' />
-                                    <div className='detile'>
-                                        <h5>{item.title}</h5>
-                                        <span>25-october</span>
-                                        <div className='icons'>
-                                            <img
-                                                src="https://static-00.iconduck.com/assets.00/wishlist-icon-2048x1952-13b2gake.png"
-                                                alt="like-icon"
-                                                loading='lazy'
-                                            />
-                                            <img
-                                                src="https://cdn-icons-png.flaticon.com/512/1345/1345874.png"
-                                                alt="delete-icon"
-                                                loading='lazy'
-                                                // onClick={deleteItem}
-                                            />
+                {ali.map((item, index) => (
+                    <div className='box-left' key={item.id}>
+                        <h3>{item.name}</h3>
+                        <p>{quantities[index]} product(s)</p>
+                        <div className='box1'>
+                            <div className='inbox'>
+                                <img className='img-product' src={item.avatar} alt="product" loading='lazy' />
+                                <div className='detile'>
+                                    <span>25-october</span>
+                                    <div className='icons'>
+                                        <div
+                                            className="like-icon"
+                                            onClick={() => handleToggleLike(item.id)}
+                                        >
+                                            {item.isLiked ? (
+                                                <FaHeart color="red" size={20} />
+                                            ) : (
+                                                <FaRegHeart color="gray" size={20} />
+                                            )}
+                                        </div>
+                                        <div
+                                            className="delete-icon"
+                                            onClick={() => handleDelete(item.id)}
+                                        >
+                                            🗑️
                                         </div>
                                     </div>
                                 </div>
-                                {/* <div className='box2'>
-                                    <button onClick={decrement}>-</button>
-                                    <span>{quantity}</span>
-                                    <button onClick={increment}>+</button>
-                                </div> */}
-                                <span className='price'>{item.price} ₽</span>
                             </div>
+                            <div className='box2'>
+                                <button onClick={() => decreaseQuantity(index)}>-</button>
+                                <span>{quantities[index]}</span>
+                                <button onClick={() => increaseQuantity(index)}>+</button>
+                            </div>
+                            <span className='price'>{item.price * quantities[index]}c</span>
                         </div>
-                    ))}
-
+                    </div>
+                ))}
             </div>
-                <div className='box-right'>
-                    <h6>select delivery address</h6>
-                    <div className='info'>
-                        {/* <p>Товары {quantity}шт.</p> */}
-                        {/* <span>{totalPrice} ₽</span> */}
-                    </div>
-                    <div className='info-2'>
-                        <h3>Total</h3>
-                        {/* <span>{totalPrice} ₽</span> */}
-                    </div>
-                    <button>Order</button>
+            <div className='box-right'>
+                <h6>select delivery address</h6>
+                <div className='info'>
+                    <p>Товары шт.</p>
+                    <span>{quantities.reduce((a, b) => a + b, 0)} шт.</span>
                 </div>
+                <div className='info-2'>
+                    <h3>Total</h3>
+                    <span>{calculateTotalPrice()}c</span>
+                </div>
+                <button>Order</button>
+            </div>
             <div className='optioins container'>
                 <div className='optioin'>
                     <strong>Способ оплаты</strong>
@@ -69,7 +121,7 @@ function BasketPage() {
                 </div>
             </div>
         </section>
-    )
+    );
 }
 
-export default BasketPage
+export default BasketPage;

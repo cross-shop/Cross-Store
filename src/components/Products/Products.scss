@@ -1,4 +1,7 @@
-.main1-kros {
+.ali {
+  position: relative;
+
+  .main1-kros {
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-start;
@@ -6,12 +9,12 @@
     overflow-x: scroll;
     scrollbar-color: transparent transparent;
     width: 100%;
-    position: relative;  /* Стрелкаларды орнотуу үчүн контейнердин позициясы керек */
-  
+    position: relative;
+
     &::-webkit-scrollbar {
-      display: none; /* Скролл сызыгын жасыруу */
+      display: none;
     }
-  
+
     .kros1 {
       background: #f9f9f9;
       border-radius: 8px;
@@ -21,7 +24,7 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       height: 350px;
       overflow: hidden;
-  
+
       button {
         background-color: rgb(5, 84, 255);
         padding: 3px 10px;
@@ -30,72 +33,90 @@
         border-radius: 5px;
         width: 177px;
       }
-  
+
       button:hover {
         background-color: blue;
       }
-  
+
       .mm {
         text-align: center;
-  
+
         img {
           width: 100%;
           height: 180px;
         }
       }
-  
+
       .main-top1 {
         text-align: center;
         margin-top: 10px;
-  
+
         p {
           margin: 5px 0;
         }
       }
-  
+
       .pp {
         position: absolute;
         top: 10px;
         right: 10px;
         font-weight: bold;
       }
-  
+
       .pw1 {
         cursor: pointer;
         text-align: center;
       }
     }
-  
-    /* Стрелкалардын стилдери */
-    .scroll-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      padding: 10px;
-      border-radius: 50%;
-      cursor: pointer;
-      z-index: 10;
-  
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-      }
-    }
-  
-    .left-arrow {
-      left: 10px;  /* Сол жакка жайгаштыруу */
-    }
-  
-    .right-arrow {
-      right: 10px;  /* Оң жакка жайгаштыруу */
-    }
   }
-  
-  .icon-like {
+
+  .scroll-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: black;
     color: white;
-    padding: 5px 10px;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
+    z-index: 10;
+    font-size: 24px;
+    transition: all 0.3s ease;
   }
-  
+
+  .left-arrow {
+    left: 0;
+  }
+
+  .right-arrow {
+    right: 0;
+  }
+}
+
+.product-bottom{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .icon-like{
+    margin-top: 5px;
+  }
+}
+
+.cart-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: green;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 999;
+  font-size: 16px;
+}

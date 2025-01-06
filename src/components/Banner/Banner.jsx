@@ -1,11 +1,11 @@
 import React from 'react';
 import "./Banner.scss";
 import Carousel from 'react-bootstrap/Carousel';
-import mainimage from "../../assets/image/mainimage.png";
+import mainimage from "../../assets/image/menu.png";
 
 function Banner() {
   return (
-    <div className="banner-carousel container">
+    <div className="banner-carousel ">
       <Carousel>
         <Carousel.Item>
           <img className="main-image" src={mainimage} alt="Main banner image" />

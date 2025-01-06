@@ -9,7 +9,7 @@ const API = "https://66dfd7322fb67ac16f2740dd.mockapi.io/product";
 
 function Products() {
   const [products, setProducts] = useState([]);
-  const [cartMessage, setCartMessage] = useState(""); // Билдирүү үчүн state
+  const [cartMessage, setCartMessage] = useState("");
   const dispatch = useDispatch();
   const containerRef = useRef(null);
 
@@ -22,7 +22,7 @@ function Products() {
         const likedItems = JSON.parse(localStorage.getItem("likedItems")) || [];
         const updatedProducts = data.map((item) => ({
           ...item,
-          isLiked: likedItems.includes(item.id), 
+          isLiked: likedItems.includes(item.id),
         }));
 
         setProducts(updatedProducts);
@@ -69,10 +69,10 @@ function Products() {
 
   const handleAddToCart = (item) => {
     dispatch(addCart(item));
-    setCartMessage("Товар добавлен в корзину"); // Билдирүүнү коюу
+    setCartMessage("Товар добавлен в корзину");
 
     setTimeout(() => {
-      setCartMessage(""); // 2 секундтан кийин билдирүүнү өчүрүү
+      setCartMessage("");
     }, 2000);
   };
 
@@ -80,7 +80,7 @@ function Products() {
     <div className='ali container'>
       {cartMessage && (
         <div className="cart-message">
-          {cartMessage} {/* Корзинага кошулган билдирүү */}
+          {cartMessage}
         </div>
       )}
 
@@ -98,7 +98,7 @@ function Products() {
               <br />
               <div className='main-top1'>
                 <p>{item.name}</p>
-                <h5>{item.price}</h5>
+                <h5>{item.price}c</h5>
               </div>
               <div className='product-bottom'>
                 <button onClick={() => handleAddToCart(item)}>Add to cart</button>

@@ -93,7 +93,7 @@ function BasketPage() {
                                 <span>{quantities[index]}</span>
                                 <button onClick={() => increaseQuantity(index)}>+</button>
                             </div>
-                            <span className='price'>{item.price * quantities[index]}c</span>
+                            <span className='price'>{item.price}c</span>
                         </div>
                     </div>
                 ))}

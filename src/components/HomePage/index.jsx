@@ -3,7 +3,7 @@ import Banner from '../Banner/Banner'
 import Status from '../Status/Status'
 import Products from '../Products/Products'
 
-function Home() {
+function Page() {
   return (
     <div>
        <Banner />
@@ -13,4 +13,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Page

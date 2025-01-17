@@ -6,10 +6,10 @@ function App() {
 
   return (
     <>
-    <div className='wrapper'>
-     <RouterProvider router={myRouter} />
-    </div>
-  </>
-)
+      <div className='wrapper'>
+        <RouterProvider router={myRouter} />
+      </div>
+    </>
+  )
 }
 export default App

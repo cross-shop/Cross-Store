@@ -6,7 +6,7 @@ const apliClient = axios.create({
     headers: {
         "Content-Type": "application/json"
     },
-}); 
+});
 
 
 export default apliClient

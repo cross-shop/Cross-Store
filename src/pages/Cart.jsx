@@ -1,5 +1,5 @@
 import React from 'react'
-import BasketPage from '../components/Basket'
+import BasketPage from '../components/Cart'
 
 function Basket() {
   return (

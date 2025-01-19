@@ -1,5 +1,5 @@
 import React from 'react'
-import IstoriaCom from '../components/istoria/IstoriaCom'
+import IstoriaCom from '../components/History/IstoriaCom'
 
 function Istoriarenda() {
   return (

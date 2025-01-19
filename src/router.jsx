@@ -16,14 +16,13 @@ import Oformzakaz from "./pages/Oformzakaz";
 import ONas from "./pages/oNas";
 import Notfound from "./pages/Notfound";
 import Konserj from "./pages/Konserj";
-import Basket from "./pages/Basket";
+import Basket from "./pages/Cart";
 
 export const myRouter = createBrowserRouter([
     {
         path: "/",
         element: <Layout />,
         children: [
-
             {
                 path: "/",
                 element: <Home />
@@ -92,9 +91,6 @@ export const myRouter = createBrowserRouter([
                 path: "konserj",
                 element: <Konserj/>
             }
-         
-           
-          
         ]
     }
 ])

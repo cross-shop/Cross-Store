@@ -10,10 +10,9 @@ function BasketPage() {
     const dispatch = useDispatch();
     const [quantities, setQuantities] = useState(ali.map(() => 1));
 
-    // Баракча жүктөлгөндө LocalStorage'дан товарларды калыбына келтирүү
     useEffect(() => {
         const savedCart = JSON.parse(localStorage.getItem('cartItems')) || [];
-        dispatch(updateCart(savedCart)); // Redux store'го орнотуу
+        dispatch(updateCart(savedCart)); 
     }, [dispatch]);
 
     const calculateTotalPrice = () => {

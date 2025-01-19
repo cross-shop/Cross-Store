@@ -13,6 +13,7 @@ function BasketPage() {
     useEffect(() => {
         const savedCart = JSON.parse(localStorage.getItem('cartItems')) || [];
         dispatch(updateCart(savedCart)); 
+        window.scrollTo(0,0)
     }, [dispatch]);
 
     const calculateTotalPrice = () => {

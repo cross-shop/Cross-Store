@@ -1,7 +1,16 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+}
+
 .footer {
     background-color: #e0e1e1;
     padding: 40px 0 20px 40px;
     font-family: 'Arial', sans-serif;
+    margin-top: auto;
 
     .info1 {
         display: flex;

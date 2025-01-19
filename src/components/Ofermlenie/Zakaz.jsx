@@ -22,16 +22,16 @@ function Zakaz() {
   }
   return (
     <div>
-       <header className='nurtilek0808  '>
-          <div className='header3990gg'>
+      <header className='nurtilek0808  '>
+        <div className='header3990gg'>
           <div className='header3990-left container'>
             <ul>
               <li>
                 <a href="">Одежда</a>
               </li>
               <li>
-              <Link to={`/obuv`}>
-                <a href="">Обувь</a>
+                <Link to={`/obuv`}>
+                  <a href="">Обувь</a>
                 </Link>
               </li>
               <li>
@@ -41,204 +41,203 @@ function Zakaz() {
                 <a href="">Сумки</a>
               </li>
               <li>
-              <Link to={`/0consignment`}>
-                <a href="">Товары для спорта</a>
+                <Link to={`/0consignment`}>
+                  <a href="">Товары для спорта</a>
                 </Link>              </li>
               <p>DEALER</p>
             </ul>
           </div>
           <div className='header3990-img'>
             <Link to={`/wishlist`}>
-          <img src={Like3} alt="" />
+              <img src={Like3} alt="" />
             </Link>
-          <img src={Magazin2} alt="" />
-          <img src={search2} alt="" />
-          
-          </div>
-          </div>
+            <img src={Magazin2} alt="" />
+            <img src={search2} alt="" />
 
-        </header>
-        <div className='ofer container'>
+          </div>
+        </div>
+
+      </header>
+      <div className='ofer container'>
         <div className='ofer-1'>
-<img src={slevazakaz} alt="" />
-<h1>Оформление заказа</h1>
+          <img src={slevazakaz} alt="" />
+          <h1>Оформление заказа</h1>
 
-<div className='ofer-input1'>
-    <p>Имя</p>
-        <input type="text" />
-        
-</div>
+          <div className='ofer-input1'>
+            <p>Имя</p>
+            <input type="text" />
 
-<div className='ofer-input2'>
-    <p>Фамилия</p>
-        <input type="text" />
-        
-</div>
+          </div>
 
-<div className='ofer-input2'>
-    <p>Телефон</p>
-        <input type="number"  placeholder='+7 (999) 999-99-99' />
-        
-</div>
-<div className='dostavka'>
-    <h2>Доставка</h2>
-</div>
+          <div className='ofer-input2'>
+            <p>Фамилия</p>
+            <input type="text" />
 
-<div className='dostavka-radio'>
-    <p>Способ доставки</p>
+          </div>
 
-        <div className='radio-top'>
-            <div className='radio1'>
-    <input type="radio" />
-        <p>Курьер — 800 руб</p>
-      
-            </div>
-            <div className='radio1'>
-    <input type="radio" />
-        <p>  Самовывозом с магазина</p>
+          <div className='ofer-input2'>
+            <p>Телефон</p>
+            <input type="number" placeholder='+7 (999) 999-99-99' />
 
-            </div>
-            <div className='radio1'>
-    <input type="radio" />
-        <p>Пункт выдачи</p>
+          </div>
+          <div className='dostavka'>
+            <h2>Доставка</h2>
+          </div>
 
-            </div>
+          <div className='dostavka-radio'>
+            <p>Способ доставки</p>
 
-        </div>
-</div>
+            <div className='radio-top'>
+              <div className='radio1'>
+                <input type="radio" />
+                <p>Курьер — 800 руб</p>
 
-<div className='dom'>
-    <p>Улица</p>
+              </div>
+              <div className='radio1'>
+                <input type="radio" />
+                <p>  Самовывозом с магазина</p>
 
-    <div className='dom-input'>
-        <input type="text" />
-        <div className='dom-top'>
+              </div>
+              <div className='radio1'>
+                <input type="radio" />
+                <p>Пункт выдачи</p>
 
-        <div className='dom-2'>
-            <p>Дом</p>
-        <input type="text" />
-        </div>
-        <div className='dom-2'>
-        <p>Квартира/офис</p>
-        <input type="text" />
-        </div>
-        </div>
-    </div>
-</div>
-
-<div className='dostavka-radio'>
-    <p>Способ оплаты</p>
-
-        <div className='radio-top'>
-            <div className='radio1'>
-    <input type="radio" />
-    <img src={visa} alt="" />
-    <p>****0409</p>
-        <h6>Банковской картой</h6>
-      
-            </div>
-            <div className='radio1'>
-    <input type="radio" />
-        <p>наличными</p>
+              </div>
 
             </div>
+          </div>
 
-        </div>
-        </div>
-        <div className='ofer-input2'>
-    <p>Комментарий <br /> для курьера</p>
-        <input type="text"  placeholder='' />
-        <button onClick={buttonClick}>ЗАКАЗАТЬ</button>
-</div>
+          <div className='dom'>
+            <p>Улица</p>
+
+            <div className='dom-input'>
+              <input type="text" />
+              <div className='dom-top'>
+
+                <div className='dom-2'>
+                  <p>Дом</p>
+                  <input type="text" />
+                </div>
+                <div className='dom-2'>
+                  <p>Квартира/офис</p>
+                  <input type="text" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className='dostavka-radio'>
+            <p>Способ оплаты</p>
+
+            <div className='radio-top'>
+              <div className='radio1'>
+                <input type="radio" />
+                <img src={visa} alt="" />
+                <p>****0409</p>
+                <h6>Банковской картой</h6>
+
+              </div>
+              <div className='radio1'>
+                <input type="radio" />
+                <p>наличными</p>
+
+              </div>
+
+            </div>
+          </div>
+          <div className='ofer-input2'>
+            <p>Комментарий <br /> для курьера</p>
+            <input type="text" placeholder='' />
+            <button onClick={buttonClick}>ЗАКАЗАТЬ</button>
+          </div>
 
         </div>
         <div className='ofer-2'>
-        <div className='icon2'> 
-          <img src={Magazin} alt="" />   
-          <div className='modal'> 
- 
-            <div className='modal2'> 
-            <h2>Корзина</h2> 
-            <img src={x} alt="" /> 
-            </div> 
-            <div className='m3'> 
-               <h5>2 товара</h5> 
-              <h5>Очистить</h5> 
-            </div> 
- 
-            <div className='cart'> 
- 
-              <div className='incart1'> 
-              <img src={kros1} alt="" /> 
-              </div> 
- 
-              <div className='incart2'> 
-                <div className='box'> 
-                 <h6>Кроссовки Nike 
-                Le Bambidou</h6> 
-                <img src={Like2} alt="" />  
-                </div> 
-              <div className='c3'> 
-                <button>PRE-LOVED</button> 
-                <p>размер</p> 
-                <h5>41 RU</h5> 
-              </div> 
-              <div className='c4'> 
-              <p>цвет</p> 
-              <h5>Red</h5> 
-              </div> 
-              <div className='c5'> 
-                <h3>21 999₽</h3> 
-                <img src={udalit} alt="" /> 
-              </div> 
-                 </div>       
- 
-              </div> 
-              {/* --------------------------------------------------------------- */} 
-              <div className='cart'> 
- 
-              <div className='incart1'> 
-              <img src={kros1} alt="" /> 
-              </div> 
- 
-              <div className='incart2'> 
-                <div className='box'> 
-                 <h6>Кроссовки Nike 
-                Le Bambidou</h6> 
-                <img src={Like2} alt="" />  
-                </div> 
-              <div className='c3'> 
-                <button>PRE-LOVED</button> 
-                <p>размер</p> 
-                <h5>41 RU</h5> 
-              </div> 
-              <div className='c4'> 
-              <p>цвет</p> 
-              <h5>Red</h5> 
-              </div> 
-              <div className='c5'> 
-                <h3>21 999₽</h3> 
-                <img src={udalit} alt="" /> 
-              </div> 
-                 </div>       
- 
-                </div> 
- 
-                <div className='bm'> 
-                  <div className='bm2'> 
-                    <h2>Итого</h2> 
-                    <h2>43 998₽</h2> 
-                  </div> 
-                  <div className='btn'> 
-                    <button>Оформить</button> 
-                  </div> 
- 
-                </div> 
- 
-            </div>    
+          <div className='icon2'>
+            <img src={Magazin} alt="" />
+            <div className='modal'>
+
+              <div className='modal2'>
+                <h2>Корзина</h2>
+                <img src={x} alt="" />
+              </div>
+              <div className='m3'>
+                <h5>2 товара</h5>
+                <h5>Очистить</h5>
+              </div>
+
+              <div className='cart'>
+
+                <div className='incart1'>
+                  <img src={kros1} alt="" />
+                </div>
+
+                <div className='incart2'>
+                  <div className='box'>
+                    <h6>Кроссовки Nike
+                      Le Bambidou</h6>
+                    <img src={Like2} alt="" />
+                  </div>
+                  <div className='c3'>
+                    <button>PRE-LOVED</button>
+                    <p>размер</p>
+                    <h5>41 RU</h5>
+                  </div>
+                  <div className='c4'>
+                    <p>цвет</p>
+                    <h5>Red</h5>
+                  </div>
+                  <div className='c5'>
+                    <h3>21 999₽</h3>
+                    <img src={udalit} alt="" />
+                  </div>
+                </div>
+
+              </div>
+              <div className='cart'>
+
+                <div className='incart1'>
+                  <img src={kros1} alt="" />
+                </div>
+
+                <div className='incart2'>
+                  <div className='box'>
+                    <h6>Кроссовки Nike
+                      Le Bambidou</h6>
+                    <img src={Like2} alt="" />
+                  </div>
+                  <div className='c3'>
+                    <button>PRE-LOVED</button>
+                    <p>размер</p>
+                    <h5>41 RU</h5>
+                  </div>
+                  <div className='c4'>
+                    <p>цвет</p>
+                    <h5>Red</h5>
+                  </div>
+                  <div className='c5'>
+                    <h3>21 999₽</h3>
+                    <img src={udalit} alt="" />
+                  </div>
+                </div>
+
+              </div>
+
+              <div className='bm'>
+                <div className='bm2'>
+                  <h2>Итого</h2>
+                  <h2>43 998₽</h2>
+                </div>
+                <div className='btn'>
+                  <button>Оформить</button>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
         </div>
-        </div>
-        </div>
+      </div>
     </div>
   )
 }

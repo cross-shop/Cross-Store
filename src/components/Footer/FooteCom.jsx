@@ -3,13 +3,11 @@ import './Footer.scss';
 import dealer from '../../assets/svg/dealerlogo.svg';
 import telegram from '../../assets/svg/telegram.svg';
 import wk from '../../assets/svg/wk.svg';
-import { Link } from 'react-router-dom';
 
 function FooterCom() {
   return (
     <footer className='footer'>
       <div className='info1'>
-        {/* Первый блок */}
         <div className='footer-section'>
           <img src={dealer} alt='Dealer logo' />
           <p>
@@ -21,7 +19,6 @@ function FooterCom() {
           </div>
         </div>
 
-        {/* Второй блок - Каталог */}
         <div className='footer-section'>
           <h1>Каталог</h1>
           <ul>
@@ -35,7 +32,6 @@ function FooterCom() {
           </ul>
         </div>
 
-        {/* Третий блок - Меню */}
         <div className='footer-section'>
           <h1>Меню</h1>
           <ul>
@@ -45,7 +41,6 @@ function FooterCom() {
           </ul>
         </div>
 
-        {/* Четвертый блок - Поддержка */}
         <div className='footer-section'>
           <h1>Поддержка</h1>
           <ul>
@@ -57,7 +52,6 @@ function FooterCom() {
         </div>
       </div>
 
-      {/* Контактная информация */}
       <ul className='contact-info'>
         <li>Политика конфиденциальности</li>
         <li>Пользовательское соглашение</li>

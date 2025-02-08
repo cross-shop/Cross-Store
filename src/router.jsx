@@ -94,14 +94,7 @@ export const myRouter = createBrowserRouter([
                 element: <Konserj/>
             }
             ,
-            {
-                path: "favorite",
-                element: <Wishlist/>
-            },
-            {
-                path: "brand",
-                element: <Brand/>
-            }
+            
         ]
     }
 ])

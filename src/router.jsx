@@ -17,8 +17,7 @@ import ONas from "./pages/oNas";
 import Notfound from "./pages/Notfound";
 import Konserj from "./pages/Konserj";
 import Basket from "./pages/Cart";
-import List from "./components/Wish/List";
-import Brand from "./pages/Brand";
+
 
 export const myRouter = createBrowserRouter([
     {

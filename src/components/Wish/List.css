@@ -6,6 +6,7 @@
 .wishlist-app{
     height: auto;
     margin-top: 100px;
+    margin-bottom: 50px;
    
 
 }
@@ -42,6 +43,7 @@ nav ul li a:hover {
     height: 308px;
     border-radius: 6px;
     margin: 9.5px;
+    object-fit: cover;
 }
 .merch {
   display: flex;
@@ -141,7 +143,8 @@ nav ul li a:hover {
   background: #161111;
 }
 .nike button:hover{
-  background: #38407a;
+  background-color: #874bb4;
+
 }
 .nike {
   margin-left: 9px;

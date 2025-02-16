@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Jost:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-
-
-
 .wishlist-app{
     height: auto;
     margin-top: 100px;
@@ -10,41 +7,7 @@
    
 
 }
-nav ul {
-    display: flex;
-    list-style: none;
-}
-nav ul li a {
-    text-decoration: none;
-    margin-right: 20px;
-    color: rgb(98, 92, 92);
-    font-weight: 500;
-    font-size: larger;
-}
-nav ul li a:hover {
-    color: grey;
-}
-.kard{
-    width: 251px;
-    height: 439px;
-    border-radius: 8px;
-    margin: 25px 0 0 25px;
-
-}
-.kard:hover {
-    /* border: 1px solid rgb(230, 212, 212); */
-    box-shadow: 0 3px 5px;
-
-    
-}
-
-.kard img{
-    width: 231px;
-    height: 308px;
-    border-radius: 6px;
-    margin: 9.5px;
-    object-fit: cover;
-}
+/* 1111111111111111111111111111111111111 */
 .merch {
   display: flex;
   transition: opasity 0.6s ease;
@@ -52,17 +15,35 @@ nav ul li a:hover {
 }
 
 .merch:hover > :not(:hover){
-  /* border: 1px solid rgb(230, 212, 212); */
   box-shadow: 0 3px 5px;
   opacity: 0.4;
-
-  
 }
 
-/* Общий контейнер */
+/* 2222222222222222222222222222222222 */
+.kard{
+    width: 238px;
+    height: 314px;
+    border-radius: 8px;
+    margin: 25px 0 0 25px;
+    background-color: #fffefe;
+   position: relative;
+
+
+}
+.kard:hover {
+    box-shadow: 0 3px 5px; 
+}
+
+.kard img{
+    width: 208px;
+    height: 208px;
+    border-radius: 6px;
+    margin: 9.5px;
+}
+
+/* 3333333333333333333333333333333333333333 */
 .app {
     display: flex;
-    /* flex-direction: column; */
     align-items: start;
     justify-content: start;
     gap: 10px;
@@ -70,7 +51,6 @@ nav ul li a:hover {
     margin: 20px 0 0 25px;
   }
   
-  /* Выпадающий список */
   .sort-select {
     padding: 10px;
     font-size: 16px;
@@ -81,88 +61,59 @@ nav ul li a:hover {
     cursor: pointer;
   }
   
-  /* Эффекты при наведении */
   .sort-select:hover {
     border-color: #09090a;
     box-shadow: 0 0 8px rgba(58, 58, 58, 0.5);
   }
   
-  /* Фокус на выпадающем списке */
   .sort-select:focus {
     outline: none;
     border-color: grey;
     box-shadow: 0 0 8px rgba(13, 13, 14, 0.7);
   }
+/*  44444444444444444444444444444444444444444 */
+.nike {
+  background-color: #fef8f8;
+}
 
-  .sea {
-    display: flex;
-    gap: 10px;
-  }
-/* цена и скидка */
-  .item {
-    display: flex;
-    /* gap: 10px; */
-    justify-content: space-evenly;
-    align-items: baseline;
-    /* margin-left: 35px; */
-  }
-  .item strong {
-    font-weight: 700;
-    font-size: 20px;
-    color: red;
-  }
-  .item del {
-    font-size: 16px;
-    color: gray;
-  }
-
-  /* описание */
-  .brand {
-    display: flex;
-    margin-left: 10px;
-    gap: 5px;
-  }
-  .star img {
-    width: 15px;
-    height: 15px;
-  }
-  .star {
-    display: flex;
-    gap: 5px;
-  }
   
 .nike button{
-  width: 231px;
-  height: 30px;
+  width: 208px;
+  height: 38px;
   border-radius: 5px;
-  /* align-items: center; */
-  /* justify-content: center; */
+  font-family: Rubik;
+  font-weight: 300;
+  font-size: 13px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 9px;
+  border-radius: 20px;
   background: #161111;
 }
 .nike button:hover{
   background-color: #874bb4;
 
 }
-.nike {
-  margin-left: 9px;
-}
-.add{
-  width: 40px;
-  height: 40px;
-  border: 1px solid gray;
-  border-radius: 50%;
-  margin-left: 20px;
-  font-family: "Baskervville";
-  font-weight: 400;
-}
-.item img {
-  width: 20px;
-  height: 20px;
-}
-.brand h4 {
-  margin-top: 5px;
+
+.nike p {
+  margin-top: 0;
+  margin-bottom: 0;
   font-size: 13px;
+  color: #3e3e42;
+  font-weight: 600;
+  font-family: R;
+
+}
+.nike h5 {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.close img {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }

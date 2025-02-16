@@ -1,91 +1,60 @@
-import React from 'react';
-import "./List.css"
-import product from "../../assets/image/1.webp"
-import product2 from "../../assets/image/1 (1).png"
-import product3 from "../../assets/image/kampus.png"
-import add from "../../assets/svg/add.svg"
+import React from "react";
+import "./List.css";
+import product1 from "../../assets/image/1.png";
+import product2 from "../../assets/image/2.png";
+import product3 from "../../assets/image/3.png";
+import close from "../../assets/image/x.png";
 
 function List() {
   return (
-
-    
     <div className="wishlist-app">
-    
-      
-<div className="app">
-<select className="sort-select">
-  <option value="newest">По дате добавления ↓</option>
-  <option value="oldest">По дате добавления ↑</option>
-  
-</select>
-
-</div>
-<div className="merch">
-
-      <div className='kard'>
-        <img src={product} alt="" />
-        <div className="item">
-        <strong>2500 сом</strong>
-            <del>3620</del>
-
-            <div className="add">
-          <img  src= {add}alt="" /></div>
-        </div>
-
-              <div className="brand">
-        <h5>Nike</h5>
-        <h4>/ Крoссовки Air Force 1 </h4>
-              </div> 
-              <div className="nike">
-                <button>В корзине</button>
-              </div>
+      <div className="app">
+        <select className="sort-select">
+          <option value="newest">По дате добавления ↓</option>
+          <option value="oldest">По дате добавления ↑</option>
+        </select>
+      </div>
+      <div className="merch">
+        <div className="kard">
+          <img src={product1} alt="" />
+          <div className="close">
+            <img src={close} alt="" />
           </div>
 
-
-
-
- 
-      <div className='kard'>
-        <img src={product2} alt="" />
-        <div className="item">
-        <strong>3200 сом</strong>
-            <del>5620</del>
-            <div className="add">
-          <img  src= {add}alt="" /></div>
-        </div>
-        
-              <div className="brand">
-        <h5>NB</h5>
-        <h4>/ New Balance</h4>
-              </div> 
-          
-              <div className="nike">
-                <button>В корзине</button>
-              </div>
+          <div className="nike">
+            <p> (WMNS) Li-Ning Plus 'Black White' AGLR234-4 </p>
+            <h5>89$</h5>
+            <button>SELECT SIZE</button>
           </div>
-
-
-          <div className='kard'>
-        <img src={product3} alt="" />
-        <div className="item">
-        <strong>3800 сом</strong>
-            <del>6620</del>
-            <div className="add">
-          <img  src= {add}alt="" /></div>
         </div>
-        
-              <div className="brand">
-        <h5>Adidas</h5>
-        <h4>/ Campus</h4>
-              </div> 
-         
-              <div className="nike">
-                <button>В корзине</button>
-                </div>
-              </div>
+
+        <div className="kard">
+          <div className="close">
+            <img src={close} alt="" />
           </div>
-       </div>
-   
+          <img src={product2} alt="" />
+          <div className="item"></div>
+          <div className="nike">
+            <p> (WMNS) Li-Ning Plus 'Black White' AGLR234-4 </p>
+            <h5>89$</h5>
+            <button>SELECT SIZE</button>
+          </div>
+        </div>
+
+        <div className="kard">
+          <div className="close">
+            <img src={close} alt="" />
+          </div>
+          <img src={product3} alt="" />
+          <div className="item"></div>
+          <div className="nike">
+            <p> (WMNS) Li-Ning Plus 'Black White' AGLR234-4 </p>
+            <h5>89$</h5>
+            <button>SELECT SIZE</button>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 

@@ -17,6 +17,8 @@ import ONas from "./pages/oNas";
 import Notfound from "./pages/Notfound";
 import Konserj from "./pages/Konserj";
 import Basket from "./pages/Cart";
+import { path } from "framer-motion/m";
+import Wishinfo from "./pages/Wishinfo";
 
 
 export const myRouter = createBrowserRouter([
@@ -68,6 +70,11 @@ export const myRouter = createBrowserRouter([
                 path: "wishlist",
                 element: <Wishlist />
             },
+            {
+                path: "wishinfo/:id",
+                element: <Wishinfo/>
+            },
+           
             {
                 path: "proleved",
                 element: <Proleved />

@@ -12,6 +12,7 @@
   display: flex;
   transition: opasity 0.6s ease;
 
+
 }
 
 .merch:hover > :not(:hover){
@@ -22,12 +23,12 @@
 /* 2222222222222222222222222222222222 */
 .kard{
     width: 238px;
-    height: 334px;
+    height: 347px;
     border-radius: 8px;
     margin: 25px 0 0 25px;
     background-color: #fffefe;
    position: relative;
-
+  box-shadow: 0 3px 5px;
 
 }
 .kard:hover {
@@ -90,6 +91,10 @@
   margin-left: 9px;
   border-radius: 20px;
   background: #161111;
+  
+}
+ .nike a{
+  text-decoration: none;
 }
 .nike button:hover{
   background-color: #874bb4;
@@ -97,16 +102,16 @@
 }
 
 .nike p {
-  margin-top: 0;
-  margin-bottom: 0;
   font-size: 13px;
   color: #3e3e42;
   font-weight: 600;
   font-family: R;
+  margin-left: 10px;
 
 }
 .nike h5 {
   font-size: 13px;
+  margin-left: 10px;
   font-weight: bold;
 }
 
@@ -117,3 +122,7 @@
   top: 10px;
   right: 10px;
 }
+
+
+
+

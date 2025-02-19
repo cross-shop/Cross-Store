@@ -4,12 +4,13 @@ import List from '../components/Wish/List'
 function Wishlist() {
   return (
     <div>
-     <List/>
+      <List/>
     </div>
   )
 }
 
 export default Wishlist
+
 
 
 

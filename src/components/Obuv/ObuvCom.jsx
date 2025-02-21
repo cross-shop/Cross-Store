@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import "./Obuv.scss"
+import "./obuv.scss"
 import Like3 from "../../assets/svg/Like3.svg"
 import Magazin2 from "../../assets/svg/magazin2.svg"
 import search from "../../assets/svg/search2.svg"

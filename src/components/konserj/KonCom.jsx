@@ -1,5 +1,5 @@
 import React from 'react'
-import magazin2 from "../../assets/svg/Magazin.svg"
+import magazin2 from "../../assets/svg/magazin.svg"
 import search2 from "../../assets/svg/search.svg"
 import konserj from "../../assets/image/konserj.png"
 import ali from "../../assets/image/ali.png"

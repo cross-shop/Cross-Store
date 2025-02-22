@@ -13,7 +13,7 @@ import Proleved from "./pages/Proleved";
 import Istoriarenda from "./pages/Istoriarenda";
 import Oferzakaz from "./pages/Oferzakaz";
 import Oformzakaz from "./pages/Oformzakaz";
-import ONas from "./pages/oNas";
+import ONas from "./pages/ONas";
 import Notfound from "./pages/Notfound";
 import Konserj from "./pages/Konserj";
 import Basket from "./pages/Cart";

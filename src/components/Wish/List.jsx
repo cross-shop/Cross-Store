@@ -33,7 +33,9 @@ function List() {
             <img src={close} alt="" />
           </div>
           <img src={product2} alt="" />
-          <div className="item"></div>
+          <div className="item">
+
+          </div>
           <div className="nike">
             <p> (WMNS) Li-Ning Plus 'Black White' AGLR234-4 </p>
             <h5>89$</h5>
@@ -46,7 +48,6 @@ function List() {
             <img src={close} alt="" />
           </div>
           <img src={product3} alt="" />
-          <div className="item"></div>
           <div className="nike">
             <p> (WMNS) Li-Ning Plus 'Black White' AGLR234-4 </p>
             <h5>89$</h5>

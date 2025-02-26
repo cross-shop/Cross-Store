@@ -17,7 +17,7 @@ function Header() {
     <header>
       <div className="header">
         <div className="header__left">
-          <div className='logo'>
+          <div className="logo">
             <Link to="/">
               <strong>DEALER</strong>
             </Link>
@@ -32,18 +32,18 @@ function Header() {
         </div>
         <div className="header__right">
           <Link to="/wishlist">
-            <Heart className='header-icon' />
+            <Heart className="header-icon" />
           </Link>
 
           <Link to="/basket">
-            <Cart className='header-icon' />
+            <Cart className="header-icon" />
             {getTotalItems() > 0 && (
               <span className="cart-count">{getTotalItems()}</span>
             )}
           </Link>
 
           <Link to="/search">
-            <Search className='header-icon' />
+            <Search className="header-icon" />
           </Link>
         </div>
       </div>

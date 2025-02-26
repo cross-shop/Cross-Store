@@ -79,6 +79,7 @@ html, body {
         }
     }
 
+    /* Адаптация для экранов меньше 768px */
     @media (max-width: 768px) {
         .info1 {
             flex-direction: column;
@@ -88,6 +89,31 @@ html, body {
 
         .footer-section {
             text-align: center;
+            min-width: unset; 
+        }
+
+        .contact-info {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding: 20px;
+
+        .info1 {
+            padding: 0 20px;
+        }
+
+        .footer-section {
+            text-align: center;
+            min-width: unset; 
+        }
+
+        .contact-info {
+            flex-direction: column;
+            gap: 10px;
+            align-items: center; 
         }
     }
 }

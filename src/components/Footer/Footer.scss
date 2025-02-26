@@ -79,41 +79,138 @@ html, body {
         }
     }
 
-    /* Адаптация для экранов меньше 768px */
-    @media (max-width: 768px) {
+    @media (max-width: 1200px) {
+        padding: 30px;
+
         .info1 {
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
+            flex-direction: row;
+            justify-content: space-between;
         }
 
-        .footer-section {
-            text-align: center;
-            min-width: unset; 
+        .footer-section h1 {
+            font-size: 16px;
         }
 
-        .contact-info {
-            flex-direction: column;
-            gap: 10px;
+        .footer-section ul {
+            font-size: 13px;
         }
     }
 
-    @media (max-width: 480px) {
-        padding: 20px;
+    @media (max-width: 992px) {
+        padding: 30px;
 
         .info1 {
-            padding: 0 20px;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
         }
 
         .footer-section {
             text-align: center;
-            min-width: unset; 
+            min-width: unset;
+            h1 {
+                font-size: 15px;
+            }
+
+            ul {
+                font-size: 12px;
+            }
+
+            .logos {
+                gap: 15px;
+
+                img {
+                    width: 25px;
+                    height: 25px;
+                }
+            }
         }
 
         .contact-info {
             flex-direction: column;
             gap: 10px;
-            align-items: center; 
+            align-items: center;
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 20px;
+
+        .info1 {
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .footer-section {
+            text-align: center;
+            min-width: unset;
+            h1 {
+                font-size: 14px;
+            }
+
+            ul {
+                font-size: 12px;
+            }
+
+            .logos {
+                gap: 15px;
+                justify-content: center;
+
+                img {
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+
+            p {
+                width: auto;
+            }
+        }
+
+        .contact-info {
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+    }
+
+    @media (max-width: 576px) {
+        padding: 15px;
+
+        .info1 {
+            padding: 0 15px;
+        }
+
+        .footer-section {
+            text-align: center;
+            min-width: unset; 
+            h1 {
+                font-size: 12px;
+            }
+
+            ul {
+                font-size: 10px;
+            }
+
+            .logos {
+                gap: 12px;
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            p {
+                width: auto;
+            }
+        }
+
+        .contact-info {
+            flex-direction: column;
+            gap: 8px;
+            align-items: center;
         }
     }
 }

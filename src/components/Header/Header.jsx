@@ -1,54 +1,59 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaHeart as Heart } from "react-icons/fa6";
-import { FaShoppingCart as Cart } from "react-icons/fa";
-import { ImSearch as Search } from "react-icons/im";
-import { useSelector } from 'react-redux';
-import "./Header.scss";
+import React, { useState } from "react";
+import { FaShoppingCart, FaSearch, FaHeart } from "react-icons/fa"; // Иконкалар
+import "./Header.css";
+import { NavLink } from "react-router-dom";
 
-function Header() {
-  const { ali } = useSelector((state) => state.carts);
+const Header = () => {
+  const [menuActive, setMenuActive] = useState(false);
 
-  const getTotalItems = () => {
-    return ali.length;
+  const toggleMenu = () => {
+    setMenuActive(!menuActive);
   };
 
   return (
-    <header>
-      <div className="header">
-        <div className="header__left">
-          <div className="logo">
-            <Link to="/">
-              <strong>DEALER</strong>
-            </Link>
-          </div>
-          <ul className="header__menu">
-            <li><Link to="/catalog">Одежда</Link></li>
-            <li><Link to="/obuv">Обувь</Link></li>
-            <li><Link to="/oformzakaz">Аксессуары</Link></li>
-            <li><Link to="/proleved">Сумки</Link></li>
-            <li><Link to="/0consignment">Товары для спорта</Link></li>
-          </ul>
+    <header className="header">
+      <div className="hinfo container">
+        <div className="menu-toggle" onClick={toggleMenu}>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
         </div>
-        <div className="header__right">
-          <Link to="/wishlist">
-            <Heart className="header-icon" />
-          </Link>
-
-          <Link to="/basket">
-            <Cart className="header-icon" />
-            {getTotalItems() > 0 && (
-              <span className="cart-count">{getTotalItems()}</span>
-            )}
-          </Link>
-
-          <Link to="/search">
-            <Search className="header-icon" />
-          </Link>
+        <div className="logo">
+          <a href="/">Логотип</a>
+        </div>
+        <nav className={`navbar ${menuActive ? "active" : ""}`}>
+          <ul>
+            <li>
+              <a href="/obuv">Обувь</a>
+            </li>
+            <li>
+              <a href="#">Аксессуары</a>
+            </li>
+            <li>
+              <a href="#">Сумки</a>
+            </li>
+            <li>
+              <a href="#">Товары для спорта</a>
+            </li>
+            <li>
+              <a href="/onas">О нас</a>
+            </li>
+          </ul>
+        </nav>
+        <div className="icons">
+          <NavLink to={"/wishlist"}>
+            <FaHeart size={24} className="icon" />
+          </NavLink>
+          <NavLink to={"/basket"}>
+            <FaShoppingCart size={24} className="icon" />
+          </NavLink>
+          <NavLink to={"/search"}>
+            <FaSearch size={24} className="icon" />
+          </NavLink>
         </div>
       </div>
     </header>
   );
-}
+};
 
 export default Header;

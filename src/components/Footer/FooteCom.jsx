@@ -1,66 +1,41 @@
-import React from 'react';
-import './Footer.scss';
-import dealer from '../../assets/svg/dealerlogo.svg';
-import telegram from '../../assets/svg/telegram.svg';
-import wk from '../../assets/svg/wk.svg';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Footer.css";
 
-function FooterCom() {
+function Footer() {
   return (
-    <footer className='footer'>
-      <div className='info1'>
-        <div className='footer-section'>
-          <img src={dealer} alt='Dealer logo' />
-          <p>
-            Ваш поставщик в мир лимитированного ассортимента с доставкой по всему миру
-          </p>
-          <div className='logos'>
-            <img src={telegram} alt="" />
-            <img src={wk} alt='VK' />
+    <footer className="footer">
+      <div className="container">
+        <div className="footer-sections">
+          <div className="footer-column">
+            <h4>Компания</h4>
+            <ul>
+              <li><Link to="/about">О нас</Link></li>
+              <li><Link to="/contacts">Контакты</Link></li>
+              <li><Link to="/careers">Вакансии</Link></li>
+            </ul>
+          </div>
+          <div className="footer-column">
+            <h4>Клиентам</h4>
+            <ul>
+              <li><Link to="/shipping">Доставка</Link></li>
+              <li><Link to="/returns">Возврат</Link></li>
+              <li><Link to="/faq">FAQ</Link></li>
+            </ul>
+          </div>
+          <div className="footer-column">
+            <h4>Следите за нами</h4>
+            <ul>
+              <li><a href="https://facebook.com">Facebook</a></li>
+              <li><a href="https://instagram.com">Instagram</a></li>
+              <li><a href="https://twitter.com">Twitter</a></li>
+            </ul>
           </div>
         </div>
-
-        <div className='footer-section'>
-          <h1>Каталог</h1>
-          <ul>
-            <li>Товары для спорта</li>
-            <li>Аксессуары</li>
-            <li>Pre-loved</li>
-            <li>Одежда</li>
-            <li>Обувь</li>
-            <li>Сумки</li>
-            <li>Custom</li>
-          </ul>
-        </div>
-
-        <div className='footer-section'>
-          <h1>Меню</h1>
-          <ul>
-            <li>О нас</li>
-            <li>Продать свою одежду</li>
-            <li>Клиентский сервис</li>
-          </ul>
-        </div>
-
-        <div className='footer-section'>
-          <h1>Поддержка</h1>
-          <ul>
-            <li>Доставка</li>
-            <li>Оплата</li>
-            <li>Частые вопросы</li>
-            <li>Отследить заказ</li>
-          </ul>
-        </div>
+        <p className="copyright">© 2025 DEALER. Все права защищены.</p>
       </div>
-
-      <ul className='contact-info'>
-        <li>Политика конфиденциальности</li>
-        <li>Пользовательское соглашение</li>
-        <li><a href="mailto:help@dealerclub">help@dealerclub</a></li>
-        <li><a href="mailto:info@dealermsk">info@dealermsk</a></li>
-        <li>+7 (929) 555-00-04</li>
-      </ul>
     </footer>
   );
 }
 
-export default FooterCom;
+export default Footer;

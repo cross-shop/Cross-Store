@@ -68,6 +68,7 @@ export const myRouter = createBrowserRouter([
                 path: "wishlist",
                 element: <Wishlist />
             },
+           
             {
                 path: "proleved",
                 element: <Proleved />

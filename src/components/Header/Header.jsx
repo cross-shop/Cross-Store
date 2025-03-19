@@ -1,56 +1,81 @@
-import React, { useState } from "react";
-import { FaShoppingCart, FaSearch, FaHeart } from "react-icons/fa"; // Иконкалар
-import "./Header.css";
+import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
+import { FaShoppingCart, FaSearch, FaHeart } from "react-icons/fa"; // Иконки
+import "./Header.scss";
+import market from '../../assets/svg/market.svg';
+import wishlist from '../../assets/svg/wishlist.svg';
+import person from '../../assets/svg/person1.svg';
+import search from '../../assets/svg/headersearch.svg';
 
 const Header = () => {
-  const [menuActive, setMenuActive] = useState(false);
+  const headerRef = useRef(null); 
+  const [lastScrollTop, setLastScrollTop] = useState(0); 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
+      if (scrollTop > lastScrollTop) {
+        headerRef.current.classList.add("hidden");
+      } else {
+        headerRef.current.classList.remove("hidden");
+      }
+
+      setLastScrollTop(scrollTop); 
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollTop]); 
+
+  const [menuActive, setMenuActive] = useState(false);
   const toggleMenu = () => {
     setMenuActive(!menuActive);
   };
 
   return (
-    <header className="header">
-      <div className="hinfo container">
-        <div className="menu-toggle" onClick={toggleMenu}>
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
+    <header className="header" ref={headerRef}>
+      <div className="header-top">
+        <p>Mid-Season Sale - Up To 40% Off - Shop Online & In-Store</p>
+      </div>
+      <div className="header-middle">
+        <div className="middle-svg">
+          <div className="logo">
+            <a href="/">CROSS STORE</a>
+          </div>
+
+          <div className="icons">
+            <NavLink to={"/search"}>
+              <img src={search} alt="Search" />
+            </NavLink>
+
+            <NavLink className={person} to={"/search"}>
+              <img src={person} alt="Person" />
+            </NavLink>
+
+            <NavLink to={"/basket"}>
+              <img src={market} alt="Market" />
+            </NavLink>
+
+            <NavLink to={"/wishlist"}>
+              <img src={wishlist} alt="Wishlist" />
+            </NavLink>
+          </div>
         </div>
-        <div className="logo">
-          <a href="/">Логотип</a>
-        </div>
+      </div>
+      <div className="header-end">
         <nav className={`navbar ${menuActive ? "active" : ""}`}>
           <ul>
-            <li>
-              <a href="/obuv">Обувь</a>
-            </li>
-            <li>
-              <a href="#">Аксессуары</a>
-            </li>
-            <li>
-              <a href="#">Сумки</a>
-            </li>
-            <li>
-              <a href="#">Товары для спорта</a>
-            </li>
-            <li>
-              <a href="/onas">О нас</a>
-            </li>
+            <li><a href="/obuv">Обувь</a></li>
+            <li><a href="#">Аксессуары</a></li>
+            <li><a href="#">Сумки</a></li>
+            <li><a href="#">Товары для спорта</a></li>
+            <li><a href="/onas">О нас</a></li>
+            <li><a href="#">Бренды</a></li>
           </ul>
         </nav>
-        <div className="icons">
-          <NavLink to={"/wishlist"}>
-            <FaHeart size={24} className="icon" />
-          </NavLink>
-          <NavLink to={"/basket"}>
-            <FaShoppingCart size={24} className="icon" />
-          </NavLink>
-          <NavLink to={"/search"}>
-            <FaSearch size={24} className="icon" />
-          </NavLink>
-        </div>
       </div>
     </header>
   );

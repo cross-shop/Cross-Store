@@ -16,8 +16,7 @@ body {
   width: 100%;
   background: white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  transition: top 0.3s ease-in-out;
+  z-index: 1;
 
   &.hidden {
     top: -100px; 
@@ -30,7 +29,8 @@ body {
     color: rgb(255, 255, 255);
     text-align: center;
     padding-top: 5px;
-    background: rgb(181, 0, 10);
+
+background: rgb(0, 0, 0);
 
     p {
       font-size: 0.714286rem;
@@ -56,6 +56,7 @@ body {
     .icons {
       position: absolute;
       right: 60px;
+      
 
       img {
         width: 20px;
@@ -101,6 +102,7 @@ body {
         a {
           text-decoration: none;
           color: rgb(61, 58, 58);
+          font-size: 16px;
 
           &:hover {
             color: black;
@@ -121,7 +123,6 @@ body {
   .navbar ul {
     display: none;
     flex-direction: column;
-    background-color: #333;
     width: 100%;
     position: absolute;
     top: 60px;
@@ -149,7 +150,7 @@ body {
   .menu-toggle .bar {
     width: 25px;
     height: 3px;
-    background-color: #fff;
+    // background-color: #fff;
     margin: 4px 0;
   }
 }

@@ -7,36 +7,11 @@ import wishlist from '../../assets/svg/wishlist.svg';
 import person from '../../assets/svg/person1.svg';
 import search from '../../assets/svg/headersearch.svg';
 
-const Header = () => {
-  const headerRef = useRef(null); 
-  const [lastScrollTop, setLastScrollTop] = useState(0); 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+function Header () {
 
-      if (scrollTop > lastScrollTop) {
-        headerRef.current.classList.add("hidden");
-      } else {
-        headerRef.current.classList.remove("hidden");
-      }
-
-      setLastScrollTop(scrollTop); 
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrollTop]); 
-
-  const [menuActive, setMenuActive] = useState(false);
-  const toggleMenu = () => {
-    setMenuActive(!menuActive);
-  };
 
   return (
-    <header className="header" ref={headerRef}>
+    <header className="header" >
       <div className="header-top">
         <p>Mid-Season Sale - Up To 40% Off - Shop Online & In-Store</p>
       </div>
@@ -66,7 +41,7 @@ const Header = () => {
         </div>
       </div>
       <div className="header-end">
-        <nav className={`navbar ${menuActive ? "active" : ""}`}>
+        <nav className={`navbar`}>
           <ul>
             <li><a href="/obuv">Обувь</a></li>
             <li><a href="#">Аксессуары</a></li>

@@ -3,7 +3,7 @@ import "./Banner.scss";
 import Carousel from "react-bootstrap/Carousel";
 import mainimage from "../../assets/image/shoes.png";
 import table from "../../assets/image/bask.png";
-import image3 from "../../assets/image/ictock.png";
+import image3 from "../../assets/image/banner.png";
 
 function Banner() {
   return (

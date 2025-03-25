@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./List.css";
-import close from "../../assets/image/x.png";
+import close from "../../assets/svg/delete.svg";
 import { useSelector, useDispatch } from "react-redux";
 import { removeWish } from "../../redux/wish2/wishSlice";
 

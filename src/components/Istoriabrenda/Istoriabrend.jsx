@@ -21,40 +21,12 @@ function Istoriabrend() {
       <header className='header17 '>
           <img src={negr} alt="" />
           <div className='header17gg '>
-          <div className='header17-left container '>
-            <ul>
-              <li>
-                <a href="">Одежда</a>
-              </li>
-              <li>
-              <Link to={`/obuv`}>
-                <a href="">Обувь</a>
-                </Link>
-              </li>
-              <li>
-                <a href="">Аксессуары</a>
-              </li>
-              <li>
-                <a href="">Сумки</a>
-              </li>
-              <li>
-              <Link to={`/0consignment`}>
-                <a href="">Товары для спорта</a>
-                </Link>              </li>
-              <p>DEALER</p>
-            </ul>
-          </div>
-          <div className='header17-img'>
-          <img src={Magazin} alt="" />
-          <Link to={`/search`}>
-          <img src={search} alt="" />
-          </Link>
-          </div>
+          
           </div>
 
           <div className='header17-center'>
             <h1>#история <br /> бренда</h1>
-            <h2>История бренда</h2>
+            <h2>YEEZY</h2>
             
           </div>
           <div className='header-footer'></div>

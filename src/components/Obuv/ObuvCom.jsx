@@ -8,11 +8,12 @@ import obuv1 from "../../assets/image/obuv1.png"
 import Like2 from "../../assets/svg/Like2.svg"
 import kros3 from "../../assets/image/kros3.png"
 import catolog from "../../assets/image/catalog.png"
-import Acardion from '../acardion/Acardion'
+import Acardion2 from '../Acardion2/Acardion2'
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion'
 import { useDispatch } from 'react-redux';
 import x from "../../assets/svg/delete.svg"; 
+import { img } from 'framer-motion/client'
 
 
 
@@ -155,80 +156,7 @@ const handleSizeSelect = (size) => {
 
   return (
     <div>
-         <header className='header33   '>
-          <div className='header33gg container'>
-          <div className='header33-left '>
-            <ul>
-              <li>
-                <a href="">Одежда</a>
-              </li>
-              <li>
-              <Link to={`/obuv`}>
-                <a href="">Обувь</a>
-                </Link>
-              </li>
-              <li>
-                <a href="">Аксессуары</a>
-              </li>
-              <li>
-                <a href="">Сумки</a>
-              </li>
-              <li>
-              <Link to={`/0consignment`}>
-                <a href="">Товары для спорта</a>
-                </Link>              </li>
-              <p>DEALER</p>
-            </ul>
-          </div>
-          <div className='header33-img'>
-          <img src={Like3} alt="" />
-          <img src={Magazin2} alt="" onClick={handleMagazinClick} />
-          {isModalVisible && (
-              <div className='icon2'>
-                <div className='modal-nur'>
-                  <div className='modal2-nur'>
-                    <h2>Корзина</h2>
-                    <img src={x} alt="" onClick={() => setIsModalVisible(false)} />
-                  </div>
-                  <div className='m3-nur'>
-                    <h5>{selectedProducts.length} товара</h5>
-                    <h5>Очистить</h5>
-                  </div>
-                  <div className='bm-nur'>
-                    <div className='bm2-nur'>
-                      <h2>Итого</h2>
-                      <h2>{selectedProducts.reduce((total, product) => total + product.price, 0)}₽</h2>
-                    </div>
-                    <div className='btn-nur'>
-                      <button>Оформить</button>
-                    </div>
-                  </div>
-                  <div className='selected-items'>
-                    {selectedProducts.map((item) => (
-                      <div key={item.id} className='selected-item'>
-                        <img src={item.avatar} alt={item.name} style={{ height: "200px", width: "200px" }} />
-                        <div>
-                          <p>{item.name}</p>
-                          <p>Размер: {item.size}</p> {/* Отображение выбранного размера */}
-                          <h5>{item.price}₽</h5>
-                        </div>
-                      </div>
-                    ))}
-</div>
-                </div>
-              </div>
-            )}
-
-          <img src={search} alt="" />
-          
-          </div>
-          </div>
-
-         
-
-       
-      
-        </header>
+        
         <main className='main-obuv container'>
         <div className='obuv-div'>
         <div className='obuv-1'>
@@ -260,8 +188,12 @@ const handleSizeSelect = (size) => {
                   <Link to={`/`}>
                 <p>Главная /</p>
                   </Link>
+                  <Link to={'/catalog'}>
                 <p>Каталог /</p>
+                </Link>
+                <Link to={'/obuv'}>
                 <p>Обувь /</p>
+                </Link>
                 <p> Кроссовки</p>
                 </div>
                 <div className='nike3'>
@@ -297,8 +229,12 @@ const handleSizeSelect = (size) => {
       <p>{item.availability}</p>
     </div>
   ))}
-</div>
 
+  
+</div>
+<div className="guarantee">
+ <Acardion2/>
+</div>
 
 
 
@@ -306,6 +242,8 @@ const handleSizeSelect = (size) => {
         </div>
     
         </main>
+
+
     </div>
   )
 }

@@ -16,10 +16,10 @@ body {
   width: 100%;
   background: white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  z-index: 1;
+  z-index: 999;
 
   &.hidden {
-    top: -100px; 
+    top: -100px;
   }
 
   .header-top {
@@ -30,7 +30,7 @@ body {
     text-align: center;
     padding-top: 5px;
 
-background: rgb(0, 0, 0);
+    background: rgb(0, 0, 0);
 
     p {
       font-size: 0.714286rem;
@@ -56,7 +56,6 @@ background: rgb(0, 0, 0);
     .icons {
       position: absolute;
       right: 60px;
-      
 
       img {
         width: 20px;
@@ -71,7 +70,7 @@ background: rgb(0, 0, 0);
     a {
       color: black;
       text-decoration: none;
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
       font-size: 30px;
       letter-spacing: 0.0814588rem;
       font-weight: 600;
@@ -113,7 +112,6 @@ background: rgb(0, 0, 0);
   }
 }
 
-/* Адаптивные стили для мобильных устройств */
 @media screen and (max-width: 768px) {
   .header-middle {
     flex-direction: column;
@@ -140,7 +138,6 @@ background: rgb(0, 0, 0);
     display: flex;
   }
 
-
   .menu-toggle {
     display: flex;
     flex-direction: column;
@@ -150,7 +147,6 @@ background: rgb(0, 0, 0);
   .menu-toggle .bar {
     width: 25px;
     height: 3px;
-    // background-color: #fff;
     margin: 4px 0;
   }
 }

@@ -1,12 +1,12 @@
-import React from 'react'
-import Found from '../components/Found/Found'
+import React from "react";
+import Found from "../components/Error/Found";
 
 function Notfound() {
   return (
     <div>
       <Found />
     </div>
-  )
+  );
 }
 
-export default Notfound
+export default Notfound;

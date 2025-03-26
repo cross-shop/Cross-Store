@@ -1,15 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
-import { FaShoppingCart, FaSearch, FaHeart } from "react-icons/fa"; // Иконки
 import "./Header.scss";
-import market from '../../assets/svg/market.svg';
-import wishlist from '../../assets/svg/wishlist.svg';
-import person from '../../assets/svg/person1.svg';
-import search from '../../assets/svg/headersearch.svg';
+import market from "../../assets/svg/market.svg";
+import wishlist from "../../assets/svg/wishlist.svg";
+import person from "../../assets/svg/person1.svg";
+import search from "../../assets/svg/headersearch.svg";
 
-function Header () {
-
-
+function Header() {
   return (
     <header className="header " >
       <div className="header-top">
@@ -43,17 +40,29 @@ function Header () {
       <div className="header-end">
         <nav className={`navbar`}>
           <ul>
-            <li><a href="/obuv">Обувь</a></li>
-            <li><a href="#">Аксессуары</a></li>
-            <li><a href="#">Сумки</a></li>
-            <li><a href="#">Товары для спорта</a></li>
-            <li><a href="/onas">О нас</a></li>
-            <li><a href="#">Бренды</a></li>
+            <li>
+              <a href="/obuv">Обувь</a>
+            </li>
+            <li>
+              <a href="">Аксессуары</a>
+            </li>
+            <li>
+              <a href="#">Сумки</a>
+            </li>
+            <li>
+              <a href="#">Товары для спорта</a>
+            </li>
+            <li>
+              <a href="/onas">О нас</a>
+            </li>
+            <li>
+              <a href="/istoriabrenda">Бренды</a>
+            </li>
           </ul>
         </nav>
       </div>
     </header>
   );
-};
+}
 
 export default Header;

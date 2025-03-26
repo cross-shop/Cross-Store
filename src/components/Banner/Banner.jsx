@@ -4,14 +4,16 @@ import Carousel from "react-bootstrap/Carousel";
 import mainimage from "../../assets/image/shoes.png";
 import table from "../../assets/image/bask.png";
 import image3 from "../../assets/image/banner.png";
-
+import banner from '../../assets/image/bannerinfo.png'
 function Banner() {
   return (
     <div className="banner-carousel ">
       <Carousel>
         <Carousel.Item>
           <img className="main-image" src={mainimage} alt="Main banner image" />
-          <Carousel.Caption></Carousel.Caption>
+          <Carousel.Caption>
+       
+          </Carousel.Caption>
         </Carousel.Item>
 
         <Carousel.Item>

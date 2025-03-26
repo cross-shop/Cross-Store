@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./List.css";
-import close from "../../assets/image/x.png";
 import { useSelector, useDispatch } from "react-redux";
 import { removeWish } from "../../redux/wish2/wishSlice";
-
+import close from '../../assets/svg/x.svg'
+import { img } from "framer-motion/client";
 function List() {
   const wishlist = useSelector((state) => state.wishlist.wishlist);
   const dispatch = useDispatch();
@@ -29,29 +29,29 @@ function List() {
           <option value="oldest">По дате добавления ↑</option>
         </select>
       </div>
-
       <div className="merch">
-        {sortedWishlist.length > 0 ? (
-          sortedWishlist.map((item) => (
-            <div className="kard" key={item.id}>
-              <div
-                className="close"
-                onClick={() => dispatch(removeWish(item.id))}
-              >
-                <img src={close} alt="Удалить" />
-              </div>
-              <img src={item.avatar} alt={item.name} />
-              <div className="nike">
-                <p>{item.name}</p>
-                <h5>{item.price}$</h5>
-                <button>SELECT SIZE</button>
-              </div>
-            </div>
-          ))
-        ) : (
-          <p className="never">Вы еще не добавили товары в избранное.</p>
-        )}
+  {sortedWishlist.length > 0 &&
+    sortedWishlist.map((item) => (
+      <div className="kard" key={item.id}>
+        <div className="close" onClick={() => dispatch(removeWish(item.id))}>
+          <img src={close} alt="Удалить" />
+        </div>
+        <img src={item.avatar} alt={item.name} />
+        <div className="nike">
+          <p>{item.name}</p>
+          <h5>{item.price}$</h5>
+          <button>SELECT SIZE</button>
+        </div>
       </div>
+    ))}
+</div>
+
+<div className="wish" style={{ display: sortedWishlist.length > 0 ? "none" : "block" }}>
+  <h2>Вы еще не добавили товары в избранное.</h2>
+ 
+  <a href="/"><button>Добавьте товары в избранное</button></a>
+</div>
+
     </div>
   );
 }

@@ -11,7 +11,7 @@ function Header () {
 
 
   return (
-    <header className="header" >
+    <header className="header " >
       <div className="header-top">
         <p>Mid-Season Sale - Up To 40% Off - Shop Online & In-Store</p>
       </div>

@@ -81,10 +81,10 @@ function Footer() {
             </div>
           </div>
           <div className="down-icon">
-            <img src={facebook} alt="" />
-            <img src={twiter} alt="" />
-            <img src={instagram} alt="" />
-            <img src={linkedin} alt="" />
+           <a href="https://www.facebook.com/"><img src={facebook} alt="" /></a>
+           <a href="https://x.com/"> <img src={twiter} alt="" /></a>
+            <a href="https://www.instagram.com/"><img src={instagram} alt="" /></a>
+            <a href="https://ru.linkedin.com/"><img src={linkedin} alt="" /></a>
           </div>
         </div>
       </div>

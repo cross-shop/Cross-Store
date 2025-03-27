@@ -23,7 +23,7 @@ function Header() {
               <img src={search} alt="Search" />
             </NavLink>
 
-            <NavLink className={person} to={"/search"}>
+            <NavLink className={person} to={"/register"}>
               <img src={person} alt="Person" />
             </NavLink>
 

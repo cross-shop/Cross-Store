@@ -1,0 +1,174 @@
+
+
+.main{
+    width: 1318px;
+    margin: 0 auto;
+    margin-top: 50px;
+  
+  
+    .hot{
+      display: flex;
+      justify-content: space-between;
+  
+  
+    h1{
+      /* Заголовок блока */
+  color: rgb(0, 0, 0);
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 54px;
+  letter-spacing: -2%;
+  text-align: left;
+  
+    }
+  
+    .pereiti{
+  width: 96px;
+  height: 36px;
+  box-sizing: border-box;
+  border: 1px solid rgb(179, 179, 179);
+  border-radius: 100px;
+  padding: 5px 5px 5px 15px;
+  font-weight: 500;
+  
+    }
+  }
+  
+    .main-drops{
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      gap: 1rem;
+      overflow-x: scroll;
+      scrollbar-color: transparent transparent;
+      width: 100%;
+      position: relative;
+      margin-top: 30px;
+  
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      
+  
+  
+   
+      .drop{
+        width: 284px;
+        height: 298px;
+        padding: 12px;
+        box-sizing: border-box;
+        border: 1px solid rgb(214, 214, 214);
+        border-radius: 13px;
+        position: relative;
+  
+        .new{
+          width: 59px;
+          height: 36px;
+          border-radius: 13px;
+          background: rgb(0, 0, 0);
+          padding: 10px 15px 10px 15px;
+          position: absolute;
+          top: 10px;
+  
+          P{
+            color: rgb(255, 255, 255);
+            font-size: 13.2px;
+            font-weight: 600;
+            line-height: 16px;
+            letter-spacing: 0%;
+            text-align: left;
+            text-transform: uppercase;
+          }
+        }
+        .heart{
+          position: absolute;
+          top: 15px;
+          right: 15px;
+        
+        }
+  
+        
+        img{
+          width: 254px;
+          height: 198px;
+          object-fit: cover;
+        }
+  
+        
+  
+      }
+  
+  
+      
+    }
+  }
+  .drop-text {
+    p {
+      color: rgb(62, 62, 62);
+      font-family: Inter;
+      font-size: 15.04px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: 0%;
+      text-align: center;
+       width: 233px;
+       height: 36px;
+  
+    }
+  
+    h4 {
+        /* Цена */
+  color: rgb(62, 62, 62);
+  font-family: Ruberoid;
+  font-size: 15.04px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0%;
+  text-align: center;
+  
+    }
+  
+    &:hover {
+  
+        p {
+            color: blue; 
+        }
+  
+        h4 {
+          color: blue; 
+  
+        }
+    }
+  
+    
+    .scroll-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: black;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 8;
+      font-size: 24px;
+      transition: all 0.3s ease;
+    }
+  
+    .left-arrow {
+      left: 0;
+    }
+  
+    .right-arrow {
+      right: 0;
+    }
+  
+  }
+  
+  
+  

@@ -22,42 +22,7 @@ function Zakaz() {
   }
   return (
     <div>
-      <header className='nurtilek0808  '>
-        <div className='header3990gg'>
-          <div className='header3990-left container'>
-            <ul>
-              <li>
-                <a href="">Одежда</a>
-              </li>
-              <li>
-                <Link to={`/obuv`}>
-                  <a href="">Обувь</a>
-                </Link>
-              </li>
-              <li>
-                <a href="">Аксессуары</a>
-              </li>
-              <li>
-                <a href="">Сумки</a>
-              </li>
-              <li>
-                <Link to={`/0consignment`}>
-                  <a href="">Товары для спорта</a>
-                </Link>              </li>
-              <p>DEALER</p>
-            </ul>
-          </div>
-          <div className='header3990-img'>
-            <Link to={`/wishlist`}>
-              <img src={Like3} alt="" />
-            </Link>
-            <img src={Magazin2} alt="" />
-            <img src={search2} alt="" />
-
-          </div>
-        </div>
-
-      </header>
+    
       <div className='ofer container'>
         <div className='ofer-1'>
           <img src={slevazakaz} alt="" />

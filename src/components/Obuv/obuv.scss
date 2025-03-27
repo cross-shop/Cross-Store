@@ -13,28 +13,31 @@
 
                 img{
                     width: 692px;
-height: 500px;
+                    height: 580px;
+                    object-fit: cover;
                 }
             }
             .obuv-2img{
-                position: absolute;
-                bottom: 60px;
+               
                 display: flex;
                 gap: 8px;
                 overflow: hidden;
+                margin-top: 40px;
                  
 
                 img{
-                    border: 1px solid black;
                     width: 74px;                               
                     height: 74px;
+                    box-sizing: border-box;
+                    border: 1px solid rgb(219, 219, 219);
+                    background: url(DSC01387),rgb(217, 217, 217);
                 }
                 img:hover{
                     box-sizing: border-box;
                     border: 1px solid rgb(255, 127, 98);
                     border-radius: 9px;
-
-background: url(DSC01387),rgb(217, 217, 217);
+                    background: url(DSC01387),rgb(217, 217, 217);
+                    cursor: pointer;
                 }
             }
         }
@@ -203,12 +206,11 @@ background: url(DSC01387),rgb(217, 217, 217);
 
 h1{
     position: absolute;
-    left: 23px;
+    left: 33px;
     top: 20px;
     color: rgb(61, 61, 61);
-    font-family: Ruberoid;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 28px;
     letter-spacing: 0%;
     text-align: center;
@@ -450,191 +452,34 @@ p{
              }
         }
     }
+
+
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+      }
+      
+      .modal {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+      }
+      
+      .close-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+      
 }
 
 
-
-// .main-obuv {
-//     max-width: 1200px;
-//     margin: 0 auto;
-//     padding: 20px;
-//     display: flex;
-//     justify-content: center;
-//     margin-top: 200px;
-  
-//     .obuv-div {
-//       display: flex;
-//       gap: 40px;
-  
-//       .obuv-1 {
-//         display: flex;
-//         flex-direction: column;
-//         align-items: center;
-//         gap: 20px;
-  
-//         .obuv-1img {
-//           img {
-//             width: 400px;
-//             height: auto;
-//             border-radius: 10px;
-//             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-//           }
-//         }
-  
-//         .obuv-2img {
-//           display: flex;
-//           gap: 10px;
-  
-//           div {
-//             cursor: pointer;
-//             transition: transform 0.3s ease;
-  
-//             &:hover {
-//               transform: scale(1.1);
-//             }
-  
-//             img {
-//               width: 60px;
-//               height: 60px;
-//               border-radius: 5px;
-//               object-fit: cover;
-//               border: 2px solid transparent;
-  
-//               &:hover {
-//                 border: 2px solid #d11a2a;
-//               }
-//             }
-//           }
-//         }
-//       }
-  
-//       .obuv-2 {
-//         max-width: 500px;
-        
-//         .nike4 {
-//           display: flex;
-//           gap: 5px;
-//           font-size: 14px;
-//           color: gray;
-          
-//           a {
-//             text-decoration: none;
-//             color: gray;
-//           }
-//         }
-  
-//         .nike3 {
-//           display: flex;
-//           align-items: center;
-//           justify-content: space-between;
-          
-//           h1 {
-//             font-size: 24px;
-//             font-weight: bold;
-//           }
-//         }
-  
-//         .nike-button {
-//           display: flex;
-//           gap: 15px;
-//           margin-top: 15px;
-  
-//           button {
-//             padding: 12px 20px;
-//             border: none;
-//             cursor: pointer;
-//             font-size: 16px;
-//             font-weight: bold;
-//             transition: 0.3s ease;
-//             border-radius: 5px;
-  
-//             &:first-child {
-//               background-color: #d11a2a;
-//               color: white;
-  
-//               &:hover {
-//                 background-color: #b01724;
-//               }
-//             }
-  
-//             &:last-child {
-//               background-color: #f5f5f5;
-//               color: black;
-//               border: 1px solid #ccc;
-  
-//               &:hover {
-//                 background-color: #ddd;
-//               }
-//             }
-//           }
-//         }
-  
-//         .nike-razmer {
-//           margin-top: 20px;
-  
-//           h1 {
-//             font-size: 18px;
-//             margin-bottom: 10px;
-//           }
-  
-//           .razmer-button {
-//             display: flex;
-//             gap: 10px;
-  
-//             button {
-//               padding: 8px 12px;
-//               background-color: white;
-//               border: 1px solid #ccc;
-//               cursor: pointer;
-  
-//               &:hover {
-//                 background-color: #ddd;
-//               }
-//             }
-//           }
-  
-//           p {
-//             color: gray;
-//             font-size: 14px;
-//             margin-top: 5px;
-//           }
-//         }
-  
-//         .nike-grid {
-//           display: grid;
-//           grid-template-columns: repeat(4, 1fr);
-//           gap: 10px;
-//           margin-top: 20px;
-  
-//           .grid1 {
-//             padding: 10px;
-//             text-align: center;
-//             border: 1px solid #ccc;
-//             border-radius: 5px;
-//             cursor: pointer;
-//             transition: 0.3s ease;
-//             background-color: white;
-  
-//             h1 {
-//               font-size: 16px;
-//             }
-  
-//             p {
-//               font-size: 12px;
-//               color: gray;
-//             }
-  
-//             &:hover {
-//               background-color: #d11a2a;
-//               color: white;
-//               border-color: #d11a2a;
-  
-//               p {
-//                 color: white;
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }

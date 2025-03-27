@@ -1,15 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Jost:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 .wishlist-app {
+  margin: 0 auto;
+  width: 1400px;
   margin-top: 175px;
 
+ 
   
 
 
 }
 .merch {
+
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   transition: opasity 0.6s ease;
 }
 

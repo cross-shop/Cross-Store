@@ -12,35 +12,7 @@ function HelpCom() {
          <header className='header170'>
           <img src={help} alt="" />
           <div className='header170gg'>
-          <div className='header170-left container'>
-            <ul>
-              <li>
-                <a href="">Одежда</a>
-              </li>
-              <li>
-              <Link to={`/obuv`}>
-                <a href="">Обувь</a>
-                </Link>
-              </li>
-              <li>
-                <a href="">Аксессуары</a>
-              </li>
-              <li>
-                <a href="">Сумки</a>
-              </li>
-              <li>
-              <Link to={`/0consignment`}>
-                <a href="">Товары для спорта</a>
-                </Link>              </li>
-              <p>DEALER</p>
-            </ul>
-          </div>
-          <div className='header170-img'>
-          <img src={Magazin} alt="" />
-          <Link to={`/search`}>
-          <img src={search} alt="" />
-          </Link>
-          </div>
+        
           </div>
 
           <div className='header170-center'>
@@ -51,9 +23,10 @@ function HelpCom() {
           </div>
           <div className='router'>
             <Link to={`/`}>
-            <p>Главная//</p>        
+            <p>Главная /</p>        
             </Link>
-            <h1>Поддержка//</h1>
+            <Link to={'/help'}>
+            <p>Поддержка</p></Link>
           </div>
           <div className='header-footer0'></div>
 

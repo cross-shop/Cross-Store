@@ -77,7 +77,7 @@ export const myRouter = createBrowserRouter([
         element: <ONas />,
       },
       {
-        path: "konserj",
+        path: "/konserj",
         element: <Konserj />,
       },
       {

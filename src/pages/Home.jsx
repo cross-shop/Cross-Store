@@ -5,6 +5,7 @@ import HomeNew from '../components/HomeNew/HomeNew.jsx';
 import HomeCatalog from '../components/HomeCatalog/HomeCatalog.jsx';
 import Homedvchp from '../components/Homedvchp/Homedvchp.jsx';
 import Homebrand from '../components/Homebrand/Homebrand.jsx';
+import HomeBanner from '../components/Homebrand/HomeBanner/HomeBanner.jsx'
 function Home() {
   return (
     <div>
@@ -14,6 +15,7 @@ function Home() {
       <HomeCatalog/>
       <Homedvchp/>
       <Homebrand/>
+      <HomeBanner/>
     </div>
   )
 }

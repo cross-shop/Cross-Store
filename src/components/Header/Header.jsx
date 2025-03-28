@@ -5,7 +5,7 @@ import market from "../../assets/svg/market.svg";
 import wishlist from "../../assets/svg/wishlist.svg";
 import person from "../../assets/svg/person1.svg";
 import search from "../../assets/svg/headersearch.svg";
-
+import logo from '../../assets/image/logo.png'
 function Header() {
   return (
     <header className="header " >
@@ -14,8 +14,16 @@ function Header() {
       </div>
       <div className="header-middle">
         <div className="middle-svg">
+          <div className="logo-img">
+            <NavLink to={'/'}>
+        <img src={logo} alt="" />
+        </NavLink>
+          </div>
+
+
           <div className="logo">
-            <a href="/">CROSS STORE</a>
+            <a href="/"> CROSS STORE</a>
+
           </div>
 
           <div className="icons">
@@ -37,6 +45,7 @@ function Header() {
           </div>
         </div>
       </div>
+
       <div className="header-end">
         <nav className={`navbar`}>
           <ul>

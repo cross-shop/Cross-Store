@@ -1,0 +1,107 @@
+.acces {
+    width: 1440px;
+    margin-top: 165px;
+    height: auto;
+  
+    .top-access {
+      display: flex;
+      padding-left: 20px;
+      height: 100px;
+      background: white;
+      position: relative;
+      align-items: center;
+  
+      .link {
+        a {
+          text-decoration: none;
+          color: rgb(26, 26, 26);
+        }
+      }
+  
+      .as-logo {
+        position: absolute;
+        left: 700px;
+  
+        h2 {
+          font-family: "Proxima Nova", "Helvetica Neue", Verdana, Arial;
+          font-weight: 400;
+          color: rgb(26, 26, 26);
+        }
+      }
+    }
+  
+    .middle-access {
+      .as-text {
+        display: flex;
+        padding-left: 40px;
+        justify-content: space-between;
+  
+        .as-category {
+          width: 300px;
+  
+          .option-br {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+  
+            select,
+            input {
+              width: 240px;
+              height: 36px;
+              border: 1px solid rgb(242, 242, 242);
+              padding: 6px;
+              background-position: right 8px center;
+            }
+  
+            input {
+              margin-top: 8px;
+              margin-bottom: 16px;
+              background-size: 12px;
+            }
+          }
+  
+          .as-check {
+            display: flex;
+            flex-direction: column;
+            overflow-y: scroll;
+            height: 500px;
+            width: 300px;
+  
+            .check {
+              display: flex;
+              gap: 10px;
+  
+              input {
+                width: 18px;
+                height: 18px;
+              }
+  
+              p {
+                font-size: 13px;
+              }
+            }
+          }
+        }
+  
+        .as-search {
+          position: relative;
+  
+          img {
+            position: absolute;
+            left: 210px;
+            bottom: 25px;
+          }
+        }
+  
+        .vid-o {
+          display: flex;
+          gap: 15px;
+  
+          select {
+            border: none;
+          }
+        }
+      }
+    }
+  }
+  

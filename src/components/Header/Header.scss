@@ -13,17 +13,19 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 1540px;
   background: white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   z-index: 999;
+  margin: 0 auto;
+
 
   &.hidden {
     top: -100px;
   }
 
   .header-top {
-    width: 100%;
+    width: 1540px;
     pointer-events: all;
     height: 40px;
     color: rgb(255, 255, 255);
@@ -45,7 +47,7 @@ body {
   }
 
   .middle-svg {
-    width: 100%;
+    width: 300px;
     height: 70px;
     display: flex;
     gap: 520px;
@@ -79,6 +81,7 @@ body {
     }
 
     .logo {
+      display: flex;
     
 
       
@@ -90,6 +93,7 @@ body {
       letter-spacing: 0.0814588rem;
       font-weight: 600;
       margin-left: 80px;
+      width: 300px;
 
       
 

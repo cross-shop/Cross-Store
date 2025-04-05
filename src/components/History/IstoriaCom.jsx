@@ -23,29 +23,7 @@ function IstoriaCom() {
     <div>
        <header className='nurtilek08  '>
           <div className='header39gg'>
-          <div className='header39-left container'>
-            <ul>
-              <li>
-                <a href="">Одежда</a>
-              </li>
-              <li>
-              <Link to={`/obuv`}>
-                <a href="">Обувь</a>
-                </Link>
-              </li>
-              <li>
-                <a href="">Аксессуары</a>
-              </li>
-              <li>
-                <a href="">Сумки</a>
-              </li>
-              <li>
-              <Link to={`/0consignment`}>
-                <a href="">Товары для спорта</a>
-                </Link>              </li>
-              <p>DEALER</p>
-            </ul>
-          </div>
+       
           <div className='header39-img'>
             <Link to={`/wishlist`}>
           <img src={Like3} alt="" />

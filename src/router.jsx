@@ -17,6 +17,8 @@ import Basket from "./pages/Cart";
 import AuthForm from "./auth/AuthForm";
 import AdminLogin from "./admin/Login";
 import Dashboard from "./admin/Dashboard";
+import Access from "./pages/Access";
+import Bags from "./pages/Bags";
 
 export const myRouter = createBrowserRouter([
   {
@@ -84,6 +86,16 @@ export const myRouter = createBrowserRouter([
         path: "/register",
         element: <AuthForm />,
       },
+      {
+        path: 'accessories',
+        element: <Access/>
+    
+      },
+      {
+        path: 'bags',
+        element: <Bags/>
+    
+      }
     ],
   },
   {
@@ -94,4 +106,5 @@ export const myRouter = createBrowserRouter([
     path: "/dashboard",
     element: <Dashboard />
   },
+ 
 ]);

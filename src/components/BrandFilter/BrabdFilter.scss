@@ -1,0 +1,45 @@
+.brand-filter{
+    width: 250px;
+    
+
+    .filter{
+        
+          width: 240px;
+          height: 36px;
+          border: 1px solid rgb(242, 242, 242);
+          padding: 6px 0 6px 10px;
+          background-position: right 8px center;
+
+          
+          
+          
+        
+    }
+
+    .search-in {
+        input{
+            width: 250px;
+        }
+    }
+
+    .fbrand-list{
+        width: 250px;
+        height: 240px;
+        overflow-y: scroll;
+       
+        
+
+        .flex {
+          display: flex;
+          gap: 7px;
+
+          
+          
+
+
+        }
+        
+       
+    }
+
+}

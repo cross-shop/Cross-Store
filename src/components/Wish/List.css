@@ -23,14 +23,15 @@
 }
 
 .kard {
-  width: 238px;
+  width: 258px;
   height: 347px;
   border-radius: 8px;
   margin: 25px 0 0 25px;
   background-color: #fffefe;
   position: relative;
   box-shadow: 0 3px 5px;
-  margin-bottom: 30px;
+  padding: 25px;
+
 }
 .kard:hover {
   box-shadow: 0 3px 5px;
@@ -40,7 +41,8 @@
   width: 208px;
   height: 208px;
   border-radius: 6px;
-  margin: 9.5px;
+  object-fit: cover;
+  /* margin: 9.5px; */
 }
 
 .app {
@@ -86,7 +88,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 9px;
   border-radius: 20px;
   background: #161111;
 }

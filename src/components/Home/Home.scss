@@ -1,170 +1,3 @@
-// .main1 {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   padding: 20px;
-// }
-
-// .main1-Nike2 p {
-//   font-size: 24px;
-//   text-align: center;
-// }
-
-// .main-mixer {
-//   display: flex;
-//   justify-content: center;
-//   gap: 15px;
-
-//   .mixer {
-//     flex: 1 1 300px;
-//     max-width: 300px;
-
-//     img {
-//       width: 100%;
-//       height: 250px;
-//       object-fit: cover;
-//       border-radius: 10px;
-//     }
-//   }
-// }
-
-// .main1-spes1 {
-//   text-align: center;
-//   margin-top: 20px;
-
-//   img {
-//     max-width: 100%;
-//     height: auto;
-//   }
-// }
-
-// .main1-podbor1 {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   margin-top: 20px;
-
-//   label {
-//     font-size: 18px;
-//   }
-
-//   .price-range {
-//     display: flex;
-//     gap: 10px;
-//   }
-
-//   button {
-//     margin-top: 10px;
-//     padding: 10px 20px;
-//     background-color: #ff6600;
-//     color: white;
-//     border: none;
-//     cursor: pointer;
-//     border-radius: 5px;
-//   }
-// }
-
-// .main1-custom1 {
-//   width: 100%;
-//   text-align: center;
-//   margin-top: 30px;
-
-//   .center-custom1 {
-//     display: grid;
-//     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-//     gap: 20px;
-//     margin-top: 15px;
-//   }
-
-//   .custom-1 img {
-//     width: 100%;
-//     height: 200px;
-//     object-fit: cover;
-//     border-radius: 10px;
-//   }
-// }
-
-// .main1-catolog {
-//   text-align: center;
-//   margin-top: 30px;
-
-//   img {
-//     width: 100%;
-//     max-width: 600px;
-//     height: auto;
-//   }
-
-//   button {
-//     margin-top: 10px;
-//     padding: 10px 20px;
-//     background-color: #007bff;
-//     color: white;
-//     border: none;
-//     cursor: pointer;
-//     border-radius: 5px;
-//   }
-// }
-
-// .main1-catolog2 {
-//   text-align: center;
-//   margin-top: 30px;
-
-//   img {
-//     width: 100%;
-//     max-width: 500px;
-//     height: auto;
-//   }
-
-//   input {
-//     margin-top: 10px;
-//     padding: 10px;
-//     width: 80%;
-//     max-width: 300px;
-//     border: 1px solid #ccc;
-//     border-radius: 5px;
-//   }
-
-//   button {
-//     margin-top: 10px;
-//     padding: 10px 20px;
-//     background-color: #28a745;
-//     color: white;
-//     border: none;
-//     cursor: pointer;
-//     border-radius: 5px;
-//   }
-// }
-
-// @media (max-width: 768px) {
-//   .main-mixer {
-//     flex-direction: column;
-//     align-items: center;
-//   }
-
-//   .main1-custom1 .center-custom1 {
-//     grid-template-columns: 1fr;
-//   }
-
-//   .main1-catolog img,
-//   .main1-catolog2 img {
-//     max-width: 90%;
-//   }
-// }
-
-// @media (max-width: 480px) {
-//   .main-mixer .mixer img {
-//     height: 200px;
-//   }
-
-//   .main1-podbor1 .price-range {
-//     flex-direction: column;
-//     align-items: center;
-//   }
-
-//   .main1-catolog2 input {
-//     width: 90%;
-//   }
-// }
 
 .main{
   width: 1318px;
@@ -178,7 +11,6 @@
 
 
   h1{
-    /* Заголовок блока */
 color: rgb(0, 0, 0);
 font-size: 40px;
 font-weight: 500;
@@ -256,7 +88,7 @@ font-weight: 500;
       
       img{
         width: 254px;
-        height: 198px;
+        height: 230px;
         object-fit: cover;
       }
 

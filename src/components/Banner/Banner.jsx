@@ -1,7 +1,7 @@
 import React from "react";
 import "./Banner.scss";
 import Carousel from "react-bootstrap/Carousel";
-import mainimage from "../../assets/image/shoes.png";
+import mainimage from "../../assets/image/man.png";
 import table from "../../assets/image/bask.png";
 import image3 from "../../assets/image/banner.png";
 import banner from '../../assets/image/bannerinfo.png'

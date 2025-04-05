@@ -1,7 +1,11 @@
 .acces {
     width: 1440px;
-    margin-top: 165px;
     height: auto;
+    margin: 0 auto;
+    margin-top: 165px;
+
+
+  
   
     .top-access {
       display: flex;
@@ -10,6 +14,7 @@
       background: white;
       position: relative;
       align-items: center;
+      border-bottom: 1px solid rgb(242, 242, 242);
   
       .link {
         a {
@@ -37,7 +42,9 @@
         justify-content: space-between;
   
         .as-category {
-          width: 300px;
+          display: flex;
+          // position: relative;
+          
   
           .option-br {
             display: flex;
@@ -52,13 +59,19 @@
               padding: 6px;
               background-position: right 8px center;
             }
-  
+       
             input {
-              margin-top: 8px;
-              margin-bottom: 16px;
-              background-size: 12px;
+              // background-size: 12px;
+              width: 20px;
+              margin-top: -4px;
+              
             }
+
+
+            
           }
+
+          
   
           .as-check {
             display: flex;
@@ -84,12 +97,36 @@
         }
   
         .as-search {
+          width: 240px;
           position: relative;
+
+          input {
+            width: 240px;
+            height: 36px;
+            border: 1px solid rgb(242, 242, 242);
+            padding: 6px;
+            background-position: right 8px center;
+          }
   
           img {
             position: absolute;
             left: 210px;
             bottom: 25px;
+          }
+        }
+
+        .as-img{
+          width: 1000px;
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          // margin-top: -60px;
+        
+
+
+          img{
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
           }
         }
   

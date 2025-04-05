@@ -12,28 +12,7 @@ function NasCom() {
     <>
     <div className='ONas '>
           <div className='header12 container'>
-          <div className='header12-left '>
-            <ul>
-              <li>
-                <Link to={"/"}>
-                <a href="">Одежда</a>
-                </Link>
-              </li>
-              <li>
-                <a href="">Обувь</a>
-              </li>
-              <li>
-                <a href="">Аксессуары</a>
-              </li>
-              <li>
-                <a href="">Сумки</a>
-              </li>
-              <li>
-                <a href="">Товары для спорта</a>
-              </li>
-              <p>DEALER</p>
-            </ul>
-          </div>
+         
           <div className='header1-img'>
           {/* <img src={Like} alt="" /> */}
 

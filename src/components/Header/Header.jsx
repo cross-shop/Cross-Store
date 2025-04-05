@@ -6,10 +6,11 @@ import wishlist from "../../assets/svg/wishlist.svg";
 import person from "../../assets/svg/person1.svg";
 import search from "../../assets/svg/headersearch.svg";
 import logo from '../../assets/image/logo.png'
+import { Link } from "react-router-dom";
 function Header() {
   return (
-    <header className="header " >
-      <div className="header-top">
+    <header className="header  " >
+      <div className="header-top ">
         <p>Mid-Season Sale - Up To 40% Off - Shop Online & In-Store</p>
       </div>
       <div className="header-middle">
@@ -53,10 +54,10 @@ function Header() {
               <a href="/obuv">Обувь</a>
             </li>
             <li>
-              <a href="">Аксессуары</a>
+             <a href="/accessories">Акссесуары</a>
             </li>
             <li>
-              <a href="#">Сумки</a>
+              <a href="/bags">Сумки</a>
             </li>
             <li>
               <a href="#">Товары для спорта</a>

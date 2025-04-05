@@ -2,6 +2,7 @@ import React from 'react';
 import './Accessories.Com.scss';
 import search from '../../assets/svg/search.svg';
 import ass1 from '../../assets/image/ass1.png';
+import BrandFilter from '../BrandFilter/BrandFilter';
 
 function Accessories() {
   return (
@@ -15,21 +16,40 @@ function Accessories() {
           <h2>Акссесуары</h2>
         </div>
       </div>
-      <hr />
       <div className="middle-access">
         <div className="as-text">
           <div className="as-category">
             <div className="option-br">
+              {/* Заменили первый select на кастомный фильтр */}
+              <div className="brandfilter">
+                <BrandFilter />
+              </div>
+
+              {/* Остальные стандартные select'ы */}
               <select>
-                <option value="">Бренд</option>
+                <option value="">Отделение</option>
+                
               </select>
 
-              <div className="as-search">
-                <input type="search" placeholder="Поиск" />
-                <img src={search} alt="search" />
-              </div>
+              <select>
+                <option value="">Цвет</option>
+              </select>
+
+              <select>
+                <option value="">Размер одежды</option>
+              </select>
+
+              <select>
+                <option value="">Цена</option>
+              </select>
+
             </div>
 
+            <div className="as-img">
+              {[...Array(12)].map((_, i) => (
+                <img key={i} src={ass1} alt={`ass${i}`} />
+              ))}
+            </div>
           </div>
 
           <div className="vid-o">

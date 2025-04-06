@@ -20,12 +20,11 @@ function Accessories() {
         <div className="as-text">
           <div className="as-category">
             <div className="option-br">
-              {/* Заменили первый select на кастомный фильтр */}
               <div className="brandfilter">
-                <BrandFilter />
+              <BrandFilter />
+
               </div>
 
-              {/* Остальные стандартные select'ы */}
               <select>
                 <option value="">Отделение</option>
                 

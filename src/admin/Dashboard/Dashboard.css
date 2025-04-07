@@ -1,0 +1,10 @@
+.dul{
+    display: flex;
+    gap: 50px;
+}
+
+.dul li{
+    cursor: pointer;
+    list-style: none;
+    font-size: 20px;
+}

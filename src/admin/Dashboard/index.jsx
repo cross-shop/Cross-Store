@@ -1,18 +1,23 @@
-import { useNavigate } from "react-router-dom";
+import "./Dashboard.css"; // Стиль файлын кошуу
 
-function Dashboard() {
-  const navigate = useNavigate(); 
-
-  const handleLogout = () => {
-    navigate("/adminlogin");
+function AdminDashboard({ userName, handleLogout }) {
+  const confirmLogout = () => {
+    if (window.confirm("Are you sure you want to logout?")) {
+      handleLogout();
+    }
   };
 
   return (
-    <div>
-      <h2>Welcome to Admin Dashboard</h2>
-      <button onClick={handleLogout}>Logout</button>
+    <div className="dashboard">
+      <nav>
+        <ul className="dul">
+          <li>admin-home</li>
+          <li>add-product</li>
+          <li>products-page</li>
+        </ul>
+      </nav>
     </div>
   );
 }
 
-export default Dashboard;
+export default AdminDashboard;

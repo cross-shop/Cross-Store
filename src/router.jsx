@@ -32,48 +32,48 @@ export const myRouter = createBrowserRouter([
         element: <Basket />,
       },
       {
-        path: "*",
+        path: "/*",
         element: <Notfound />,
       },
       {
-        path: "search",
+        path: "/search",
         element: <Search />,
       },
       {
-        path: "catalog",
+        path: "/catalog",
         element: <Catalog />,
       },
       {
-        path: "istoria",
+        path: "/istoria",
         element: <Istoria />,
       },
       {
-        path: "help",
+        path: "/help",
         element: <Help />,
       },
       {
-        path: "obuv",
+        path: "/obuv",
         element: <Obuv />,
       },
       {
-        path: "wishlist",
+        path: "/wishlist",
         element: <Wishlist />,
       },
 
       {
-        path: "proleved",
+        path: "/proleved",
         element: <Proleved />,
       },
       {
-        path: "istoriabrenda",
+        path: "/istoriabrenda",
         element: <Istoriarenda />,
       },
       {
-        path: "oferzakaz",
+        path: "/oferzakaz",
         element: <Oferzakaz />,
       },
       {
-        path: "onas",
+        path: "/onas",
         element: <ONas />,
       },
       {

@@ -27,7 +27,7 @@ function AdminLogin() {
   };
 
   return (
-    <div>
+    <div className="loginblock">
       <h2>Admin Login</h2>
       {error && <p className="error-message">{error}</p>}
       <form onSubmit={handleLogin}>

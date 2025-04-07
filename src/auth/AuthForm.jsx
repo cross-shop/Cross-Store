@@ -53,7 +53,7 @@ const AuthForm = () => {
   return (
     <div className="auth-container">
       <div className="auth-box">
-        <h2>{isLogin ? "Кирүү" : "Катталуу"}</h2>
+        <h2>{isLogin ? "войти" : "регистрация"}</h2>
 
         <form
           onSubmit={(event) => {
@@ -63,13 +63,13 @@ const AuthForm = () => {
         >
           {!isLogin && (
             <div className="input-group">
-              <label>Атыңыз</label>
+              <label>ваше имя</label>
               <input
                 type="text"
                 name="name"
                 value={user.name}
                 onChange={handler}
-                placeholder="Толук аты-жөнү"
+                placeholder="имя"
                 required
               />
             </div>
@@ -82,30 +82,30 @@ const AuthForm = () => {
               value={user.email}
               name="email"
               type="email"
-              placeholder="Email жазыңыз"
+              placeholder="Email"
               required
             />
           </div>
 
           <div className="input-group">
-            <label>Сырсөз</label>
+            <label>пароль</label>
             <input
               onChange={handler}
               value={user.password}
               name="password"
               type="password"
-              placeholder="Сырсөз жазыңыз"
+              placeholder="пароль"
               required
             />
           </div>
 
           <button type="submit" className="auth-button">
-            {isLogin ? "Кирүү" : "Катталуу"}
+            {isLogin ? "войти" : "регистрация"}
           </button>
         </form>
 
         <p className="toggle-text" onClick={toggleForm}>
-          {isLogin ? "Катталуу керекпи?" : "Аккаунтуңуз барбы? Кирүү"}
+          {isLogin ? "регистрация?" : "войти"}
         </p>
       </div>
     </div>

@@ -5,26 +5,24 @@ import market from "../../assets/svg/market.svg";
 import wishlist from "../../assets/svg/wishlist.svg";
 import person from "../../assets/svg/person1.svg";
 import search from "../../assets/svg/headersearch.svg";
-import logo from '../../assets/image/logo.png'
-import { Link } from "react-router-dom";
+import logo from "../../assets/image/logo.png";
+
 function Header() {
   return (
-    <header className="header  " >
-      <div className="header-top ">
+    <header className="header">
+      <div className="header-top">
         <p>Mid-Season Sale - Up To 40% Off - Shop Online & In-Store</p>
       </div>
-      <div className="header-middle">
+      <div className="header-middle container">
         <div className="middle-svg">
           <div className="logo-img">
-            <NavLink to={'/'}>
-        <img src={logo} alt="" />
-        </NavLink>
+            <NavLink to={"/"}>
+              <img src={logo} alt="" />
+            </NavLink>
           </div>
-
 
           <div className="logo">
             <a href="/"> CROSS STORE</a>
-
           </div>
 
           <div className="icons">
@@ -54,7 +52,7 @@ function Header() {
               <a href="/obuv">Обувь</a>
             </li>
             <li>
-             <a href="/accessories">Акссесуары</a>
+              <a href="/accessories">Акссесуары</a>
             </li>
             <li>
               <a href="/bags">Сумки</a>

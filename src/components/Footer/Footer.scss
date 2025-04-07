@@ -1,108 +1,92 @@
-@import url('https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 .footer {
-    width: 1540px;
-    height: 440px;
-    border: 1px solid black;
-    background: #000;
-    position: relative;
-    margin: 0 auto;
-    
-    .footer-container{
+  width: 100%;
+  height: 440px;
+  background: #000;
+  margin: auto;
+
+  .footer-container {
+    display: flex;
+    gap: 108px;
+
+    .footer-brand {
+      color: aliceblue;
+      margin-top: 73px;
+
+      p {
+        width: 260px;
+        color: rgb(191, 186, 186);
+        font-family: Inter;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0%;
+        text-align: left;
+        margin-top: 41px;
+      }
+
+      .sait {
         display: flex;
-        margin-left: 113px;
-        gap: 108px;
-
-        .footer-brand{
-            color: aliceblue;
-            margin-top: 73px;
-
-            p{
-                width: 260px;
-                color: rgb(191, 186, 186);
-                font-family: Inter;
-                font-size: 15px;
-                font-weight: 400;
-                line-height: 18px;
-                letter-spacing: 0%;
-                text-align: left;
-                margin-top: 41px;
-            }
-
-            .sait{
-                display: flex;
-                gap: 20px;
-            }
-        }
-
-
-        .footer-links{
-            display: flex;
-            margin-top: 68px;
-            gap: 155px;
-
-            .footer-section{
-                width: 207px;
-                height: 106px;
-                display: flex;
-                flex-direction: column;
-                gap: 18px;
-
-
-                h4{
-                    color: aliceblue;
-                    font-family: "Istok Web", sans-serif;
-                    font-size: 22.89px;
-                    font-weight: 400;
-                    line-height: 31px;
-                    letter-spacing: -2%;
-                    margin-left: 30px;
-
-                }
-
-                ul{
-
-                    li{
-                    list-style: none;
-
-                        a{
-                    text-decoration: none;
-                    color: rgb(208, 196, 196);
-
-
-                        }
-
-                    }
-                }
-            }
-        }
+        gap: 20px;
+      }
     }
 
+    .footer-links {
+      display: flex;
+      margin-top: 68px;
+      gap: 155px;
 
-    .footer-bottom{
-        width: 1440px;
+      .footer-section {
+        width: 207px;
+        height: 106px;
         display: flex;
-        position: absolute;
-        bottom: 0;
-        gap: 54px;
-        padding-left: 153px;
+        flex-direction: column;
+        gap: 18px;
 
-        p{
-            color: aliceblue;
-
-
-            a{
-                color: rgb(207, 203, 203);
-                font-family: Inter;
-                font-size: 16px;
-                font-weight: 400;
-                line-height: 19px;
-                letter-spacing: 0%;
-                text-align: left;
-                text-decoration: none;
-            }
+        h4 {
+          color: aliceblue;
+          font-family: "Istok Web", sans-serif;
+          font-size: 22.89px;
+          font-weight: 400;
+          line-height: 31px;
+          letter-spacing: -2%;
         }
+
+        ul {
+            padding: 0;
+          li {
+            list-style: none;
+
+            a {
+              text-decoration: none;
+              color: rgb(208, 196, 196);
+            }
+          }
+        }
+      }
     }
-   
   }
-  
+
+  .footer-bottom {
+    width: 100%;
+    display: flex;
+    gap: 54px;
+    margin-top: 120px;
+
+    p {
+      color: aliceblue;
+
+      a {
+        color: rgb(207, 203, 203);
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        letter-spacing: 0%;
+        text-align: left;
+        text-decoration: none;
+      }
+    }
+  }
+}

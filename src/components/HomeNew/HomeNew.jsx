@@ -6,7 +6,6 @@ function HomeNew() {
   return (
     <div className='main'>
       
-      
             <div className="hot">
               <h1>Новинки</h1>
               <div className="pereiti">Перейти</div>
@@ -140,9 +139,6 @@ function HomeNew() {
                   <h4>$Price</h4>
                 </div>
               </div>
-      
-      
-      
             </div>
       
     </div>

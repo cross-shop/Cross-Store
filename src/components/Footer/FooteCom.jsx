@@ -8,7 +8,7 @@ import linkedin from '../../assets/svg/linkedin.svg'
 function Footer() {
   return (
     <div className='footer'>
-      <div className="footer-container">
+      <div className="footer-container container">
         <div className="footer-brand">
           <h2>CROSS STORE</h2>
           <p>Ваш поставщик в мир лимитированного ассортимента с доставкой по всему миру</p>
@@ -57,7 +57,7 @@ function Footer() {
         </div>
       </div>
       
-      <div className="footer-bottom">
+      <div className="footer-bottom container">
         <p><Link to="/privacy">Политика конфиденциальности</Link> | <Link to="/terms">Пользовательское соглашение</Link></p>
         <p>Email: <a href="mailto:help@dealerclub.com">help@dealerclub.com</a> | <a href="mailto:info@dealermsk.com">info@dealermsk.com</a></p>
         <p>Телефон: <a href="tel:+79295550004">+7 (929) 555-00-04</a></p>

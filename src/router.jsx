@@ -19,6 +19,9 @@ import AdminLogin from "./admin/Login";
 import Dashboard from "./admin/Dashboard";
 import Access from "./pages/Access";
 import Bags from "./pages/Bags";
+import AddProduct from "./admin/Less";
+import ProductList from "./admin/View";
+import Profile from "./components/Profile";
 
 export const myRouter = createBrowserRouter([
   {
@@ -87,24 +90,33 @@ export const myRouter = createBrowserRouter([
         element: <AuthForm />,
       },
       {
-        path: 'accessories',
-        element: <Access/>
-    
+        path: "accessories",
+        element: <Access />,
       },
       {
-        path: 'bags',
-        element: <Bags/>
-    
-      }
+        path: "bags",
+        element: <Bags />,
+      },
     ],
   },
   {
     path: "/adminlogin",
-    element: <AdminLogin />
+    element: <AdminLogin />,
   },
   {
     path: "/dashboard",
-    element: <Dashboard />
+    element: <Dashboard />,
   },
- 
+  {
+    path: "/addproduct",
+    element: <AddProduct />,
+  },
+  {
+    path: "/productlist",
+    element: <ProductList />,
+  },
+  {
+    path: "/profile",
+    element: <Profile />,
+  },
 ]);

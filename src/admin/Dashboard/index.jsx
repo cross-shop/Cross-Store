@@ -1,4 +1,4 @@
-import "./Dashboard.css"; // Стиль файлын кошуу
+import "./Dashboard.css"; 
 
 function AdminDashboard({ userName, handleLogout }) {
   const confirmLogout = () => {
@@ -12,8 +12,9 @@ function AdminDashboard({ userName, handleLogout }) {
       <nav>
         <ul className="dul">
           <li>admin-home</li>
-          <li>add-product</li>
-          <li>products-page</li>
+          <li><a href="/addproduct">add-product</a></li>
+          <li><a href="/productlist">products-page</a></li>
+        <a href="/">home-client</a>
         </ul>
       </nav>
     </div>

@@ -88,7 +88,7 @@ const ProductList = () => {
 
   return (
     <div>
-      <a href="/dashboard">dashboard</a>
+      <a href="/admin">dashboard</a>
       <h2>Продуктылар тизмеси</h2>
       <ul style={{ listStyle: "none", padding: 0 }}>
         {products.map((product) => (

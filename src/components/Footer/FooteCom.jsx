@@ -12,7 +12,7 @@ function Footer() {
         <div className="footer-brand">
           <h2>CROSS STORE</h2>
           <p>Ваш поставщик в мир лимитированного ассортимента с доставкой по всему миру</p>
-          <div className="sait">
+         - <div className="sait">
             <img src={instagram} alt="" />
             <img src={twitter} alt="" />
             <img src={linkedin} alt="" />

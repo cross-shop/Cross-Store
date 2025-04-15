@@ -87,8 +87,8 @@ font-weight: 500;
 
       
       img{
-        width: 254px;
-        height: 230px;
+        width: 244px;
+        height: 220px;
         object-fit: cover;
       }
 
@@ -101,7 +101,7 @@ font-weight: 500;
   }
 }
 .drop-text {
-  margin-top: 5px;
+  margin-left: 13px;
   p {
     color: rgb(62, 62, 62);
     font-family: Inter;
@@ -111,7 +111,8 @@ font-weight: 500;
     letter-spacing: 0%;
     text-align: center;
      width: 233px;
-     height: 36px;
+    //  height: 36px;
+
 
   }
 
@@ -119,7 +120,7 @@ font-weight: 500;
       /* Цена */
 color: rgb(62, 62, 62);
 font-family: Ruberoid;
-font-size: 15.04px;
+font-size: 20.04px;
 font-weight: 700;
 line-height: 20px;
 letter-spacing: 0%;

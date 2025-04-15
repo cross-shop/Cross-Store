@@ -1,5 +1,6 @@
 import React from 'react';
 import './Homebrand.scss';
+import { NavLink } from 'react-router-dom';
 import air from './image/air.png';
 import nike from './image/nike.png';
 import yeezy from './image/yeezy.png';
@@ -25,6 +26,7 @@ import dior from './image/dior.png';
 import casio from './image/casio.png';
 import on from './image/on.png';
 
+
 const brands = [
   air, nike, yeezy, salomon, adidas, off, converse, nb,
   asics, vans, anta, fila, puma, crocs, ugg, under,
@@ -36,11 +38,182 @@ function Homebrand() {
     <div className='brand'>
       <h1>ПРЕДСТАВЛЕННЫЕ БРЕНДЫ</h1>
       <div className='all-brands'>
-        {brands.map((src, index) => (
+        {/* {brands.map((src, index) => (
           <div key={index} className='brand-img'>
             <img src={src} alt={`brand-${index}`} />
           </div>
-        ))}
+        ))} */}
+       <div className="brand-img">
+        <NavLink to={"/air"}>
+        <img src={air} alt="" />
+        </NavLink>
+
+       </div>
+
+       <div className="brand-img">
+        <NavLink to={"/air"}>
+        <img src={nike} alt="" />
+        </NavLink>
+       </div>
+       
+       <div className="brand-img">
+        <NavLink to={"/air"}>
+        <img src={yeezy} alt="" />
+        </NavLink>
+       </div>
+
+       <div className="brand-img">
+        <NavLink to={"/air"}>
+        <img src={salomon} alt="" />
+        </NavLink>
+       </div>
+
+
+       <div className="brand-img">
+        <NavLink to={"/air"}>
+        <img src={adidas} alt="" />
+        </NavLink>
+       </div>
+
+
+       <div className="brand-img">
+        <NavLink to={"/air"}>
+        <img src={off} alt="" />
+        </NavLink>
+       </div>
+
+
+       <div className="brand-img">
+        <NavLink to={"/air"}>
+        <img src={converse} alt="" />
+        </NavLink>
+       </div>
+
+
+       <div className="brand-img">
+        <NavLink to={"/air"}>
+        <img src={nb} alt="" />
+        </NavLink>
+       </div>
+
+
+       <div className="brand-img">
+        <NavLink to={"/air"}>
+        <img src={asics} alt="" />
+        </NavLink>
+       </div>
+
+
+       <div className="brand-img">
+        <NavLink to={"/air"}>
+        <img src={vans} alt="" />
+        </NavLink>
+       </div>
+
+
+       <div className="brand-img">
+        <NavLink to={"/air"}>
+        <img src={anta} alt="" />
+        </NavLink>
+       </div>
+
+
+       <div className="brand-img">
+        <NavLink to={"/air"}>
+        <img src={fila} alt="" />
+        </NavLink>
+       </div>
+
+
+       <div className="brand-img">
+        <NavLink to={"/air"}>
+        <img src={puma} alt="" />
+        </NavLink>
+       </div>
+
+
+       <div className="brand-img">
+        <NavLink to={"/air"}>
+        <img src={crocs} alt="" />
+        </NavLink>
+       </div>
+
+
+       <div className="brand-img">
+        <NavLink to={"/air"}>
+        <img src={ugg} alt="" />
+        </NavLink>
+       </div>
+
+
+       <div className="brand-img">
+        <NavLink to={"/air"}>
+        <img src={under} alt="" />
+        </NavLink>
+       </div>
+
+
+       <div className="brand-img">
+        <NavLink to={"/air"}>
+        <img src={li} alt="" />
+        </NavLink>
+       </div>
+
+       
+       <div className="brand-img">
+        <NavLink to={"/air"}>
+        <img src={gucci} alt="" />
+        </NavLink>
+       </div>
+
+       
+       <div className="brand-img">
+        <NavLink to={"/air"}>
+        <img src={one} alt="" />
+        </NavLink>
+       </div>
+
+
+       <div className="brand-img">
+        <NavLink to={"/air"}>
+        <img src={reebok} alt="" />
+        </NavLink>
+       </div>
+
+
+       <div className="brand-img">
+        <NavLink to={"/air"}>
+        <img src={sk} alt="" />
+        </NavLink>
+       </div>
+
+
+       <div className="brand-img">
+        <NavLink to={"/air"}>
+        <img src={dior} alt="" />
+        </NavLink>
+       </div>
+
+
+       <div className="brand-img">
+        <NavLink to={"/air"}>
+        <img src={casio} alt="" />
+        </NavLink>
+       </div>
+
+
+       <div className="brand-img">
+        <NavLink to={"/air"}>
+        <img src={on} alt="" />
+        </NavLink>
+       </div>
+
+
+
+
+
+
+
       </div>
     </div>
   );

@@ -86,19 +86,42 @@ function HomeCom() {
               )}
             </div>
             <div className="drop-text">
-              <p>{item.name}</p>
-              <h4>{item.price}c</h4>
+              <p>{item.price}</p>
+              <h4>{item.name}</h4>
             </div>
           </div>
         ))}
       </div>
 
-      <button className="scroll-arrow left-arrow" onClick={scrollLeft}>
-        &#8592;
-      </button>
-      <button className="scroll-arrow right-arrow" onClick={scrollRight}>
-        &#8594;
-      </button>
+
+      <div className="hot">
+        <h1>Новинки</h1>
+        <div className="pereiti">Перейти</div>
+      </div>
+
+      <div className="main-drops" ref={containerRef}>
+        {products.slice(0, 24).map((item) => (
+          <div className="drop" key={item.id}>
+            <Link to="/obuv">
+              <img src={item.avatar} alt={item.name} />
+            </Link>
+            <div className="new">
+              <p>HOT</p>
+            </div>
+            <div className="heart" onClick={() => handleToggleWish(item)}>
+              {wishlist.some((fav) => fav.id === item.id) ? (
+                <FaHeart color="red" size={24} />
+              ) : (
+                <FaRegHeart color="gray" size={24} />
+              )}
+            </div>
+            <div className="drop-text">
+            <p>{item.price}</p>
+            <h4>{item.name}</h4>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

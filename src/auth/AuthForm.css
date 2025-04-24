@@ -1,14 +1,12 @@
-/* Контейнер */
 .auth-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 75vh;
   background-color: #f4f4f4;
   margin-top: 100px;
 }
 
-/* Форма үчүн кутуча */
 .auth-box {
   background: #fff;
   padding: 20px;
@@ -18,13 +16,11 @@
   text-align: center;
 }
 
-/* Кирүү/Катталуу жазуусу */
 .auth-box h2 {
   margin-bottom: 20px;
   color: #333;
 }
 
-/* Кирүү талаалары */
 .input-group {
   text-align: left;
   margin-bottom: 15px;
@@ -43,7 +39,6 @@
   border-radius: 5px;
 }
 
-/* Кнопка */
 .auth-button {
   width: 100%;
   background: #007bff;
@@ -59,7 +54,6 @@
   background: #0056b3;
 }
 
-/* Төмөнкү текст (Табды которуу) */
 .toggle-text {
   margin-top: 10px;
   color: #007bff;

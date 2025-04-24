@@ -1,12 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-// LocalStorage'дан товарларды жана лайктарды алуу
 const loadFromLocalStorage = () => {
     const data = localStorage.getItem('cartItems');
     return data ? JSON.parse(data) : [];
 };
 
-// LocalStorage'га товарларды жана лайктарды сактоо
 const saveToLocalStorage = (data) => {
     localStorage.setItem('cartItems', JSON.stringify(data));
 };
@@ -14,26 +12,26 @@ const saveToLocalStorage = (data) => {
 const cartSlice = createSlice({
     name: 'carts',
     initialState: {
-        ali: loadFromLocalStorage() // Жүктөлгөн товарларды баштапкы абалга орнотуу
+        ali: loadFromLocalStorage() 
     },
     reducers: {
         addCart: (state, action) => {
-            state.ali.push({ ...action.payload, isLiked: false }); // isLiked'ти башында false кылып кошобуз
-            saveToLocalStorage(state.ali); // LocalStorage'га сактоо
+            state.ali.push({ ...action.payload, isLiked: false }); 
+            saveToLocalStorage(state.ali); 
         },
         removeCart: (state, action) => {
             state.ali = state.ali.filter(item => item.id !== action.payload);
-            saveToLocalStorage(state.ali); // LocalStorage'га сактоо
+            saveToLocalStorage(state.ali); 
         },
         toggleLike: (state, action) => {
             state.ali = state.ali.map(item =>
                 item.id === action.payload ? { ...item, isLiked: !item.isLiked } : item
             );
-            saveToLocalStorage(state.ali); // Лайк өзгөргөндө да LocalStorage'га сактайбыз
+            saveToLocalStorage(state.ali);
         },
         updateCart: (state, action) => {
             state.ali = action.payload;
-            saveToLocalStorage(state.ali); // LocalStorage'га сактоо
+            saveToLocalStorage(state.ali); 
         }
     }
 });

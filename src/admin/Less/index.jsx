@@ -4,8 +4,6 @@ const AddProduct = () => {
   const [name, setProductName] = useState("");
   const [avatar, setAvatar] = useState("");
   const [price, setPrice] = useState("");
-  const [category, setCategory] = useState("");
-  const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
 
   const handleSubmit = async (e) => {
@@ -16,7 +14,6 @@ const AddProduct = () => {
       avatar: avatar,
       price: price,
       id: Date.now().toString(),
-      category: category || "undefined",
     };
 
     try {
@@ -72,15 +69,8 @@ const AddProduct = () => {
         value={price}
         onChange={(e) => setPrice(e.target.value)}
       />
-      <input
-        type="text"
-        placeholder="Категория"
-        value={category}
-        onChange={(e) => setCategory(e.target.value)}
-      />
       <button type="submit">Продукт кошуу</button>
 
-      {/* Билдирүү бөлүмү */}
       {message && <p>{message}</p>}
     </form>
   );

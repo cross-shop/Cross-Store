@@ -1,20 +1,35 @@
-import React, { useState, useEffect, useRef } from 'react';
-import './Products.scss';
-import { Link } from 'react-router-dom';
-import { addCart } from '../../redux/cart/cartSlice';
-import { addWish,removeWish } from '../../redux/wish2/wishSlice';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState, useEffect, useRef, useMemo } from "react";
+import "./Products.scss";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addCart } from "../../redux/cart/cartSlice";
+import { addWish, removeWish } from "../../redux/wish2/wishSlice";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 const API = "https://66dfd7322fb67ac16f2740dd.mockapi.io/product";
 
 function Products() {
-  const wishlist = useSelector((state)=>state.wishlist.wishlist)
+  const wishlist = useSelector((state) => state.wishlist.wishlist);
   const [products, setProducts] = useState([]);
   const [cartMessage, setCartMessage] = useState("");
-  const [wishMessage, setWishMessage] = useState("")
+  const [wishMessage, setWishMessage] = useState("");
   const dispatch = useDispatch();
   const containerRef = useRef(null);
+
+  const wishlistIds = useMemo(
+    () => new Set(wishlist.map((item) => item.id)),
+    [wishlist]
+  );
+
+    const handleToggleWish = (item) => {
+      if (wishlistIds.has(item.id)) {
+        dispatch(removeWish(item.id));
+      } else {
+        dispatch(addWish(item));
+        setWishMessage("Товар добавлен в избранное");
+        setTimeout(() => setWishMessage(""), 2000);
+      }
+    };
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -23,7 +38,10 @@ function Products() {
         const data = await response.json();
 
         const likedItems = JSON.parse(localStorage.getItem("likedItems")) || [];
-        const updatedProducts = data.map((item) => ({
+
+        const filtered = data.filter((item) => item.category === "clothing");
+
+        const updatedProducts = filtered.map((item) => ({
           ...item,
           isLiked: likedItems.includes(item.id),
         }));
@@ -37,110 +55,51 @@ function Products() {
     fetchProducts();
   }, []);
 
-
-
-  const toggleLike = (item) => {
-    if (wishlist.some((fav) => fav.id === item.id)) {
-      dispatch(removeWish(item.id));
-    } else {
-      dispatch(addWish(item));
-    }
+  const handleAddToCart = (item) => {
+    dispatch(addCart(item));
+    setCartMessage("Товар добавлен в корзину");
+    setTimeout(() => setCartMessage(""), 2000);
   };
-
-  // const toggleLike = (id) => {
-  //   setProducts((prevProducts) => {
-  //     const updatedProducts = prevProducts.map((item) =>
-  //       item.id === id ? { ...item, isLiked: !item.isLiked } : item
-  //     );
-
-  //     const likedItems = updatedProducts
-  //       .filter((item) => item.isLiked)
-  //       .map((item) => item.id);
-
-  //     localStorage.setItem("likedItems", JSON.stringify(likedItems));
-  //     return updatedProducts;
-  //   });
-  // };
 
   const scrollLeft = () => {
     if (containerRef.current) {
-      containerRef.current.scrollBy({
-        left: -900,
-        behavior: 'smooth',
-      });
+      containerRef.current.scrollBy({ left: -900, behavior: "smooth" });
     }
   };
 
   const scrollRight = () => {
     if (containerRef.current) {
-      containerRef.current.scrollBy({
-        left: 900,
-        behavior: 'smooth',
-      });
+      containerRef.current.scrollBy({ left: 900, behavior: "smooth" });
     }
   };
 
-  const handleAddToCart = (item) => {
-    dispatch(addCart(item));
-    setCartMessage("Товар добавлен в корзину");
-
-
-
-    setTimeout(() => {
-      setCartMessage("");
-    }, 2000);
-  };
-
-
-
-    
-
-  const handleAddToWish = (item) => {
-    dispatch(addWish(item));
-    setWishMessage("Товар добавлен в избранное");
-
-    setTimeout(() => {
-      setWishMessage("");
-    }, 2000);
-  };
-
-
-
-
   return (
-    <div className='ali container'>
-      {cartMessage && (
-        <div className="cart-message">
-          {cartMessage}
-        </div>
-      )}
-      {wishMessage && (
-        <div className="wish-message">
-          {wishMessage}
-        </div>
-      )}
+    <div className="ali container">
+      {cartMessage && <div className="cart-message">{cartMessage}</div>}
+      {wishMessage && <div className="wish-message">{wishMessage}</div>}
 
-      <div className='main1-kros' ref={containerRef}>
-        {products.slice(0, 24).map((item) => (
-          <div key={item.id}>
-            <div className='kros1'>
-              <div className='mm'>
+      <div className="main1-kros" ref={containerRef}>
+        {products.length > 0 ? (
+          products.map((item) => (
+            <div key={item.id} className="kros1">
+              <div className="mm">
                 <Link to={"/obuv"}>
-                  <img src={item.avatar} alt="" />
+                  <img src={item.avatar} alt={item.name} />
                 </Link>
               </div>
-
-              <div className='pw1'></div>
-              <br />
-              <div className='main-top1'>
+              <div className="main-top1">
                 <p>{item.name}</p>
                 <h5>{item.price}c</h5>
               </div>
-              <div className='product-bottom'>
-                <button onClick={() => handleAddToCart(item)}>Add to cart</button>
-
-                <div className='icon-like' onClick={() => handleAddToWish(item)}> 
-                  {wishlist.some((fav) => fav.id === item.id) ? (
+              <div className="product-bottom">
+                <button onClick={() => handleAddToCart(item)}>
+                  Add to cart
+                </button>
+                <div
+                  className="icon-like"
+                  onClick={() => handleToggleWish(item)}
+                >
+                  {wishlistIds.has(item.id) ? (
                     <FaHeart color="red" size={24} />
                   ) : (
                     <FaRegHeart color="gray" size={24} />
@@ -148,8 +107,10 @@ function Products() {
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <p>Продукты табылган жок же жүктөлүүдө...</p>
+        )}
       </div>
 
       <button className="scroll-arrow left-arrow" onClick={scrollLeft}>
@@ -163,6 +124,3 @@ function Products() {
 }
 
 export default Products;
-
-
-

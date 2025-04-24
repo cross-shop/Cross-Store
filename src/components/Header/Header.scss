@@ -22,25 +22,44 @@ body {
     top: -100px;
   }
 
-  .header-top {
-    width: 100%;
-    pointer-events: all;
-    height: 40px;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    padding-top: 5px;
-    background: rgb(0, 0, 0);
 
-    p {
-      font-size: 0.714286rem;
-      font-family: "Proxima Nova", "Helvetica Neue", Verdana, Arial, sans-serif;
-      letter-spacing: 0.0714286rem;
-      line-height: 18px;
-      font-weight: 600;
-      text-transform: uppercase;
-      display: inline;
-      color: inherit;
-    }
+    .header-top {
+      width: 100%;
+      pointer-events: all;
+      height: 40px;
+      color: rgb(255, 255, 255);
+      text-align: center;
+      padding-top: 5px;
+      background: rgb(0, 0, 0);
+      overflow: hidden; // добавим чтобы скрыть вылетающий текст
+    
+      .ticker-text {
+        display: inline-block;
+        white-space: nowrap;
+        padding-left: 100%;
+        animation: ticker-scroll 20s linear infinite;
+        font-size: 0.714286rem;
+        font-family: "Proxima Nova", "Helvetica Neue", Verdana, Arial, sans-serif;
+        letter-spacing: 0.0714286rem;
+        line-height: 18px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: inherit;
+      }
+    
+      @keyframes ticker-scroll {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+    
+
+
+
+
   }
   .header-middle {
     .middle-svg {

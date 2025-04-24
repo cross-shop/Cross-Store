@@ -21,9 +21,11 @@ function Header() {
 
   return (
     <header className="header">
-      <div className="header-top">
-        <p>Mid-Season Sale - Up To 40% Off - Shop Online & In-Store</p>
-      </div>
+     <div className="header-top">
+  <div className="ticker-text">
+    Mid-Season Sale - Up To 40% Off - Shop Online & In-Store
+  </div>
+</div>
 
       <div className="header-middle container">
         <div className="middle-svg">

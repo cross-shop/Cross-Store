@@ -85,8 +85,8 @@ function HomeCom() {
               )}
             </div>
             <div className="drop-text">
-              <p>{item.name}</p>
-              <h4>{item.price}c</h4>
+              <p>{item.price}</p>
+              <h4>{item.name}</h4>
             </div>
           </div>
         ))}
@@ -104,6 +104,7 @@ function HomeCom() {
       >
         &#8594;
       </button>
+
     </div>
   );
 }

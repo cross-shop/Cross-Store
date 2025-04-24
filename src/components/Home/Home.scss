@@ -74,6 +74,38 @@
         font-weight: bold;
       }
 
+    }
+
+
+    
+  }
+}
+.drop-text {
+  margin-left: 13px;
+  p {
+    color: rgb(62, 62, 62);
+    font-family: Inter;
+    font-size: 15.04px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: center;
+    width: 233px;
+  }
+
+  h4 {
+color: rgb(62, 62, 62);
+font-family: Ruberoid;
+font-size: 20.04px;
+font-weight: 700;
+line-height: 20px;
+letter-spacing: 0%;
+text-align: center;
+
+  }
+
+  &:hover {
+
       .heart {
         position: absolute;
         top: 10px;

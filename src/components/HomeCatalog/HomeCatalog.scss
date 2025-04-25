@@ -1,116 +1,172 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
-.img{
-    width: 1318px;
+.img {
+  width: 1318px;
+  display: flex;
+  gap: 22px;
+  margin: 0 auto;
+  margin-top: 89px;
+  flex-wrap: wrap; // бул мобилдикте колонкага өтүүсүнө жардам берет
+
+  .clothes,
+  .shoes,
+  .image {
+    flex: 1 1 383px;
+  }
+
+  .clothes {
+    margin-left: 60px;
+    position: relative;
+
+    a {
+      text-decoration: none;
+
+      p {
+        font-size: 45px;
+        color: white;
+        font-weight: 500;
+        line-height: 48px;
+        font-family: "Inter", sans-serif;
+        text-align: left;
+        position: absolute;
+        bottom: 0;
+        left: 30px;
+      }
+    }
+
+    img {
+      width: 383px;
+      height: 470px;
+      object-fit: contain;
+      border-radius: 13px;
+    }
+  }
+
+  .shoes {
+    position: relative;
+
+    img {
+      width: 383px;
+      height: 470px;
+      object-fit: cover;
+      border-radius: 13px;
+    }
+
+    a {
+      text-decoration: none;
+      position: relative;
+
+      p {
+        font-size: 45px;
+        color: white;
+        font-weight: 500;
+        line-height: 48px;
+        font-family: "Inter", sans-serif;
+        text-align: left;
+        position: absolute;
+        top: 186px;
+        right: 230px;
+      }
+    }
+  }
+
+  .image {
     display: flex;
+    flex-direction: column;
     gap: 22px;
-    margin: 0 auto;
-    margin-top: 89px;
+    position: relative;
 
-    .clothes{
-        margin-left: 60px;
-        position: relative;
+    .i1 {
+      position: relative;
 
-        a{
-            text-decoration: none;
+      a {
+        text-decoration: none;
+        position: absolute;
+        left: 23px;
+        top: 77px;
 
-           
-            p{
-                font-size: 45px;
-                color: rgb(255, 255, 255);
-                font-weight: 500;
-                line-height: 48px;
-                font-family: "Inter", sans-serif;
-                text-align: left;
-                position: absolute;
-                bottom: 0;
-                left: 30px;
-
-                
-            }
+        p {
+          color: white;
+          font-family: Inter;
+          font-size: 40px;
+          font-weight: 500;
+          line-height: 48px;
+          letter-spacing: -2%;
+          text-align: left;
         }
-       
-
-
-        img{
-            width: 383px;
-            height: 470px;
-            object-fit: contain;
-            border-radius: 13px;
-            
-
-        }
-    }
-    .shoes{
-        position: relative;
-
-        img{
-            width: 383px;
-            height: 470px;
-            object-fit: cover;
-            border-radius: 13px;
-
-        }
-
-        a{
-            text-decoration: none;
-            position: relative;
-
-            p{
-                
-                font-size: 45px;
-                color: rgb(255, 255, 255);
-                font-weight: 500;
-                line-height: 48px;
-                font-family: "Inter", sans-serif;
-                text-align: left;
-                position: absolute;
-                top: 186px;
-                right: 230px;
-               
-
-            }
-        }
+      }
     }
 
-    .image{
-        display: flex;
-        flex-direction: column;
-        gap: 22px;
-        position: relative;
-
-        .i1{
-            position: relative;
-
-            a{
-                text-decoration: none;
-                position: absolute;
-                left: 23px;
-                top: 77px;
-
-
-
-                p{
-
-                    color: rgb(255, 255, 255);
-                    font-family: Inter;
-                    font-size: 40px;
-                    font-weight: 500;
-                    line-height: 48px;
-                    letter-spacing: -2%;
-                    text-align: left;
-
-                }
-            }
-
-        }
-
-        img{
-            width: 383px;
-            height: 142px;
-            object-fit: cover;
-            border-radius: 13px;
-        }
+    img {
+      width: 383px;
+      height: 142px;
+      object-fit: cover;
+      border-radius: 13px;
     }
-    
+  }
+
+  // 1024px чейин планшет
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    justify-content: center;
+
+    .clothes,
+    .shoes,
+    .image {
+      margin-left: 0;
+      margin-bottom: 20px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      a p {
+        font-size: 28px;
+        line-height: 34px;
+      }
+    }
+
+    .shoes a p {
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+    }
+  }
+
+  // 768px чейин мобилдик
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    .clothes,
+    .shoes,
+    .image {
+      width: 90%;
+      text-align: center;
+
+      a p {
+        font-size: 24px;
+        left: 10px;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .image .i1 a p {
+      font-size: 24px;
+      top: 20px;
+      left: 15px;
+    }
+
+    .shoes a p {
+      font-size: 24px;
+      right: 10px;
+      top: 40%;
+    }
+  }
 }

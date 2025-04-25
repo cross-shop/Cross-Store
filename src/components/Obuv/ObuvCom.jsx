@@ -89,7 +89,7 @@ function ObuvCom() {
             <img src={selectedImage} alt="Main product" />
           </div>
           <div className='obuv-2img'>
-            {products.slice(0, 7).map((product, index) => (
+            {products.map((product, index) => (
               <img key={index} src={product.avatar || obuv1} alt={`Product ${index}`}
                 onClick={() => setSelectedImage(product.avatar || obuv1)}
               />

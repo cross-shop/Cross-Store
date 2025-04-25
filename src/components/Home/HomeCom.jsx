@@ -57,7 +57,7 @@ function HomeCom() {
   const foodProducts = products.filter((item) => item.category === "food");
 
   return (
-    <div className="main">
+    <div className="main container">
       {message && <div className="wish-message">{message}</div>}
       {error && <div className="error-message">{error}</div>}
 
@@ -85,11 +85,16 @@ function HomeCom() {
               )}
             </div>
             <div className="drop-text">
-              <p>{item.price}</p>
-              <h4>{item.name}</h4>
+              <p>{item.name}</p>
+              <h4>{item.price}c</h4>
             </div>
           </div>
         ))}
+        {foodProducts.length === 0 && (
+          <p style={{ textAlign: "center", width: "100%", marginTop: "2rem" }}>
+            Азырынча продуктылар жок...
+          </p>
+        )}
       </div>
 
       <button
@@ -104,8 +109,8 @@ function HomeCom() {
       >
         &#8594;
       </button>
-
     </div>
   );
 }
+
 export default HomeCom;

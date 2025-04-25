@@ -40,11 +40,11 @@
     }
 
     .drop {
-      background: linear-gradient(145deg, #ffffff, #f0f0f0);
+      background: #fffefe;
       border-radius: 12px;
       padding: 20px;
       margin: 15px;
-      min-width: 260px;
+      max-width: 260px;
       height: 360px;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -162,7 +162,7 @@ text-align: center;
   .right-arrow {
     right: 0;
   }
-}
+
 
 .wish-message {
   position: fixed;

@@ -1,275 +1,267 @@
 .nurtilek08 {
-    width: 1440px; 
-    height: 70px;
-    margin: 0 auto; 
-    position: relative;    
-    background: rgb(241, 241, 241);
-   
-    .header39gg{
-        position: absolute;
-        top: 28px;
-        left: 120px;
-        display: flex;
-        justify-content: space-around;
-        .header39-left{
-            
-            ul { 
-                display: flex;
-                gap: 25px;
-                list-style: none;
-            
-                li {
-                    a {
-                        color: black;
-                        font-family: Inter;
-                        font-size: 12.25px;
-                        font-weight: 400;
-                        line-height: 15px;
-                        letter-spacing: 1%;
-                        text-align: left;
-                        text-decoration: none !important;
-                    }
-                }
-                p{
-    
-    color: black;
-    padding-left: 134px;
-    padding-top: 3px;
-                }
-            }
-            
-        }
-        .header39-img{
-            width: 105.84px;
-height: 26px;
-display: flex;
-gap: 26px;
-margin-left: 400px;
-img{
-    width: 22.84px;
-height: 21.5px;
+  width: 1440px;
+  height: 70px;
+  margin: 0 auto;
+  position: relative;
+  background: rgb(241, 241, 241);
 
-}
-        }
-    }
-
-}
-.ali{
-    margin-top: 65px;
-    .ali2{
-        display: flex;
-
-    }
-    .ali3{
-        display: flex;
-        align-items: center;
-        gap: 883px;
-        button{
-            width: 187.7px;
-height: 52.88px;
-border-radius: 100px;
-
-background: rgb(232, 232, 232);
-        }
-    }
-}
-.fotos{
+  .header39gg {
+    position: absolute;
+    top: 28px;
+    left: 120px;
     display: flex;
+    justify-content: space-around;
+    .header39-left {
+      ul {
+        display: flex;
+        gap: 25px;
+        list-style: none;
+
+        li {
+          a {
+            color: black;
+            font-family: Inter;
+            font-size: 12.25px;
+            font-weight: 400;
+            line-height: 15px;
+            letter-spacing: 1%;
+            text-align: left;
+            text-decoration: none !important;
+          }
+        }
+        p {
+          color: black;
+          padding-left: 134px;
+          padding-top: 3px;
+        }
+      }
+    }
+    .header39-img {
+      width: 105.84px;
+      height: 26px;
+      display: flex;
+      gap: 26px;
+      margin-left: 400px;
+      img {
+        width: 22.84px;
+        height: 21.5px;
+      }
+    }
+  }
+}
+.ali {
+  margin-top: 65px;
+  .ali2 {
+    display: flex;
+  }
+  .ali3 {
+    display: flex;
+    align-items: center;
+    gap: 883px;
+    button {
+      width: 187.7px;
+      height: 52.88px;
+      border-radius: 100px;
+
+      background: rgb(232, 232, 232);
+    }
+  }
+}
+.fotos {
+  display: flex;
+  gap: 20px;
+
+  img {
+    width: 285px;
+    height: 215px;
+  }
+}
+.main1-Nike1 {
+  margin-top: 95px;
+
+  p {
+    color: rgb(0, 0, 0);
+    font-family: Ruberoid;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 54px;
+    letter-spacing: -2%;
+    text-align: center;
+  }
+  .Nike1 {
+    display: flex;
+    margin-top: 25px;
     gap: 20px;
 
-    img{
-        width: 285px;
-        height: 215px;
+    h1 {
+      color: rgb(0, 0, 0);
+      font-family: Effloresce;
+      font-size: 80.57px;
+      font-weight: 400;
+      line-height: 98px;
+      letter-spacing: -2%;
+      text-align: center;
     }
+
+    .Nike1-1 {
+      display: flex;
+      align-items: center;
+      h2 {
+        width: 448px;
+        height: 0;
+        border: 1px solid rgb(216, 216, 216);
+      }
+    }
+    .Nike1-2 {
+      display: flex;
+      align-items: center;
+      h2 {
+        width: 448px;
+        height: 0;
+        border: 1px solid rgb(216, 216, 216);
+      }
+    }
+  }
 }
-.main1-Nike1{
-    margin-top: 95px;
+.main-mixer {
+  display: flex;
+  gap: 21px;
 
-    p{
-        color: rgb(0, 0, 0);
-font-family: Ruberoid;
-font-size: 40px;
-font-weight: 400;
-line-height: 54px;
-letter-spacing: -2%;
-text-align: center;
+  .mixer1 {
+    position: relative;
+    img {
+      width: 387px;
+      height: 534px;
     }
-    .Nike1{
-        display: flex;
-        margin-top: 25px;
-        gap: 20px;
-
-        h1{
-            color: rgb(0, 0, 0);
-font-family: Effloresce;
-font-size: 80.57px;
-font-weight: 400;
-line-height: 98px;
-letter-spacing: -2%;
-text-align: center;
-        }
-
-        .Nike1-1{
-            display: flex;
-            align-items: center;
-            h2{
-                width: 448px;
-height: 0;
-border: 1px solid rgb(216, 216, 216);
-            }
-        }
-        .Nike1-2{
-            display: flex;
-            align-items: center;
-            h2{
-                width: 448px;
-height: 0;
-border: 1px solid rgb(216, 216, 216);
-            }
-        }
+    p {
+      color: rgb(255, 255, 255);
+      font-family: Ruberoid;
+      font-size: 22.99px;
+      font-weight: 400;
+      line-height: 100%;
+      letter-spacing: -5%;
+      text-align: left;
+      text-transform: uppercase;
+      position: absolute;
+      left: 28px;
+      bottom: 19px;
     }
+    .mixer1-img {
+      position: absolute;
+      top: 17px;
+      right: 23px;
+
+      img {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+  .mixer2 {
+    position: relative;
+    img {
+      width: 387px;
+      height: 534px;
+    }
+    p {
+      color: rgb(255, 255, 255);
+      font-family: Ruberoid;
+      font-size: 22.99px;
+      font-weight: 400;
+      line-height: 100%;
+      letter-spacing: -5%;
+      text-align: left;
+      text-transform: uppercase;
+      position: absolute;
+      left: 27px;
+      top: 29px;
+    }
+    .mixer1-img {
+      position: absolute;
+      top: 17px;
+      right: 23px;
+
+      img {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
 }
-.main-mixer{
+.main1-catolog2 {
+  position: relative;
+  margin-top: 28px;
+  img {
+    width: 1200px;
+    height: 333px;
+  }
+  h1 {
+    position: absolute;
+    top: 46px;
+    left: 43px;
+    color: rgb(255, 255, 255);
+    font-family: Ruberoid;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 54px;
+    letter-spacing: -2%;
+    text-align: left;
+  }
+  p {
+    position: absolute;
+    left: 43px;
+    top: 115px;
+    color: rgb(255, 255, 255);
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: left;
+  }
 
+  .catolog2-input1 {
     display: flex;
-    gap: 21px;
+    position: absolute;
+    gap: 9px;
+    bottom: 24px;
+    left: 43px;
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-.mixer1{
-    position: relative;
-    img{
-        width: 387px;
-height: 534px;
+      border-radius: 35px;
+
+      background: linear-gradient(
+        80.91deg,
+        rgb(249, 248, 247) 0.49%,
+        rgb(255, 255, 255) 99.53%
+      );
+
+      width: 205px;
+      height: 55px;
+
+      color: rgb(0, 0, 0);
+      font-family: Inter;
+      font-size: 13.2px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0%;
+      text-align: left;
     }
-    p{
-        color: rgb(255, 255, 255);
-font-family: Ruberoid;
-font-size: 22.99px;
-font-weight: 400;
-line-height: 100%;
-letter-spacing: -5%;
-text-align: left;
-text-transform: uppercase;
-position: absolute;
-left: 28px;
-bottom: 19px;
+    input {
+      width: 232px;
+      border-radius: 100px;
+
+      background: rgb(255, 255, 255);
+      height: 55px;
     }
-    .mixer1-img{
-        position: absolute;
-        top: 17px;
-        right: 23px;
-
-        img{
-            width: 35px;
-height: 35px;
-        }
-    }
-}
-.mixer2{
-    position: relative;
-    img{
-        width: 387px;
-height: 534px;
-    }
-    p{
-        color: rgb(255, 255, 255);
-font-family: Ruberoid;
-font-size: 22.99px;
-font-weight: 400;
-line-height: 100%;
-letter-spacing: -5%;
-text-align: left;
-text-transform: uppercase;
-position: absolute;
-left: 27px;
-top: 29px;
-    }
-    .mixer1-img{
-        position: absolute;
-        top: 17px;
-        right: 23px;
-
-        img{
-            width: 35px;
-height: 35px;
-        }
-    }
-}
-}
-.main1-catolog2{
-    position: relative;
-    margin-top: 28px;
-     img{
-        width: 1200px;
-height: 333px;
-     }
-     h1{
-        position: absolute;
-        top: 46px;
-        left: 43px;
-        color: rgb(255, 255, 255);
-        font-family: Ruberoid;
-        font-size: 40px;
-        font-weight: 400;
-        line-height: 54px;
-        letter-spacing: -2%;
-        text-align: left;
-     }
-     p{
-        position: absolute;
-        left: 43px;
-        top: 115px;
-        color: rgb(255, 255, 255);
-        font-family: Inter;
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 22px;
-        text-align: left;
-     }
-    
-     .catolog2-input1{
-        display: flex;
-            position: absolute;
-            gap: 9px;
-            bottom: 24px;
-            left: 43px;
-        button{
-        
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-          
-
-            border-radius: 35px;
-
-            background: linear-gradient(80.91deg, rgb(249, 248, 247) 0.49%,rgb(255, 255, 255) 99.53%);
-
-            width: 205px;
-            height: 55px;
-
-color: rgb(0, 0, 0);
-font-family: Inter;
-font-size: 13.2px;
-font-weight: 400;
-line-height: 16px;
-letter-spacing: 0%;
-text-align: left;
-         }
-         input{
-            width: 232px;
-            border-radius: 100px;
-
-background: rgb(255, 255, 255);
-height: 55px;
-         }
-         color: rgb(217, 217, 217);
-font-family: Inter;
-font-size: 17px;
-font-weight: 400;
-line-height: 21px;
-letter-spacing: -2%;
-text-align: center;
-
-
-     }
+    color: rgb(217, 217, 217);
+    font-family: Inter;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: -2%;
+    text-align: center;
+  }
 }

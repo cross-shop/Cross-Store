@@ -1,112 +1,132 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { FaHeart, FaRegHeart } from "react-icons/fa";
-import { addWish, removeWish } from "../../redux/wish2/wishSlice";
-import { Link } from "react-router-dom";
 import "./Home.scss";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addCart } from "../../redux/cart/cartSlice";
+import { addWish, removeWish } from "../../redux/wish2/wishSlice";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 const API = "https://66dfd7322fb67ac16f2740dd.mockapi.io/product";
 
 function HomeCom() {
+  const wishlist = useSelector((state) => state.wishlist.wishlist);
   const [products, setProducts] = useState([]);
-  const [message, setMessage] = useState("");
-  const [error, setError] = useState("");
+  const [cartMessage, setCartMessage] = useState("");
+  const [wishMessage, setWishMessage] = useState("");
+  const dispatch = useDispatch();
   const containerRef = useRef(null);
 
-  const dispatch = useDispatch();
-  const wishlist = useSelector((state) => state.wishlist.wishlist);
   const wishlistIds = useMemo(
     () => new Set(wishlist.map((item) => item.id)),
     [wishlist]
   );
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await fetch(API);
-        const data = await response.json();
-        setProducts(data);
-      } catch (err) {
-        console.error("Ошибка при загрузке продуктов:", err);
-        setError("Не удалось загрузить продукты.");
-      }
-    };
-
-    fetchProducts();
-  }, []);
 
   const handleToggleWish = (item) => {
     if (wishlistIds.has(item.id)) {
       dispatch(removeWish(item.id));
     } else {
       dispatch(addWish(item));
-      setMessage("Добавлено в избранное");
-      setTimeout(() => setMessage(""), 2000);
+      setWishMessage("Товар добавлен в избранное");
+      setTimeout(() => setWishMessage(""), 2000);
     }
   };
 
-  const scrollContainer = (direction) => {
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch(API);
+        const data = await response.json();
+
+        const likedItems = JSON.parse(localStorage.getItem("likedItems")) || [];
+
+        const filtered = data.filter((item) => item.category === "food");
+
+        const updatedProducts = filtered.map((item) => ({
+          ...item,
+          isLiked: likedItems.includes(item.id),
+        }));
+
+        setProducts(updatedProducts);
+      } catch (error) {
+        console.error("Ошибка при загрузке данных:", error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  const handleAddToCart = (item) => {
+    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+    const itemExists = cartItems.some((cartItem) => cartItem.id === item.id);
+
+    if (itemExists) {
+      setCartMessage("Товар уже в корзине");
+      setTimeout(() => setCartMessage(""), 2000);
+      return;
+    }
+
+    dispatch(addCart(item));
+    setCartMessage("Товар добавлен в корзину");
+    setTimeout(() => setCartMessage(""), 2000);
+  };
+
+  const scrollLeft = () => {
     if (containerRef.current) {
-      containerRef.current.scrollBy({
-        left: direction === "left" ? -900 : 900,
-        behavior: "smooth",
-      });
+      containerRef.current.scrollBy({ left: -900, behavior: "smooth" });
     }
   };
 
-  const foodProducts = products.filter((item) => item.category === "food");
+  const scrollRight = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollBy({ left: 900, behavior: "smooth" });
+    }
+  };
 
   return (
-    <div className="main container">
-      {message && <div className="wish-message">{message}</div>}
-      {error && <div className="error-message">{error}</div>}
+    <div className="ali container">
+      {cartMessage && <div className="cart-message">{cartMessage}</div>}
+      {wishMessage && <div className="wish-message">{wishMessage}</div>}
 
-      <div className="hot">
-        <h1>Самое популярное сейчас</h1>
-        <Link to="/popular" className="pereiti">
-          Перейти
-        </Link>
-      </div>
-
-      <div className="main-drops" ref={containerRef}>
-        {foodProducts.map((item) => (
-          <div className="drop" key={item.id}>
-            <Link to="/obuv">
-              <img src={item.avatar} alt={item.name} />
-            </Link>
-            <div className="new">
-              <p>HOT</p>
+      <div className="main1-kros" ref={containerRef}>
+        {products.length > 0 ? (
+          products.map((item) => (
+            <div key={item.id} className="kros1">
+              <div className="mm">
+                <Link to={"/obuv"}>
+                  <img src={item.avatar} alt={item.name} />
+                </Link>
+              </div>
+              <div className="main-top1">
+                <p>{item.name}</p>
+                <h5>{item.price}c</h5>
+              </div>
+              <div className="product-bottom">
+                <button onClick={() => handleAddToCart(item)}>
+                  Add to cart
+                </button>
+                <div
+                  className="icon-like"
+                  onClick={() => handleToggleWish(item)}
+                >
+                  {wishlistIds.has(item.id) ? (
+                    <FaHeart color="red" size={24} />
+                  ) : (
+                    <FaRegHeart color="gray" size={24} />
+                  )}
+                </div>
+              </div>
             </div>
-            <div className="heart" onClick={() => handleToggleWish(item)}>
-              {wishlistIds.has(item.id) ? (
-                <FaHeart color="red" size={24} />
-              ) : (
-                <FaRegHeart color="gray" size={24} />
-              )}
-            </div>
-            <div className="drop-text">
-              <p>{item.name}</p>
-              <h4>{item.price}c</h4>
-            </div>
-          </div>
-        ))}
-        {foodProducts.length === 0 && (
-          <p style={{ textAlign: "center", width: "100%", marginTop: "2rem" }}>
-            Азырынча продуктылар жок...
-          </p>
+          ))
+        ) : (
+          <p>Продукты табылган жок же жүктөлүүдө...</p>
         )}
       </div>
 
-      <button
-        className="scroll-arrow left-arrow"
-        onClick={() => scrollContainer("left")}
-      >
+      <button className="scroll-arrow left-arrow" onClick={scrollLeft}>
         &#8592;
       </button>
-      <button
-        className="scroll-arrow right-arrow"
-        onClick={() => scrollContainer("right")}
-      >
+      <button className="scroll-arrow right-arrow" onClick={scrollRight}>
         &#8594;
       </button>
     </div>

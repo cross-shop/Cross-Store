@@ -1,105 +1,52 @@
 .acces {
-    width: 1440px;
-    height: auto;
-    margin: 0 auto;
-    margin-top: 165px;
+  width: 1440px;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 165px;
 
+  .top-access {
+    display: flex;
+    padding-left: 20px;
+    height: 100px;
+    background: white;
+    position: relative;
+    align-items: center;
+    border-bottom: 1px solid rgb(242, 242, 242);
 
-  
-  
-    .top-access {
-      display: flex;
-      padding-left: 20px;
-      height: 100px;
-      background: white;
-      position: relative;
-      align-items: center;
-      border-bottom: 1px solid rgb(242, 242, 242);
-  
-      .link {
-        a {
-          text-decoration: none;
-          color: rgb(26, 26, 26);
-        }
-      }
-  
-      .as-logo {
-        position: absolute;
-        left: 700px;
-  
-        h2 {
-          font-family: "Proxima Nova", "Helvetica Neue", Verdana, Arial;
-          font-weight: 400;
-          color: rgb(26, 26, 26);
-        }
+    .link {
+      a {
+        text-decoration: none;
+        color: rgb(26, 26, 26);
       }
     }
-  
-    .middle-access {
-      .as-text {
+
+    .as-logo {
+      position: absolute;
+      left: 700px;
+
+      h2 {
+        font-family: "Proxima Nova", "Helvetica Neue", Verdana, Arial;
+        font-weight: 400;
+        color: rgb(26, 26, 26);
+      }
+    }
+  }
+
+  .middle-access {
+    .as-text {
+      display: flex;
+      padding-left: 40px;
+      justify-content: space-between;
+
+      .as-category {
         display: flex;
-        padding-left: 40px;
-        justify-content: space-between;
-  
-        .as-category {
+
+        .option-br {
           display: flex;
-          // position: relative;
-          
-  
-          .option-br {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-  
-            select,
-            input {
-              width: 240px;
-              height: 36px;
-              border: 1px solid rgb(242, 242, 242);
-              padding: 6px;
-              background-position: right 8px center;
-            }
-       
-            input {
-              // background-size: 12px;
-              width: 20px;
-              margin-top: -4px;
-              
-            }
+          flex-direction: column;
+          gap: 24px;
 
-
-            
-          }
-
-          
-  
-          .as-check {
-            display: flex;
-            flex-direction: column;
-            overflow-y: scroll;
-            height: 500px;
-            width: 300px;
-  
-            .check {
-              display: flex;
-              gap: 10px;
-  
-              input {
-                width: 18px;
-                height: 18px;
-              }
-  
-              p {
-                font-size: 13px;
-              }
-            }
-          }
-        }
-  
-        .as-search {
-          width: 240px;
-          position: relative;
-
+          select,
           input {
             width: 240px;
             height: 36px;
@@ -107,38 +54,75 @@
             padding: 6px;
             background-position: right 8px center;
           }
-  
-          img {
-            position: absolute;
-            left: 210px;
-            bottom: 25px;
+
+          input {
+            width: 20px;
+            margin-top: -4px;
           }
         }
 
-        .as-img{
-          width: 1000px;
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          // margin-top: -60px;
-        
-
-
-          img{
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-          }
-        }
-  
-        .vid-o {
+        .as-check {
           display: flex;
-          gap: 15px;
-  
-          select {
-            border: none;
+          flex-direction: column;
+          overflow-y: scroll;
+          height: 500px;
+          width: 300px;
+
+          .check {
+            display: flex;
+            gap: 10px;
+
+            input {
+              width: 18px;
+              height: 18px;
+            }
+
+            p {
+              font-size: 13px;
+            }
           }
+        }
+      }
+
+      .as-search {
+        width: 240px;
+        position: relative;
+
+        input {
+          width: 240px;
+          height: 36px;
+          border: 1px solid rgb(242, 242, 242);
+          padding: 6px;
+          background-position: right 8px center;
+        }
+
+        img {
+          position: absolute;
+          left: 210px;
+          bottom: 25px;
+        }
+      }
+
+      .as-img {
+        width: 1000px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        img {
+          width: 200px;
+          height: 200px;
+          object-fit: cover;
+        }
+      }
+
+      .vid-o {
+        display: flex;
+        gap: 15px;
+
+        select {
+          border: none;
         }
       }
     }
   }
-  
+}

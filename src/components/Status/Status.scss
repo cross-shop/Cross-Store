@@ -39,7 +39,6 @@
     }
   }
 
-  /* Модалдын стили */
   .modal {
     position: fixed;
     top: 0;
@@ -65,7 +64,7 @@
   .modal-image {
     width: 100%;
     height: auto;
-    max-width: 600px; /* Сүрөттү орнотуу */
+    max-width: 600px;
     border-radius: 8px;
   }
 

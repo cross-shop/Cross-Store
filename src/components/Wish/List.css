@@ -4,14 +4,8 @@
   margin: 0 auto;
   width: 1400px;
   margin-top: 175px;
-
- 
-  
-
-
 }
 .merch {
-
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   transition: opasity 0.6s ease;
@@ -31,7 +25,6 @@
   position: relative;
   box-shadow: 0 3px 5px;
   padding: 25px;
-
 }
 .kard:hover {
   box-shadow: 0 3px 5px;
@@ -42,7 +35,6 @@
   height: 208px;
   border-radius: 6px;
   object-fit: cover;
-  /* margin: 9.5px; */
 }
 
 .app {
@@ -169,7 +161,6 @@
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 100px;
-   
   }
 
   .kard {
@@ -185,23 +176,23 @@
     justify-content: center;
   }
 }
-.wish{
+.wish {
   display: flex;
   text-align: center;
   margin: 0 auto;
   flex-direction: column;
   height: 36vh;
 }
-.wish img{
+.wish img {
   width: 50px;
   height: 50px;
   margin-left: 45px;
 }
-.wish h2{
+.wish h2 {
   font-size: 2rem;
-    color: #333;
+  color: #333;
 }
-.wish button{
+.wish button {
   background-color: black;
   color: white;
 }

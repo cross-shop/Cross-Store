@@ -9,14 +9,19 @@ const wishSlice = createSlice({
   initialState,
   reducers: {
     addWish: (state, action) => {
-      const product = { ...action.payload, dateAdded: new Date().toISOString() };
+      const product = {
+        ...action.payload,
+        dateAdded: new Date().toISOString(),
+      };
       if (!state.wishlist.some((item) => item.id === product.id)) {
         state.wishlist.push(product);
         localStorage.setItem("wishlist", JSON.stringify(state.wishlist));
       }
     },
     removeWish: (state, action) => {
-      state.wishlist = state.wishlist.filter((item) => item.id !== action.payload);
+      state.wishlist = state.wishlist.filter(
+        (item) => item.id !== action.payload
+      );
       localStorage.setItem("wishlist", JSON.stringify(state.wishlist));
     },
   },

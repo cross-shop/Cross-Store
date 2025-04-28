@@ -1,23 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import status1 from "../../assets/image/status1.png";
 import status2 from "../../assets/image/status2.png";
 import status3 from "../../assets/image/status3.png";
 import status4 from "../../assets/image/status4.png";
 import status5 from "../../assets/image/status5.png";
 import status6 from "../../assets/image/status6.png";
-import "./Status.scss"
+import "./Status.scss";
 
 function Status() {
-  const [isModalOpen, setModalOpen] = useState(false); // Модалдын ачылышын башкаруу
-  const [modalImage, setModalImage] = useState(null); // Модалдын сүрөтүн башкаруу
+  const [isModalOpen, setModalOpen] = useState(false); 
+  const [modalImage, setModalImage] = useState(null);
 
-  // Модалды ачуу жана сүрөттү орнотуу
   const openModal = (image) => {
     setModalImage(image);
     setModalOpen(true);
   };
 
-  // Модалды жабуу
   const closeModal = () => {
     setModalOpen(false);
     setModalImage(null);
@@ -46,12 +44,13 @@ function Status() {
         </div>
       </div>
 
-      {/* Модал терезеси */}
       {isModalOpen && (
         <div className="modal" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <img src={modalImage} alt="Статус модал" className="modal-image" />
-            <button className="close-btn" onClick={closeModal}>Закрыть</button>
+            <button className="close-btn" onClick={closeModal}>
+              Закрыть
+            </button>
           </div>
         </div>
       )}

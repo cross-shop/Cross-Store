@@ -1,13 +1,13 @@
-import React from 'react'
-import ObuvCom from '../components/Obuv/ObuvCom'
-import Obuvinfo from '../components/Obuv/Obuvinfo/Obuvinfo'
+import React from "react";
+import ObuvCom from "../components/Obuv/ObuvCom";
+import Obuvinfo from "../components/Obuv/Obuvinfo/Obuvinfo";
 function Obuv() {
   return (
     <div>
       <ObuvCom />
-      <Obuvinfo/>
+      <Obuvinfo />
     </div>
-  )
+  );
 }
 
-export default Obuv
+export default Obuv;

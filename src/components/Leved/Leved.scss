@@ -36,13 +36,11 @@
         }
 
         p {
-
           color: white;
           padding-left: 134px;
           padding-top: 3px;
         }
       }
-
     }
 
     .nur1709-img {
@@ -54,7 +52,6 @@
       img {
         width: 22.84px;
         height: 21.5px;
-
       }
     }
   }
@@ -87,7 +84,6 @@
       letter-spacing: -2%;
       text-align: left;
     }
-
   }
 
   .nur9 {
@@ -127,8 +123,6 @@
     border-top-left-radius: 45px;
     border-top-right-radius: 45px;
   }
-
-
 }
 
 .nurtilek08 {
@@ -155,7 +149,6 @@
     width: 333px;
     background-color: black;
   }
-
 }
 
 .nurtilek-main {
@@ -228,12 +221,9 @@
               letter-spacing: 0%;
               text-align: left;
               text-decoration: none;
-
-
             }
           }
         }
-
       }
     }
 
@@ -371,7 +361,7 @@
           }
         }
 
-        input[type="radio"]:checked+.custom-radio::after {
+        input[type="radio"]:checked + .custom-radio::after {
           background-color: currentColor;
         }
       }
@@ -388,7 +378,6 @@
         color: black;
       }
     }
-
   }
 
   .catalog-2 {
@@ -415,7 +404,6 @@
           width: 254px;
           height: 148px;
         }
-
       }
 
       .pp-19 {
@@ -508,6 +496,5 @@
         }
       }
     }
-
   }
 }

@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import proleved from "../../assets/image/proleved.png"
-import { Link } from 'react-router-dom'
-import search3 from "../../assets/svg/search3.svg"
-import Like2 from "../../assets/svg/Like2.svg"
-import kros3 from "../../assets/image/kros3.png"
-import "./Leved.scss"
-
+import React, { useState, useEffect } from "react";
+import proleved from "../../assets/image/proleved.png";
+import { Link } from "react-router-dom";
+import search3 from "../../assets/svg/search3.svg";
+import Like2 from "../../assets/svg/Like2.svg";
+import kros3 from "../../assets/image/kros3.png";
+import "./Leved.scss";
 
 function Leved() {
   const [minPrice, setMinPrice] = useState(32780);
@@ -26,39 +25,43 @@ function Leved() {
   };
   return (
     <div>
-      <header className='nurtilek container'>
-        <img className='foto' src={proleved} alt="" />
-        <div className='nur-center'>
+      <header className="nurtilek container">
+        <img className="foto" src={proleved} alt="" />
+        <div className="nur-center">
           <h1>Custom</h1>
         </div>
-        <div className='nur9'>
+        <div className="nur9">
           <Link to={`/`}>
             <p>Главная//</p>
           </Link>
           <h1>Поддержка//</h1>
         </div>
-        <div className='nur-footer09'></div>
-
-
-
+        <div className="nur-footer09"></div>
       </header>
-      <div className='nurtilek09 container'>
-        <h1>Бывшая в употреблении лимитированная одежда, <br /> обувь и аксессуары</h1>
-        <p>Комиссионные позиции в отличном состоянии по стоимости ниже, чем в бутике, к <br /> тому же отдавая предпочтение бывшим в употреблении лотам, мы проявляем <br /> осознанность и заботимся о нашей планете. При этом вещи выглядят практически <br /> как новые, и в свою коллекцию мы получаем настоящие сокровища, которые вряд ли <br /> найдешь в обычном магазине.</p>
-
-
-
+      <div className="nurtilek09 container">
+        <h1>
+          Бывшая в употреблении лимитированная одежда, <br /> обувь и аксессуары
+        </h1>
+        <p>
+          Комиссионные позиции в отличном состоянии по стоимости ниже, чем в
+          бутике, к <br /> тому же отдавая предпочтение бывшим в употреблении
+          лотам, мы проявляем <br /> осознанность и заботимся о нашей планете.
+          При этом вещи выглядят практически <br /> как новые, и в свою
+          коллекцию мы получаем настоящие сокровища, которые вряд ли <br />{" "}
+          найдешь в обычном магазине.
+        </p>
       </div>
-      <main className='nurtilek-main container'>
-
-        <div className='catalog-1'>
-
-          <div className='catolog-1-1'>
-            <div className='catolog-f1'>
+      <main className="nurtilek-main container">
+        <div className="catalog-1">
+          <div className="catolog-1-1">
+            <div className="catolog-f1">
               <h1>Категории</h1>
               <ul>
                 <li>
-                  <a href=""> <span>Одежда</span></a>
+                  <a href="">
+                    {" "}
+                    <span>Одежда</span>
+                  </a>
                 </li>
                 <li>
                   <a href="">Свитера, трикотаж</a>
@@ -81,9 +84,8 @@ function Leved() {
               </ul>
             </div>
 
-            <div className='catolog-f2'>
+            <div className="catolog-f2">
               <ul>
-
                 <li>
                   <a href="">Верхняя одежда</a>
                 </li>
@@ -99,15 +101,10 @@ function Leved() {
                 <li>
                   <a href="">Товары для спорта</a>
                 </li>
-
               </ul>
             </div>
-
-
-
-
           </div>
-          <div className='catolog-1-2'>
+          <div className="catolog-1-2">
             <h1>Фильтры</h1>
             <div className="price-range1">
               <label>Цена</label>
@@ -146,15 +143,13 @@ function Leved() {
                   readOnly
                 />
                 <span>₽</span>
-
               </div>
               <p>Цвет</p>
-
             </div>
 
-            <div className='serach2-inpu2'>
+            <div className="serach2-inpu2">
               <img src={search3} alt="" />
-              <input type="text" placeholder='Поиск цвета' />
+              <input type="text" placeholder="Поиск цвета" />
             </div>
 
             <div className="color-options">
@@ -190,174 +185,153 @@ function Leved() {
               </label>
               <p>Бренд</p>
             </div>
-            <div className='search-brend'>
+            <div className="search-brend">
               <img src={search3} alt="" />
-              <input type="text" placeholder='Поиск цвета' />
+              <input type="text" placeholder="Поиск цвета" />
             </div>
           </div>
         </div>
-        <div className='catalog-2'>
-
-          <div className='kros19'>
-            <div className='mm9'>
+        <div className="catalog-2">
+          <div className="kros19">
+            <div className="mm9">
               <img src={kros3} alt="" />
-
             </div>
-            <div className='pp9'>NEW</div>
-            <div className='pw19'>
+            <div className="pp9">NEW</div>
+            <div className="pw19">
               <img src={Like2} alt="" />
-            </div> <br />
-
-            <div className='main-top19'>
-              <p>Сумка Jacquemus
-              </p>
+            </div>{" "}
+            <br />
+            <div className="main-top19">
+              <p>Сумка Jacquemus</p>
               <p>Le Bambidou</p>
               <h5>21 999₽</h5>
             </div>
           </div>
           {/* ,mnhggggghhhhhhh */}
-          <div className='kros19'>
-            <div className='mm9'>
+          <div className="kros19">
+            <div className="mm9">
               <img src={kros3} alt="" />
-
             </div>
-            <div className='pp9'>NEW</div>
-            <div className='pw19'>
+            <div className="pp9">NEW</div>
+            <div className="pw19">
               <img src={Like2} alt="" />
-            </div> <br />
-
-            <div className='main-top19'>
-              <p>Сумка Jacquemus
-              </p>
+            </div>{" "}
+            <br />
+            <div className="main-top19">
+              <p>Сумка Jacquemus</p>
               <p>Le Bambidou</p>
               <h5>21 999₽</h5>
             </div>
           </div>
-          <div className='kros19'>
-            <div className='mm9'>
+          <div className="kros19">
+            <div className="mm9">
               <img src={kros3} alt="" />
-
             </div>
-            <div className='pp9'>NEW</div>
-            <div className='pw19'>
+            <div className="pp9">NEW</div>
+            <div className="pw19">
               <img src={Like2} alt="" />
-            </div> <br />
-
-            <div className='main-top19'>
-              <p>Сумка Jacquemus
-              </p>
+            </div>{" "}
+            <br />
+            <div className="main-top19">
+              <p>Сумка Jacquemus</p>
               <p>Le Bambidou</p>
               <h5>21 999₽</h5>
             </div>
           </div>
-          <div className='kros19'>
-            <div className='mm9'>
+          <div className="kros19">
+            <div className="mm9">
               <img src={kros3} alt="" />
-
             </div>
-            <div className='pp9'>NEW</div>
-            <div className='pw19'>
+            <div className="pp9">NEW</div>
+            <div className="pw19">
               <img src={Like2} alt="" />
-            </div> <br />
-
-            <div className='main-top19'>
-              <p>Сумка Jacquemus
-              </p>
+            </div>{" "}
+            <br />
+            <div className="main-top19">
+              <p>Сумка Jacquemus</p>
               <p>Le Bambidou</p>
               <h5>21 999₽</h5>
             </div>
           </div>
-          <div className='kros19'>
-            <div className='mm9'>
+          <div className="kros19">
+            <div className="mm9">
               <img src={kros3} alt="" />
-
             </div>
-            <div className='pp9'>NEW</div>
-            <div className='pw19'>
+            <div className="pp9">NEW</div>
+            <div className="pw19">
               <img src={Like2} alt="" />
-            </div> <br />
-
-            <div className='main-top19'>
-              <p>Сумка Jacquemus
-              </p>
+            </div>{" "}
+            <br />
+            <div className="main-top19">
+              <p>Сумка Jacquemus</p>
               <p>Le Bambidou</p>
               <h5>21 999₽</h5>
             </div>
           </div>
-          <div className='kros19'>
-            <div className='mm9'>
+          <div className="kros19">
+            <div className="mm9">
               <img src={kros3} alt="" />
-
             </div>
-            <div className='pp9'>NEW</div>
-            <div className='pw19'>
+            <div className="pp9">NEW</div>
+            <div className="pw19">
               <img src={Like2} alt="" />
-            </div> <br />
-
-            <div className='main-top19'>
-              <p>Сумка Jacquemus
-              </p>
+            </div>{" "}
+            <br />
+            <div className="main-top19">
+              <p>Сумка Jacquemus</p>
               <p>Le Bambidou</p>
               <h5>21 999₽</h5>
             </div>
           </div>
-          <div className='kros19'>
-            <div className='mm9'>
+          <div className="kros19">
+            <div className="mm9">
               <img src={kros3} alt="" />
-
             </div>
-            <div className='pp9'>NEW</div>
-            <div className='pw19'>
+            <div className="pp9">NEW</div>
+            <div className="pw19">
               <img src={Like2} alt="" />
-            </div> <br />
-
-            <div className='main-top19'>
-              <p>Сумка Jacquemus
-              </p>
+            </div>{" "}
+            <br />
+            <div className="main-top19">
+              <p>Сумка Jacquemus</p>
               <p>Le Bambidou</p>
               <h5>21 999₽</h5>
             </div>
           </div>
-          <div className='kros19'>
-            <div className='mm9'>
+          <div className="kros19">
+            <div className="mm9">
               <img src={kros3} alt="" />
-
             </div>
-            <div className='pp9'>NEW</div>
-            <div className='pw19'>
+            <div className="pp9">NEW</div>
+            <div className="pw19">
               <img src={Like2} alt="" />
-            </div> <br />
-
-            <div className='main-top19'>
-              <p>Сумка Jacquemus
-              </p>
+            </div>{" "}
+            <br />
+            <div className="main-top19">
+              <p>Сумка Jacquemus</p>
               <p>Le Bambidou</p>
               <h5>21 999₽</h5>
             </div>
           </div>
-          <div className='kros19'>
-            <div className='mm9'>
+          <div className="kros19">
+            <div className="mm9">
               <img src={kros3} alt="" />
-
             </div>
-            <div className='pp9'>NEW</div>
-            <div className='pw19'>
+            <div className="pp9">NEW</div>
+            <div className="pw19">
               <img src={Like2} alt="" />
-            </div> <br />
-
-            <div className='main-top19'>
-              <p>Сумка Jacquemus
-              </p>
+            </div>{" "}
+            <br />
+            <div className="main-top19">
+              <p>Сумка Jacquemus</p>
               <p>Le Bambidou</p>
               <h5>21 999₽</h5>
             </div>
           </div>
         </div>
-
       </main>
-
     </div>
-  )
+  );
 }
 
-export default Leved
+export default Leved;

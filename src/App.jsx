@@ -10,8 +10,8 @@ function ScrollToTop() {
 
   return null;
 }
-  
-function App() {  
+
+function App() {
   return (
     <>
       <ScrollToTop />

@@ -21,15 +21,15 @@ function Products() {
     [wishlist]
   );
 
-    const handleToggleWish = (item) => {
-      if (wishlistIds.has(item.id)) {
-        dispatch(removeWish(item.id));
-      } else {
-        dispatch(addWish(item));
-        setWishMessage("Товар добавлен в избранное");
-        setTimeout(() => setWishMessage(""), 2000);
-      }
-    };
+  const handleToggleWish = (item) => {
+    if (wishlistIds.has(item.id)) {
+      dispatch(removeWish(item.id));
+    } else {
+      dispatch(addWish(item));
+      setWishMessage("Товар добавлен в избранное");
+      setTimeout(() => setWishMessage(""), 2000);
+    }
+  };
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -56,6 +56,16 @@ function Products() {
   }, []);
 
   const handleAddToCart = (item) => {
+    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+    const itemExists = cartItems.some((cartItem) => cartItem.id === item.id);
+
+    if (itemExists) {
+      setCartMessage("Товар уже в корзине");
+      setTimeout(() => setCartMessage(""), 2000);
+      return;
+    }
+
     dispatch(addCart(item));
     setCartMessage("Товар добавлен в корзину");
     setTimeout(() => setCartMessage(""), 2000);
@@ -119,6 +129,7 @@ function Products() {
       <button className="scroll-arrow right-arrow" onClick={scrollRight}>
         &#8594;
       </button>
+      <hr />
     </div>
   );
 }

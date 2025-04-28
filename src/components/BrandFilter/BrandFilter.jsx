@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import '../BrandFilter/BrabdFilter.scss'
+import "../BrandFilter/BrabdFilter.scss";
 const brands = [
   "1017 АЛИКС 9SM",
   "Купающаяся обезьяна",
@@ -19,9 +19,7 @@ export default function BrandFilter() {
 
   const toggleBrand = (brand) => {
     setSelected((prev) =>
-      prev.includes(brand)
-        ? prev.filter((b) => b !== brand)
-        : [...prev, brand]
+      prev.includes(brand) ? prev.filter((b) => b !== brand) : [...prev, brand]
     );
   };
 
@@ -31,39 +29,33 @@ export default function BrandFilter() {
 
   return (
     <div className="brand-filter">
-      <div
-        className="filter"
-        onClick={() => setOpen(!open)}
-      >
+      <div className="filter" onClick={() => setOpen(!open)}>
         <span>Бренд</span>
         {open ? (
-  <ChevronUp size={16} style={{ marginLeft: '160px' }} />
-) : (
-  <ChevronDown size={16} style={{ marginLeft: '165px' }} />
-)}
-
+          <ChevronUp size={16} style={{ marginLeft: "160px" }} />
+        ) : (
+          <ChevronDown size={16} style={{ marginLeft: "165px" }} />
+        )}
       </div>
 
       {open && (
         <>
-        <div className="search-in">
-          <input style={{ width: '240px', marginTop: '6px'}}
-            type="text"
-            placeholder="Поиск"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
+          <div className="search-in">
+            <input
+              style={{ width: "240px", marginTop: "6px" }}
+              type="text"
+              placeholder="Поиск"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
           </div>
 
           <div className="fbrand-list">
             {filteredBrands.map((brand) => (
-              <label
-                key={brand}
-                className="flex"
-              >
-                <input type="checkbox"
-                className="ch"
-                
+              <label key={brand} className="flex">
+                <input
+                  type="checkbox"
+                  className="ch"
                   checked={selected.includes(brand)}
                   onChange={() => toggleBrand(brand)}
                 />

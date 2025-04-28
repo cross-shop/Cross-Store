@@ -1,5 +1,5 @@
-import React from 'react';
-import Accessories from '../components/Accessories/AccessoriesCom';
+import React from "react";
+import Accessories from "../components/Accessories/AccessoriesCom";
 function Access() {
   return (
     <div>

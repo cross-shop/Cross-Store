@@ -1,162 +1,107 @@
 .ali {
   position: relative;
+}
 
-  .main1-kros {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    gap: 1rem;
-    overflow-x: scroll;
-    scrollbar-color: transparent transparent;
-    width: 100%;
-    position: relative;
+.main1-kros {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  width: 100%;
+}
 
-    &::-webkit-scrollbar {
-      display: none;
-    }
+.kros1 {
+  background: #f0f0f0;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px;
+  min-width: 260px;
+  height: 360px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
 
-    .kros1 {
-      background: linear-gradient(145deg, #ffffff, #f0f0f0);
-      border-radius: 12px;
-      padding: 20px;
-      margin: 15px;
-      min-width: 260px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      height: 360px;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+.product-bottom button {
+  background-color: #0584ff;
+  padding: 8px 15px;
+  color: white;
+  border-radius: 5px;
+  width: 100%;
+  border: none;
+  font-size: 14px;
+}
 
-      &:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-      }
+.mm {
+  text-align: center;
+  width: 235px;
+  height: 170px;
+  margin: 0 auto;
+  overflow: hidden;
+}
 
-      button {
-        background-color: rgb(5, 84, 255);
-        padding: 8px 15px;
-        color: white;
-        border-radius: 5px;
-        width: 100%;
-        border: none;
-        font-size: 14px;
-        font-weight: 600;
-        transition: background-color 0.3s ease, transform 0.3s ease;
+.mm img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
 
-        &:hover {
-          background-color: #0041c2;
-          transform: scale(1.05);
-        }
-      }
+.main-top1 {
+  text-align: center;
+  margin-top: 15px;
+}
 
-      .mm {
-        text-align: center;
-        width: 235px;
-        height: 170px;
-        margin: 0 auto;
-        padding: 0;
-        overflow: hidden;
+.main-top1 p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #555;
+}
 
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 8px;
-        }
-      }
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: black;
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
 
-      .main-top1 {
-        text-align: center;
-        margin-top: 15px;
+.left-arrow {
+  left: 0;
+}
 
-        p {
-          margin: 8px 0;
-          font-size: 14px;
-          color: #555;
-        }
-      }
-
-      .pp {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        font-weight: bold;
-        color: #888;
-        font-size: 14px;
-      }
-
-      .pw1 {
-        cursor: pointer;
-        text-align: center;
-        color: #007bff;
-        font-weight: 500;
-        text-decoration: underline;
-        transition: color 0.3s ease;
-
-        &:hover {
-          color: #0056b3;
-        }
-      }
-    }
-
-  }
-
-  .scroll-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: black;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 8;
-    font-size: 24px;
-    transition: all 0.3s ease;
-  }
-
-  .left-arrow {
-    left: 0;
-  }
-
-  .right-arrow {
-    right: 0;
-  }
+.right-arrow {
+  right: 0;
 }
 
 .product-bottom {
   display: flex;
   align-items: center;
   gap: 10px;
-
 }
 
-.cart-message {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: green;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  z-index: 999;
-  font-size: 16px;
-}
-
+.cart-message,
 .wish-message {
   position: fixed;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgb(171, 30, 72);
-  color: white;
   padding: 10px;
   border-radius: 5px;
-  z-index: 999;
   font-size: 16px;
+  z-index: 999;
+}
+
+.cart-message {
+  background-color: green;
+  color: white;
+}
+
+.wish-message {
+  background-color: rgb(171, 30, 72);
+  color: white;
 }

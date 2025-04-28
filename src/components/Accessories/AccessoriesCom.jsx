@@ -1,8 +1,8 @@
-import React from 'react';
-import './Accessories.Com.scss';
-import search from '../../assets/svg/search.svg';
-import ass1 from '../../assets/image/ass1.png';
-import BrandFilter from '../BrandFilter/BrandFilter';
+import React from "react";
+import "./Accessories.Com.scss";
+import search from "../../assets/svg/search.svg";
+import ass1 from "../../assets/image/ass1.png";
+import BrandFilter from "../BrandFilter/BrandFilter";
 
 function Accessories() {
   return (
@@ -21,13 +21,11 @@ function Accessories() {
           <div className="as-category">
             <div className="option-br">
               <div className="brandfilter">
-              <BrandFilter />
-
+                <BrandFilter />
               </div>
 
               <select>
                 <option value="">Отделение</option>
-                
               </select>
 
               <select>
@@ -41,7 +39,6 @@ function Accessories() {
               <select>
                 <option value="">Цена</option>
               </select>
-
             </div>
 
             <div className="as-img">

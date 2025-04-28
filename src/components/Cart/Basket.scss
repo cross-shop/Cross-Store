@@ -1,8 +1,6 @@
 .basket-page {
   margin: 100px auto;
   margin-top: 200px;
-   
-
 }
 
 .basket- {
@@ -18,20 +16,17 @@
   display: flex;
   justify-content: space-between;
 
-
   .price {
     font-size: 24px;
     width: 100px;
     text-align: center;
   }
-
 }
 
 .box2 {
   display: flex;
   align-items: start;
   gap: 10px;
-
 
   button {
     background-color: black;
@@ -59,8 +54,6 @@
   font-size: 22px;
 }
 
-
-
 .box-left {
   width: 750px;
   padding: 20px;
@@ -81,7 +74,6 @@
   display: flex;
   gap: 30px;
   width: 350px;
-
 }
 
 .img-product {
@@ -101,7 +93,6 @@
   h5 {
     font-size: 20px;
   }
-
 }
 
 .icons {
@@ -109,13 +100,12 @@
   gap: 15px;
   cursor: pointer;
 
-   .icon-like {
+  .icon-like {
     color: white;
     padding: 5px 10px;
     cursor: pointer;
   }
 }
-
 
 .box-right {
   position: fixed;
@@ -130,7 +120,6 @@
   h6 {
     font-size: 22px;
     color: #a73afd;
-    ;
   }
 
   button {
@@ -213,15 +202,14 @@
   text-align: center;
   padding: 20px;
   margin-top: 40px;
-  
+
   h2 {
-      font-size: 2rem;
-      color: #333;
+    font-size: 2rem;
+    color: #333;
   }
 
-  .cart-btn{
+  .cart-btn {
     background-color: black;
     color: white;
   }
-
 }

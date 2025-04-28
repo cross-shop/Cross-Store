@@ -37,14 +37,13 @@ function BasketPage() {
   };
 
   const handleDelete = (id) => {
-    dispatch(removeCart(id)); // Продуктту Redux store'дон жана LocalStorage'дан өчүрүү
+    dispatch(removeCart(id)); 
   };
 
   const handleToggleLike = (id) => {
-    dispatch(toggleLike(id)); // Лайк статусун өзгөртүү
+    dispatch(toggleLike(id)); 
   };
 
-  // Корзина бош болсо билдирүүнү көрсөтүү
   if (ali.length === 0) {
     return (
       <section className="empty-basket">

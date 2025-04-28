@@ -1,11 +1,11 @@
-import React from 'react'
-import BagsCom from '../components/Bags/BagsCom'
+import React from "react";
+import BagsCom from "../components/Bags/BagsCom";
 function Bags() {
   return (
     <div>
-        <BagsCom/>
+      <BagsCom />
     </div>
-  )
+  );
 }
 
-export default Bags
+export default Bags;

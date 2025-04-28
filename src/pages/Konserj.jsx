@@ -1,12 +1,12 @@
-import React from 'react'
-import KonCom from '../components/konserj/KonCom'
+import React from "react";
+import KonCom from "../components/konserj/KonCom";
 
 function Konserj() {
   return (
     <div>
-      <KonCom/>
+      <KonCom />
     </div>
-  )
+  );
 }
 
-export default Konserj
+export default Konserj;

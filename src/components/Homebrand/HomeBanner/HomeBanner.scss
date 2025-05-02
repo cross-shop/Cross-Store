@@ -175,14 +175,13 @@
 }
 
 .catalog-banner .infbanner,
-.skid .skidban {
+.skidban {
   position: absolute;
-  top: 30px;
+  top: 30%;
   left: 5vw;
-
   p,
   span {
-    color: #3e3e3e;
+  color: white;
   }
 
   button {
@@ -190,10 +189,11 @@
     padding: 15px 20px;
     background: linear-gradient(80.91deg, #090909 1.03%, #88837e 99.01%);
     color: white;
+    width: 240px;
   }
 }
 
-.skid .skidban .butinput {
+.skid .skidban  {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -202,8 +202,7 @@
   position: absolute;
   bottom: 30px;
 
-  input,
-  button {
+  input{
     padding: 10px 20px;
     border-radius: 35px;
   }

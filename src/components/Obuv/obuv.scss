@@ -42,22 +42,6 @@
       margin-top: 40px;
 
       .obuv-2-Nike {
-        .nike4 {
-          display: flex;
-          a {
-            text-decoration: none;
-          }
-
-          p {
-            color: rgb(12, 11, 11);
-            font-family: Inter;
-            font-size: 14.25px;
-            font-weight: 400;
-            line-height: 15px;
-            letter-spacing: 6%;
-            text-align: left;
-          }
-        }
         .nike3 {
           display: flex;
           gap: 25px;
@@ -145,55 +129,12 @@
           letter-spacing: 0%;
           text-align: left;
         }
-        p {
-          color: rgb(145, 145, 145);
-          font-family: Inter;
-          font-size: 14px;
-          font-weight: 400;
-        }
-        .razmer-button {
-          display: flex;
-          gap: 5px;
-          button {
-            width: 38.13px;
-            height: 33.75px;
-            border-radius: 7.5px;
-            background: rgb(235, 235, 235);
-            color: rgb(61, 61, 61);
-            font-family: Ruberoid;
-            font-size: 12.5px;
-            font-weight: 400;
-            line-height: 17px;
-            letter-spacing: 0%;
-            text-align: center;
-            border: none;
-            padding: 5px;
-          }
-          button:hover {
-            border-radius: 7.5px;
-            background: linear-gradient(
-                80.91deg,
-                rgb(9, 9, 9) 4.794%,
-                rgb(136, 131, 126) 95.406%
-              ),
-              rgb(0, 0, 0);
-            color: rgb(255, 255, 255);
-            font-family: Ruberoid;
-            font-size: 12.5px;
-            font-weight: 400;
-            line-height: 17px;
-            letter-spacing: 0%;
-            text-align: center;
-            width: 38.13px;
-            height: 33.75px;
-          }
-        }
       }
       .nike-grid {
         width: 488px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        height: 402px;
+        height: 100px;
         margin-top: 20px;
 
         .grid1 {
@@ -457,31 +398,5 @@
         text-align: left;
       }
     }
-  }
-
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-  }
-
-  .modal {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-  }
-
-  .close-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
   }
 }

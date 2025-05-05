@@ -93,7 +93,7 @@ function HomeCom() {
           products.map((item) => (
             <div key={item.id} className="kros1">
               <div className="mm">
-                <Link to={"/obuv"}>
+                <Link to={`/obuv/${item.id}`} state={{ selectedProduct: item }}>
                   <img src={item.avatar} alt={item.name} />
                 </Link>
               </div>

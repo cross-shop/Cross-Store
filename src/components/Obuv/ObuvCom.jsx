@@ -1,88 +1,51 @@
 import React, { useState, useEffect } from "react";
 import "./obuv.scss";
-import Like3 from "../../assets/svg/Like3.svg";
-import { Link } from "react-router-dom";
-import obuv1 from "../../assets/image/obuv1.png";
+import { Link, useParams, useLocation } from "react-router-dom";
 import Acardion2 from "../Acardion2/Acardion2";
-import { useLocation } from "react-router-dom";
+
 const API = "https://66dfd7322fb67ac16f2740dd.mockapi.io/product";
+
 function ObuvCom() {
+  const { id } = useParams();
   const location = useLocation();
+  const locationProduct = location.state?.selectedProduct || null;
+
+  const [selectedProduct, setSelectedProduct] = useState(locationProduct);
+  const [selectedImage, setSelectedImage] = useState(locationProduct?.avatar || null);
   const [products, setProducts] = useState([]);
-  const [selectedProducts, setSelectedProducts] = useState([]);
-  const selectedProduct = location.state?.selectedProduct || null;
-  const [selectedImage, setSelectedImage] = useState(
-    selectedProduct?.avatar || obuv1
-  );
-  const [currentView, setCurrentView] = useState("size");
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [selectedSize, setSelectedSize] = useState(null);
 
   useEffect(() => {
-    const getProduct = async () => {
+    const fetchProducts = async () => {
       try {
         const res = await fetch(API);
         const data = await res.json();
         setProducts(data);
-        console.log(data);
+
+        // Эгерде state аркылуу продукт жок болсо – URL'ден ID менен тап
+        if (!locationProduct) {
+          const foundProduct = data.find((item) => item.id === id);
+          setSelectedProduct(foundProduct);
+          setSelectedImage(foundProduct?.avatar || null);
+        }
       } catch (error) {
-        console.log(error);
+        console.error("Failed to fetch product:", error);
       }
     };
-    getProduct();
-  }, []);
+    fetchProducts();
+  }, [id, locationProduct]);
 
-  const handleNextImage = () => {
-    if (products.length > 0) {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % products.length);
-      setSelectedImage(
-        products[(currentIndex + 1) % products.length]?.avatar || obuv1
-      );
-    }
-  };
-
-  const handleSizeSelect = (size) => {
-    setSelectedSize(size);
-  };
-
-  const toggleButton1 = (item) => {
-    if (!item || !selectedSize) return;
-
-    const productWithSize = { ...item, size: selectedSize };
-
-    setSelectedProducts((prevSelected) => {
-      if (prevSelected.some((selectedItem) => selectedItem.id === item.id)) {
-        return prevSelected.filter(
-          (selectedItem) => selectedItem.id !== item.id
-        );
-      }
-      return [...prevSelected, productWithSize];
-    });
-
-    setIsModalVisible(true);
-  };
+  if (!selectedProduct) {
+    return <p>Продукт табылган жок...</p>;
+  }
 
   const sizeOptions = [
     {
       label: "size",
       sizes: [
-        { size: "35.5", availability: "под заказ" },
-        { size: "36", availability: "в наличии" },
-        { size: "36.5", availability: "в наличии" },
-        { size: "37", availability: "в наличии" },
-        { size: "37.5", availability: "в наличии" },
+        { size: "36", availability: "под заказ" },
         { size: "38", availability: "в наличии" },
-        { size: "38.5", availability: "в наличии" },
-        { size: "39", availability: "в наличии" },
-        { size: "39.5", availability: "в наличии" },
         { size: "40", availability: "в наличии" },
-        { size: "40.5", availability: "в наличии" },
-        { size: "41", availability: "в наличии" },
-        { size: "41.5", availability: "в наличии" },
         { size: "42", availability: "в наличии" },
-        { size: "42.5", availability: "в наличии" },
-        { size: "43", availability: "в наличии" },
       ],
     },
   ];
@@ -98,9 +61,9 @@ function ObuvCom() {
             {products.map((product, index) => (
               <img
                 key={index}
-                src={product.avatar || obuv1}
+                src={product.avatar}
                 alt={`Product ${index}`}
-                onClick={() => setSelectedImage(product.avatar || obuv1)}
+                onClick={() => setSelectedImage(product.avatar)}
               />
             ))}
           </div>
@@ -108,63 +71,33 @@ function ObuvCom() {
 
         <div className="obuv-2">
           <div className="obuv-2-Nike">
-            <div className="nike4">
-              <Link to={`/`}>
-                <p>Главная /</p>
-              </Link>
-              <Link to={"/catalog"}>
-                <p>Каталог /</p>
-              </Link>
-              <Link to={"/obuv"}>
-                <p>Обувь /</p>
-              </Link>
-              <p> Кроссовки</p>
-            </div>
-
             <div className="nike3">
-              <h1>Кроссовки Nike Milu Deer</h1>
-              <img src={Like3} alt="Like icon" />
+              <h1>{selectedProduct.name}</h1>
             </div>
 
             <div className="price">
-              <p>$133</p>
-              <span>Цвет</span>
+              <p>${selectedProduct.price}</p>
             </div>
 
             <div className="nike-button">
               <Link to={`/oferzakaz`}>
                 <button>Быстрая покупка</button>
               </Link>
-
-              <Link to={"/basket"}>
-                <button onClick={() => toggleButton1(selectedProduct)}>
-                  Добавить в корзину
-                </button>
-              </Link>
+              <button>Добавить в корзину</button>
             </div>
           </div>
 
           <div className="nike-razmer">
             <h1>Выберите размер</h1>
-            <div className="razmer-button">
-              <button onClick={() => setCurrentView("size")}>size</button>
-            </div>
-            <p>Таблица размеров</p>
           </div>
 
           <div className="nike-grid">
-            {sizeOptions
-              .find((option) => option.label === currentView)
-              ?.sizes?.map((item, index) => (
-                <div
-                  className="grid1"
-                  key={index}
-                  onClick={() => handleSizeSelect(item.size)}
-                >
-                  <h1>{item.size}</h1>
-                  <p>{item.availability}</p>
-                </div>
-              ))}
+            {sizeOptions[0].sizes.map((item, index) => (
+              <div className="grid1" key={index}>
+                <h1>{item.size}</h1>
+                <p>{item.availability}</p>
+              </div>
+            ))}
           </div>
 
           <div className="guarantee">
@@ -172,23 +105,6 @@ function ObuvCom() {
           </div>
         </div>
       </div>
-
-      {isModalVisible && (
-        <div className="modal-overlay">
-          <div className="modal">
-            <button className="close-btn" onClick={handleCloseClick}>
-              <img src={x} alt="Закрыть" />
-            </button>
-            <h2>Товар добавлен в корзину!</h2>
-            <p>
-              {selectedProduct?.name} ({selectedSize})
-            </p>
-            <Link to="/cart">
-              <button className="go-to-cart">Перейти в корзину</button>
-            </Link>
-          </div>
-        </div>
-      )}
     </main>
   );
 }

@@ -48,7 +48,7 @@ function Status() {
         <div className="modal" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <img src={modalImage} alt="Статус модал" className="modal-image" />
-            <button className="close-btn" onClick={closeModal}>
+            <button className="close-btn2" onClick={closeModal}>
               Закрыть
             </button>
           </div>

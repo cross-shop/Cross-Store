@@ -57,7 +57,7 @@ export const myRouter = createBrowserRouter([
         element: <Help />,
       },
       {
-        path: "/obuv",
+        path: "/obuv/:id",
         element: <Obuv />,
       },
       {

@@ -101,7 +101,7 @@ function Header() {
         <nav className={`navbar ${menuOpen ? "active" : ""}`}>
           <ul>
             <li>
-              <NavLink to="/obuv">Обувь</NavLink>
+              <NavLink to="/obuv/id">Обувь</NavLink>
             </li>
             <li>
               <NavLink to="/accessories">Аксессуары</NavLink>

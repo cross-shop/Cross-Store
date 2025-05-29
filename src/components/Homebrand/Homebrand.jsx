@@ -55,7 +55,7 @@ const brands = [
 
 function Homebrand() {
   return (
-    <div className="brand">
+    <div className="brand container">
       <h1>ПРЕДСТАВЛЕННЫЕ БРЕНДЫ</h1>
       <div className="all-brands">
         {/* {brands.map((src, index) => (

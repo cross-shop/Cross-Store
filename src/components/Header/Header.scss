@@ -166,46 +166,26 @@ body {
   @media (max-width: 768px) {
     .header-end {
       display: none;
-      background-color: white;
-      width: 100%;
-      position: absolute;
-      top: 218px;
-      left: 0;
-      z-index: 998;
-
-      &.active {
-        display: flex;
-      }
-
-      .navbar {
-        ul {
-          display: grid;
-          grid-gap: 1px;
-          padding: 0;
-          background-color: rgb(255, 255, 255);
-          color: rgb(0, 0, 0);
-          width: 100%;
-          text-align: left;
-
-          li {
-            padding: 10px 0;
-            a {
-              display: block;
-              color: black;
-              font-size: 16px;
-            }
-          }
-        }
-      }
+      position: static;
+      top: auto;
+      padding-top: 10px;
+    }
+  
+    .header-end.active {
+      display: block;
     }
 
     .menu-toggle {
       display: flex;
       text-align: left;
+      margin-left: -50px;
+    }
+    .icons img {
+      display: none;
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (min-width: 768px) and (max-width: 1024px) {
     .header {
       flex-direction: column;
       text-align: center;

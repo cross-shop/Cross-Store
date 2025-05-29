@@ -1,25 +1,25 @@
-.ali {
+.container-wrapper {
   position: relative;
 }
 
-.main1-kros {
+.carousel-wrapper {
   display: flex;
   gap: 1rem;
   overflow-x: auto;
   width: 100%;
 }
 
-.kros1 {
+.product-card {
   background: #f0f0f0;
   border-radius: 8px;
   padding: 20px;
   margin: 15px;
   min-width: 260px;
-  height: 360px;
+  height: 33 0px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-.product-bottom button {
+.action-button {
   background-color: #0584ff;
   padding: 8px 15px;
   color: white;
@@ -29,7 +29,7 @@
   font-size: 14px;
 }
 
-.mm {
+.image-box {
   text-align: center;
   width: 235px;
   height: 170px;
@@ -37,25 +37,25 @@
   overflow: hidden;
 }
 
-.mm img {
+.image-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
 }
 
-.main-top1 {
+.product-info {
   text-align: center;
   margin-top: 15px;
 }
 
-.main-top1 p {
+.product-info p {
   margin: 8px 0;
   font-size: 14px;
   color: #555;
 }
 
-.scroll-arrow {
+.scroll-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -68,24 +68,25 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  border: none;
 }
 
-.left-arrow {
+.scroll-left {
   left: 0;
 }
 
-.right-arrow {
+.scroll-right {
   right: 0;
 }
 
-.product-bottom {
+.card-footer {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.cart-message,
-.wish-message {
+.alert-cart,
+.alert-wish {
   position: fixed;
   top: 20px;
   left: 50%;
@@ -96,12 +97,18 @@
   z-index: 999;
 }
 
-.cart-message {
+.alert-cart {
   background-color: green;
   color: white;
 }
 
-.wish-message {
+.alert-wish {
   background-color: rgb(171, 30, 72);
   color: white;
+}
+
+@media (max-width: 768px) {
+  .scroll-button {
+    display: none;
+  }
 }

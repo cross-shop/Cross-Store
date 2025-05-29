@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
-import "./Home.scss";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addCart } from "../../redux/cart/cartSlice";
@@ -84,25 +83,29 @@ function HomeCom() {
   };
 
   return (
-    <div className="ali container">
-      {cartMessage && <div className="cart-message">{cartMessage}</div>}
-      {wishMessage && <div className="wish-message">{wishMessage}</div>}
+    <div className="container-wrapper container">
+      <h1>component1</h1>
+      {cartMessage && <div className="alert-cart">{cartMessage}</div>}
+      {wishMessage && <div className="alert-wish">{wishMessage}</div>}
 
-      <div className="main1-kros" ref={containerRef}>
+      <div className="carousel-wrapper" ref={containerRef}>
         {products.length > 0 ? (
           products.map((item) => (
-            <div key={item.id} className="kros1">
-              <div className="mm">
+            <div key={item.id} className="product-card">
+              <div className="image-box">
                 <Link to={`/obuv/${item.id}`} state={{ selectedProduct: item }}>
                   <img src={item.avatar} alt={item.name} />
                 </Link>
               </div>
-              <div className="main-top1">
+              <div className="product-info">
                 <p>{item.name}</p>
                 <h5>{item.price}c</h5>
               </div>
-              <div className="product-bottom">
-                <button onClick={() => handleAddToCart(item)}>
+              <div className="card-footer">
+                <button
+                  className="action-button"
+                  onClick={() => handleAddToCart(item)}
+                >
                   Add to cart
                 </button>
                 <div
@@ -123,12 +126,13 @@ function HomeCom() {
         )}
       </div>
 
-      <button className="scroll-arrow left-arrow" onClick={scrollLeft}>
+      <button className="scroll-button scroll-left" onClick={scrollLeft}>
         &#8592;
       </button>
-      <button className="scroll-arrow right-arrow" onClick={scrollRight}>
+      <button className="scroll-button scroll-right" onClick={scrollRight}>
         &#8594;
       </button>
+      <hr />
     </div>
   );
 }

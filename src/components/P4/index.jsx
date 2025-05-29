@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
-// import "./Products.scss";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addCart } from "../../redux/cart/cartSlice";
@@ -8,7 +7,7 @@ import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 const API = "https://66dfd7322fb67ac16f2740dd.mockapi.io/product";
 
-function Homedvchp() {
+function Products4() {
   const wishlist = useSelector((state) => state.wishlist.wishlist);
   const [products, setProducts] = useState([]);
   const [cartMessage, setCartMessage] = useState("");
@@ -133,9 +132,8 @@ function Homedvchp() {
       <button className="scroll-button scroll-right" onClick={scrollRight}>
         &#8594;
       </button>
-      <hr />
     </div>
   );
 }
 
-export default Homedvchp;
+export default Products4;

@@ -9,7 +9,7 @@ import menuimg from "../../assets/image/menuimg.png";
 function HomeCatalog() {
   return (
     <div>
-      <section className="img">
+      {/* <section className="img">
         <div className="clothes">
           <img src={acsess2} alt="" />
           <Link to={"/odejda"}>
@@ -45,7 +45,7 @@ function HomeCatalog() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

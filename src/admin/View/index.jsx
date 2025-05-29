@@ -7,7 +7,7 @@ const ProductList = () => {
   const [editName, setEditName] = useState("");
   const [editPrice, setEditPrice] = useState("");
   const [editAvatar, setEditAvatar] = useState("");
-  const [editCategory, setEditCategory] = useState(""); // Категорияны сактоо
+  const [editCategory, setEditCategory] = useState(""); 
   const [showModal, setShowModal] = useState(false);
 
   const apiUrl = "https://66dfd7322fb67ac16f2740dd.mockapi.io/product";

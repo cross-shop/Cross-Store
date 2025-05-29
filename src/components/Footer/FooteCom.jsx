@@ -23,30 +23,29 @@ function Footer() {
           </div>
         </div>
 
-        <div className="footer-links">
           <div className="footer-section">
             <h4>Каталог</h4>
             <ul>
               <li>
-                <Link to="/clothing">Одежда</Link>
+                <Link to="">Одежда</Link>
               </li>
               <li>
-                <Link to="/shoes">Обувь</Link>
+                <Link to="">Обувь</Link>
               </li>
               <li>
-                <Link to="/accessories">Аксессуары</Link>
+                <Link to="">Аксессуары</Link>
               </li>
               <li>
-                <Link to="/bags">Сумки</Link>
+                <Link to="">Сумки</Link>
               </li>
               <li>
-                <Link to="/sports">Товары для спорта</Link>
+                <Link to="">Товары для спорта</Link>
               </li>
               <li>
-                <Link to="/preloved">Pre-loved</Link>
+                <Link to="">Pre-loved</Link>
               </li>
               <li>
-                <Link to="/custom">Custom</Link>
+                <Link to="">Custom</Link>
               </li>
             </ul>
           </div>
@@ -55,16 +54,16 @@ function Footer() {
             <h4>Меню</h4>
             <ul>
               <li>
-                <Link to="/about">О нас</Link>
+                <Link to="">О нас</Link>
               </li>
               <li>
-                <Link to="/sell">Продать свою одежду</Link>
+                <Link to="">Продать свою одежду</Link>
               </li>
               <li>
-                <Link to="/konserj">Консерьж</Link>
+                <Link to="">Консерьж</Link>
               </li>
               <li>
-                <Link to="/help">Клиентский сервис</Link>
+                <Link to="">Клиентский сервис</Link>
               </li>
             </ul>
           </div>
@@ -73,29 +72,28 @@ function Footer() {
             <h4>Поддержка</h4>
             <ul>
               <li>
-                <Link to="/delivery">Доставка</Link>
+                <Link to="">Доставка</Link>
               </li>
               <li>
-                <Link to="/payment">Оплата</Link>
+                <Link to="">Оплата</Link>
               </li>
               <li>
-                <Link to="/faq">Частые вопросы</Link>
+                <Link to="">Частые вопросы</Link>
               </li>
               <li>
-                <Link to="/help">Клиентский сервис</Link>
+                <Link to="">Клиентский сервис</Link>
               </li>
               <li>
-                <Link to="/track">Отследить заказ</Link>
+                <Link to="">Отследить заказ</Link>
               </li>
             </ul>
           </div>
-        </div>
       </div>
 
       <div className="footer-bottom container">
         <p>
-          <Link to="/privacy">Политика конфиденциальности</Link> |{" "}
-          <Link to="/terms">Пользовательское соглашение</Link>
+          <Link to="">Политика конфиденциальности</Link> |{" "}
+          <Link to="">Пользовательское соглашение</Link>
         </p>
         <p>
           Email: <a href="mailto:help@dealerclub.com">help@dealerclub.com</a> |{" "}

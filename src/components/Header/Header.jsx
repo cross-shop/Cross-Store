@@ -12,7 +12,7 @@ import { auth } from "../../firebase";
 function Header() {
   const navigate = useNavigate();
   const cartItems = useSelector((state) => state.carts.ali);
-  const wishlistItems = useSelector((state) => state.wishlist.wishlist);
+  const wishlistItems = useSelector((state) => state.wishlist.wishlist);                                      
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
@@ -97,23 +97,24 @@ function Header() {
         </div>
       </div>
 
-      <div className={`header-end ${menuOpen ? "active" : ""}`}>
+      <div 
+      className={`header-end ${menuOpen ? "active" : ""}`}>
         <nav className={`navbar ${menuOpen ? "active" : ""}`}>
           <ul>
             <li>
-              <NavLink to="/obuv/id">Обувь</NavLink>
+              <NavLink to="/catalog">Каталог</NavLink>
             </li>
             <li>
               <NavLink to="/accessories">Аксессуары</NavLink>
             </li>
             <li>
-              <NavLink to="/bags">Сумки</NavLink>
+              <NavLink to="/istoria">История</NavLink>
             </li>
             <li>
-              <NavLink to="#">Товары для спорта</NavLink>
+              <NavLink to="help">Поддержка</NavLink>
             </li>
             <li>
-              <NavLink to="/onas">О нас</NavLink>
+              <NavLink to="/about">О нас</NavLink>
             </li>
             <li>
               <NavLink to="/istoriabrenda">Бренды</NavLink>

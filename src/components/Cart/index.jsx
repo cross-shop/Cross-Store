@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
-import { removeCart, updateCart, toggleLike } from "../../redux/cart/cartSlice";
+import { removeCart, updateCart, toggleLike } from "../../redux/cart/cartSlice";                                                             
 import { Link } from "react-router-dom";
 import "./Basket.scss";
+import { auth } from "../../firebase";
+import { clearCart } from "../../redux/cart/cartSlice";
 
 function BasketPage() {
   const { ali } = useSelector((state) => state.carts);
@@ -37,11 +38,47 @@ function BasketPage() {
   };
 
   const handleDelete = (id) => {
-    dispatch(removeCart(id)); 
+    dispatch(removeCart(id));
   };
 
   const handleToggleLike = (id) => {
-    dispatch(toggleLike(id)); 
+    dispatch(toggleLike(id));
+  };
+
+  const handleWhatsAppOrder = () => {
+    const user = auth.currentUser;
+
+    if (!user) {
+      alert("Пожалуйста, войдите в систему или зарегистрируйтесь, чтобы разместить заказ.");
+      return;
+    }
+
+    const phoneNumber = "996706237053";
+    const message =
+      `Здравствуйте! Я хотел бы сделать заказ.\n\n` +
+      ali
+        .map(
+          (item, index) =>
+            `• ${item.name} - ${quantities[index]} штук - ${
+              item.price * quantities[index]
+            }c`
+        )
+        .join("\n") +
+      `\n\nОбщая сумма: ${calculateTotalPrice()}c`;
+
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(url, "_blank");
+  };
+
+  const handleClearCart = () => {
+    const confirmed = window.confirm(
+      "Вы уверены, что хотите очистить корзину?"
+    );
+    if (confirmed) {
+      dispatch(clearCart());
+    }
   };
 
   if (ali.length === 0) {
@@ -60,44 +97,32 @@ function BasketPage() {
       <div className="basket-container container">
         {ali.map((item, index) => (
           <div className="box-left" key={item.id}>
-            <h3>{item.name}</h3>
-            <p>{quantities[index]} product(s)</p>
+            <img
+              className="img-product"
+              src={item.avatar}
+              alt="product"
+              loading="lazy"
+            />
+
             <div className="box1">
-              <div className="inbox">
-                <img
-                  className="img-product"
-                  src={item.avatar}
-                  alt="product"
-                  loading="lazy"
-                />
-                <div className="detile">
-                  <span>25-october</span>
-                  <div className="icons">
-                    <div
-                      className="like-icon"
-                      onClick={() => handleToggleLike(item.id)}
-                    >
-                      {item.isLiked ? (
-                        <FaHeart color="red" size={20} />
-                      ) : (
-                        <FaRegHeart color="gray" size={20} />
-                      )}
-                    </div>
-                    <div
-                      className="delete-icon"
-                      onClick={() => handleDelete(item.id)}
-                    >
-                      🗑️
-                    </div>
-                  </div>
+              <div className="cart-top">
+                <h5>{item.name}</h5>
+                <span className="price">{item.price}c</span>
+              </div>
+              <div className="cart-main">
+                <p>{quantities[index]} product(s)</p>
+                <div className="box2">
+                  <button onClick={() => decreaseQuantity(index)}>-</button>
+                  <span>{quantities[index]}</span>
+                  <button onClick={() => increaseQuantity(index)}>+</button>
                 </div>
               </div>
-              <div className="box2">
-                <button onClick={() => decreaseQuantity(index)}>-</button>
-                <span>{quantities[index]}</span>
-                <button onClick={() => increaseQuantity(index)}>+</button>
-              </div>
-              <span className="price">{item.price}c</span>
+              <button
+                className="delete-icon"
+                onClick={() => handleDelete(item.id)}
+              >
+                Удалить
+              </button>
             </div>
           </div>
         ))}
@@ -112,8 +137,17 @@ function BasketPage() {
           <h3>Total</h3>
           <span>{calculateTotalPrice()}c</span>
         </div>
-        <button>Order</button>
+        <button onClick={handleWhatsAppOrder} className="whatsapp-order-btn">
+          заказать
+        </button>
       </div>
+
+      <div className="clear container">
+        <button className="clear-cart-btn" onClick={handleClearCart}>
+          отчисть корзину
+        </button>
+      </div>
+
       <div className="optioins container">
         <div className="optioin">
           <strong>Способ оплаты</strong>

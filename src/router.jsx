@@ -28,95 +28,28 @@ export const myRouter = createBrowserRouter([
     path: "/",
     element: <Layout />,
     children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/basket",
-        element: <Basket />,
-      },
-      {
-        path: "/*",
-        element: <Notfound />,
-      },
-      {
-        path: "/search",
-        element: <Search />,
-      },
-      {
-        path: "/catalog",
-        element: <Catalog />,
-      },
-      {
-        path: "/istoria",
-        element: <Istoria />,
-      },
-      {
-        path: "/help",
-        element: <Help />,
-      },
-      {
-        path: "/obuv/:id",
-        element: <Obuv />,
-      },
-      {
-        path: "/wishlist",
-        element: <Wishlist />,
-      },
-
-      {
-        path: "/proleved",
-        element: <Proleved />,
-      },
-      {
-        path: "/istoriabrenda",
-        element: <Istoriarenda />,
-      },
-      {
-        path: "/oferzakaz",
-        element: <Oferzakaz />,
-      },
-      {
-        path: "/onas",
-        element: <ONas />,
-      },
-      {
-        path: "/konserj",
-        element: <Konserj />,
-      },
-      {
-        path: "/register",
-        element: <AuthForm />,
-      },
-      {
-        path: "accessories",
-        element: <Access />,
-      },
-      {
-        path: "bags",
-        element: <Bags />,
-      },
+      { path: "/", element: <Home /> },
+      { path: "/*", element: <Notfound /> },
+      { path: "/basket", element: <Basket /> },
+      { path: "/search", element: <Search /> },
+      { path: "/catalog", element: <Catalog /> },
+      { path: "/istoria", element: <Istoria /> },
+      { path: "/help", element: <Help /> },
+      { path: "/obuv/:id", element: <Obuv /> },
+      { path: "/wishlist", element: <Wishlist /> },
+      { path: "/proleved", element: <Proleved /> },
+      { path: "/istoriabrenda", element: <Istoriarenda /> },                                                  
+      { path: "/payment", element: <Oferzakaz /> },
+      { path: "/about", element: <ONas /> },
+      { path: "/konserj", element: <Konserj /> },
+      { path: "/register", element: <AuthForm /> },
+      { path: "/accessories", element: <Access /> },
+      { path: "/bags", element: <Bags /> },
     ],
   },
-  {
-    path: "/adminlogin",
-    element: <AdminLogin />,
-  },
-  {
-    path: "/admin",
-    element: <Dashboard />,
-  },
-  {
-    path: "/addproduct",
-    element: <AddProduct />,
-  },
-  {
-    path: "/productlist",
-    element: <ProductList />,
-  },
-  {
-    path: "/profile",
-    element: <Profile />,
-  },
+  { path: "/adminlogin", element: <AdminLogin /> },
+  { path: "/admin", element: <Dashboard /> },
+  { path: "/addproduct", element: <AddProduct /> },
+  { path: "/productlist", element: <ProductList /> },
+  { path: "/profile", element: <Profile /> },
 ]);

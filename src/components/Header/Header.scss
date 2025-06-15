@@ -170,7 +170,7 @@ body {
       top: auto;
       padding-top: 10px;
     }
-  
+
     .header-end.active {
       display: block;
     }
@@ -181,6 +181,9 @@ body {
       margin-left: -50px;
     }
     .icons img {
+      display: none;
+    }
+    .counter {
       display: none;
     }
   }
@@ -195,5 +198,8 @@ body {
       justify-content: center;
       align-items: center;
     }
+  }
+  .counter {
+    display: none;
   }
 }

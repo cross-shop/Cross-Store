@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./style.css"
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -7,7 +8,7 @@ const ProductList = () => {
   const [editName, setEditName] = useState("");
   const [editPrice, setEditPrice] = useState("");
   const [editAvatar, setEditAvatar] = useState("");
-  const [editCategory, setEditCategory] = useState(""); 
+  const [editCategory, setEditCategory] = useState("");
   const [showModal, setShowModal] = useState(false);
 
   const apiUrl = "https://66dfd7322fb67ac16f2740dd.mockapi.io/product";
@@ -56,19 +57,19 @@ const ProductList = () => {
     setEditName(product.name);
     setEditPrice(product.price);
     setEditAvatar(product.avatar);
-    setEditCategory(product.category); // Категорияны да тандап алуу
+    setEditCategory(product.category); 
     setShowModal(true);
   };
 
   const handleUpdate = async () => {
-    if (!editName || !editPrice || !editAvatar || !editCategory) return; // Категорияны текшерүү
+    if (!editName || !editPrice || !editAvatar || !editCategory) return; 
 
     const updatedProduct = {
       ...editingProduct,
       name: editName,
       price: editPrice,
       avatar: editAvatar,
-      category: editCategory, // Категорияны дагы жаңыртуу
+      category: editCategory, 
     };
 
     try {
@@ -92,44 +93,61 @@ const ProductList = () => {
     }
   };
 
+
+  const groupedByCategory = products.reduce((groups, product) => {
+    const category = product.category || "Башка";
+    if (!groups[category]) {
+      groups[category] = [];
+    }
+    groups[category].push(product);
+    return groups;
+  }, {});
+  
+
   if (loading) return <p>Жүктөлүүдө...</p>;
 
   return (
-    <div>
+    <div className="container">
       <a href="/admin">dashboard</a>
-      <h2>Продуктылар тизмеси</h2>
+      <h2 className="h3products">Список Продукции</h2>
+  
+      {Object.keys(groupedByCategory).map((category) => (
+        <div key={category} className="admin-products-carts">
+          <h2>категория {category} </h2>
+          <ul className="categories">
+            {groupedByCategory[category].map((product) => (
+              <li
+                key={product.id}
+                style={{
+                  marginBottom: "20px",
+                  border: "1px solid #ddd",
+                  padding: "10px",
+                  borderRadius: "8px",
 
-      <ul style={{ listStyle: "none", padding: 0 }}>
-        {products.map((product) => (
-          <li
-            key={product.id}
-            style={{
-              marginBottom: "20px",
-              border: "1px solid #ddd",
-              padding: "10px",
-              borderRadius: "8px",
-            }}
-          >
-            <h3>{product.name}</h3>
-            <img src={product.avatar} alt={product.name} width="150" />
-            <p>Баасы: {product.price} сом</p>
-            <p>Категория: {product.category}</p> 
-            <button
-              onClick={() => startEditing(product)}
-              style={{ marginRight: "10px" }}
-            >
-              Өзгөртүү
-            </button>
-            <button
-              onClick={() => handleDelete(product.id)}
-              style={{ backgroundColor: "red", color: "white" }}
-            >
-              Өчүрүү
-            </button>
-          </li>
-        ))}
-      </ul>
-
+                }}
+              >
+                <h4>{product.name}</h4>
+                <img src={product.avatar} alt={product.name} width="150" />
+                <p>Цена: {product.price} сом</p>
+                <button
+                className="update"
+                  onClick={() => startEditing(product)}
+                >
+                  Изменить
+                </button>
+                <button
+                className="close"
+                  onClick={() => handleDelete(product.id)}
+                >
+                  удалить
+                </button>
+              </li>
+            ))}
+          </ul>
+          <hr />
+        </div>
+      ))}
+  
       {showModal && (
         <div style={styles.modalOverlay}>
           <div style={styles.modal}>
@@ -160,9 +178,12 @@ const ProductList = () => {
               onChange={(e) => setEditCategory(e.target.value)}
               style={styles.input}
             >
-              <option value="food">экинчи компонентке</option>
-              <option value="clothing">биринчи компонентке</option>
+              <option value="nike">компонент1 nike</option>
+              <option value="puma">компонент2 puma</option>
+              <option value="jordan">компонент3 jordan</option>
+              <option value="adidas">компонент4 adidas</option>
             </select>
+  
             <div style={{ marginTop: "10px" }}>
               <button onClick={handleUpdate} style={styles.saveBtn}>
                 Сактоо
@@ -182,9 +203,9 @@ const ProductList = () => {
       )}
     </div>
   );
+  
 };
 
-// Стили
 const styles = {
   modalOverlay: {
     position: "fixed",

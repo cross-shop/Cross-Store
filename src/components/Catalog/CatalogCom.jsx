@@ -149,7 +149,7 @@ function CatalogCom() {
                   value={parseInt(maxPrice).toLocaleString()}
                   readOnly
                 />
-                <span>₽</span>
+                <span>с</span>
               </div>
               <p>Цвет</p>
             </div>
@@ -210,7 +210,7 @@ function CatalogCom() {
             <div className="main-top19">
               <p>Сумка Jacquemus</p>
               <p>Le Bambidou</p>
-              <h5>21 999₽</h5>
+              <h5>21 999с</h5>
             </div>
           </div>
           <div className="kros19">
@@ -240,7 +240,7 @@ function CatalogCom() {
             <div className="main-top19">
               <p>Сумка Jacquemus</p>
               <p>Le Bambidou</p>
-              <h5>21 999₽</h5>
+              <h5>21 999с</h5>
             </div>
           </div>
           <div className="kros19">
@@ -255,7 +255,7 @@ function CatalogCom() {
             <div className="main-top19">
               <p>Сумка Jacquemus</p>
               <p>Le Bambidou</p>
-              <h5>21 999₽</h5>
+              <h5>21 999с</h5>
             </div>
           </div>
           <div className="kros19">
@@ -270,7 +270,7 @@ function CatalogCom() {
             <div className="main-top19">
               <p>Сумка Jacquemus</p>
               <p>Le Bambidou</p>
-              <h5>21 999₽</h5>
+              <h5>21 999с</h5>
             </div>
           </div>
           <div className="kros19">
@@ -285,7 +285,7 @@ function CatalogCom() {
             <div className="main-top19">
               <p>Сумка Jacquemus</p>
               <p>Le Bambidou</p>
-              <h5>21 999₽</h5>
+              <h5>21 999с</h5>
             </div>
           </div>
           <div className="kros19">
@@ -300,7 +300,7 @@ function CatalogCom() {
             <div className="main-top19">
               <p>Сумка Jacquemus</p>
               <p>Le Bambidou</p>
-              <h5>21 999₽</h5>
+              <h5>21 999с</h5>
             </div>
           </div>
           <div className="kros19">
@@ -315,7 +315,7 @@ function CatalogCom() {
             <div className="main-top19">
               <p>Сумка Jacquemus</p>
               <p>Le Bambidou</p>
-              <h5>21 999₽</h5>
+              <h5>21 999с</h5>
             </div>
           </div>
           <div className="kros19">
@@ -330,7 +330,7 @@ function CatalogCom() {
             <div className="main-top19">
               <p>Сумка Jacquemus</p>
               <p>Le Bambidou</p>
-              <h5>21 999₽</h5>
+              <h5>21 999с</h5>
             </div>
           </div>
         </div>

@@ -32,40 +32,40 @@
       }
     }
 
-      .footer-section {
-        width: 200px;
-        flex-direction: column;
-        margin-top: 10px;
+    .footer-section {
+      width: 200px;
+      flex-direction: column;
+      margin-top: 10px;
 
-        h4 {
-          color: aliceblue;
-          font-family: "Istok Web", sans-serif;
-          font-size: 20px;
-          font-weight: 400;
-          line-height: 28px;
-        }
+      h4 {
+        color: aliceblue;
+        font-family: "Istok Web", sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 28px;
+      }
 
-        ul {
-          padding: 0;
-          margin: 0;
+      ul {
+        padding: 0;
+        margin: 0;
 
-          li {
-            list-style: none;
+        li {
+          list-style: none;
 
-            a {
-              text-decoration: none;
-              color: rgb(208, 196, 196);
-              font-size: 14px;
-              transition: color 0.2s ease;
+          a {
+            text-decoration: none;
+            color: rgb(208, 196, 196);
+            font-size: 14px;
+            transition: color 0.2s ease;
 
-              &:hover {
-                color: #fff;
-              }
+            &:hover {
+              color: #fff;
             }
           }
         }
       }
     }
+  }
 
   .footer-bottom {
     margin: 40px auto 0;
@@ -94,7 +94,6 @@
     }
   }
 }
-
 
 @media (max-width: 1024px) {
   .footer .footer-container {

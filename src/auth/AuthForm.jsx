@@ -23,7 +23,7 @@ const AuthForm = () => {
 
   async function signup() {
     if (!user.email || !user.password || !user.name) {
-      toast.error("Бардык талааларды толтуруңуз.");
+      toast.error("Пожалуйста, заполните все поля.");
       return;
     }
 
@@ -34,12 +34,12 @@ const AuthForm = () => {
         user.email,
         user.password
       );
-      console.log("Каттоо ийгиликтүү:", res.user);
+      console.log("Регистрация прошла успешно:", res.user);
 
-      toast.success("Ийгиликтүү катталдыңыз!");
+      toast.success("Вы успешно зарегистрировались!");
 
       setTimeout(() => {
-        navigate("/profile"); // профил баракчага өтөт
+        navigate("/profile"); 
       }, 2000);
     } catch (error) {
       console.error("Каттоо ката:", error);
@@ -51,7 +51,7 @@ const AuthForm = () => {
 
   async function login() {
     if (!user.email || !user.password) {
-      toast.error("Email жана сырсөздү толтуруңуз.");
+      toast.error("Введите свой адрес электронной почты и пароль.");
       return;
     }
 
@@ -62,16 +62,16 @@ const AuthForm = () => {
         user.email,
         user.password
       );
-      console.log("Кирүү ийгиликтүү:", res.user);
+      console.log("Вход успешен:", res.user);
 
-      toast.success("Кош келиңиз!");
+      toast.success("добро пожаловать!");
 
       setTimeout(() => {
-        navigate("/profile"); // логин болгондо башка баракча
+        navigate("/profile"); 
       }, 2000);
     } catch (error) {
       console.error("Кирүү ката:", error);
-      toast.error("Email же сырсөз туура эмес.");
+      toast.error("Неверный адрес электронной почты или пароль.");
     } finally {
       setLoading(false);
     }
@@ -85,7 +85,7 @@ const AuthForm = () => {
   return (
     <div className="auth-container">
       <div className="auth-box">
-        <h2>{isLogin ? "Кирүү" : "Катталуу"}</h2>
+        <h2>{isLogin ? "Войти" : "Регистрация"}</h2>
 
         <form
           onSubmit={(event) => {
@@ -95,13 +95,13 @@ const AuthForm = () => {
         >
           {!isLogin && (
             <div className="input-group">
-              <label>Атыңыз</label>
+              <label>Ваше имя</label>
               <input
                 type="text"
                 name="name"
                 value={user.name}
                 onChange={handler}
-                placeholder="Атыңыз"
+                placeholder="Ваше имя"
                 required
               />
             </div>
@@ -120,24 +120,24 @@ const AuthForm = () => {
           </div>
 
           <div className="input-group">
-            <label>Сырсөз</label>
+            <label>Пароль</label>
             <input
               onChange={handler}
               value={user.password}
               name="password"
               type="password"
-              placeholder="Сырсөз"
+              placeholder="Пароль"
               required
             />
           </div>
 
           <button type="submit" className="auth-button" disabled={loading}>
-            {loading ? "Күтүңүз..." : isLogin ? "Кирүү" : "Катталуу"}
+            {loading ? "пожалуйста, подождите" : isLogin ? "Войти" : "Зарегистрироваться"}
           </button>
         </form>
 
         <p className="toggle-text" onClick={toggleForm}>
-          {isLogin ? "Каттала элексизби?" : "Катталгансызбы? Кирүү"}
+          {isLogin ? "Зарегистрироваться" : "Войти"}
         </p>
       </div>
       <ToastContainer />

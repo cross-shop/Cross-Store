@@ -1,0 +1,32 @@
+.categories{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+.categories li{
+    list-style: none;
+}
+.h3products{
+    text-align: center;
+    margin: 30px auto;
+}
+.admin-products-carts{
+    margin-top: 50px;
+}
+.update{
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+}
+.close{
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin-left: 10px;
+}

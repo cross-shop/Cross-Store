@@ -142,7 +142,7 @@ function Leved() {
                   value={parseInt(maxPrice).toLocaleString()}
                   readOnly
                 />
-                <span>₽</span>
+                <span>с</span>
               </div>
               <p>Цвет</p>
             </div>
@@ -204,23 +204,7 @@ function Leved() {
             <div className="main-top19">
               <p>Сумка Jacquemus</p>
               <p>Le Bambidou</p>
-              <h5>21 999₽</h5>
-            </div>
-          </div>
-          {/* ,mnhggggghhhhhhh */}
-          <div className="kros19">
-            <div className="mm9">
-              <img src={kros3} alt="" />
-            </div>
-            <div className="pp9">NEW</div>
-            <div className="pw19">
-              <img src={Like2} alt="" />
-            </div>{" "}
-            <br />
-            <div className="main-top19">
-              <p>Сумка Jacquemus</p>
-              <p>Le Bambidou</p>
-              <h5>21 999₽</h5>
+              <h5>21 999с</h5>
             </div>
           </div>
           <div className="kros19">
@@ -235,7 +219,7 @@ function Leved() {
             <div className="main-top19">
               <p>Сумка Jacquemus</p>
               <p>Le Bambidou</p>
-              <h5>21 999₽</h5>
+              <h5>21 999с</h5>
             </div>
           </div>
           <div className="kros19">
@@ -250,7 +234,7 @@ function Leved() {
             <div className="main-top19">
               <p>Сумка Jacquemus</p>
               <p>Le Bambidou</p>
-              <h5>21 999₽</h5>
+              <h5>21 999с</h5>
             </div>
           </div>
           <div className="kros19">
@@ -265,7 +249,7 @@ function Leved() {
             <div className="main-top19">
               <p>Сумка Jacquemus</p>
               <p>Le Bambidou</p>
-              <h5>21 999₽</h5>
+              <h5>21 999с</h5>
             </div>
           </div>
           <div className="kros19">
@@ -280,7 +264,7 @@ function Leved() {
             <div className="main-top19">
               <p>Сумка Jacquemus</p>
               <p>Le Bambidou</p>
-              <h5>21 999₽</h5>
+              <h5>21 999с</h5>
             </div>
           </div>
           <div className="kros19">
@@ -295,7 +279,7 @@ function Leved() {
             <div className="main-top19">
               <p>Сумка Jacquemus</p>
               <p>Le Bambidou</p>
-              <h5>21 999₽</h5>
+              <h5>21 999с</h5>
             </div>
           </div>
           <div className="kros19">
@@ -310,7 +294,7 @@ function Leved() {
             <div className="main-top19">
               <p>Сумка Jacquemus</p>
               <p>Le Bambidou</p>
-              <h5>21 999₽</h5>
+              <h5>21 999с</h5>
             </div>
           </div>
           <div className="kros19">
@@ -325,7 +309,22 @@ function Leved() {
             <div className="main-top19">
               <p>Сумка Jacquemus</p>
               <p>Le Bambidou</p>
-              <h5>21 999₽</h5>
+              <h5>21 999с</h5>
+            </div>
+          </div>
+          <div className="kros19">
+            <div className="mm9">
+              <img src={kros3} alt="" />
+            </div>
+            <div className="pp9">NEW</div>
+            <div className="pw19">
+              <img src={Like2} alt="" />
+            </div>{" "}
+            <br />
+            <div className="main-top19">
+              <p>Сумка Jacquemus</p>
+              <p>Le Bambidou</p>
+              <h5>21 999с</h5>
             </div>
           </div>
         </div>

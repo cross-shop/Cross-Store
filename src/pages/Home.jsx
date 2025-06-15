@@ -1,19 +1,23 @@
 import React from "react";
-import HomeCom from "../components/Home/HomeCom.jsx";
-import Page from "../components/HomePage";
-import Homedvchp from "../components/Homedvchp/Homedvchp.jsx";
+import Banner from "../components/Banner/Banner";
+import Status from "../components/Status/Status";
+import P1 from "../components/P1/index..jsx";
+import P2 from "../components/P2";
+import P3 from "../components/P3";
+import P4 from "../components/P4";
 import Homebrand from "../components/Homebrand/Homebrand.jsx";
 import HomeBanner from "../components/HomeBanner/HomeBanner.jsx";
-import Products4 from "../components/P4/index.jsx";
 
 function Home() {
   return (
     <div>
-      <Page />
-      <HomeCom />
-      <Homedvchp />
+      <Banner />
+      <Status />
+      <P1 />
+      <P2 />
+      <P3 />
       <Homebrand />
-      <Products4 />
+      <P4 />
       <HomeBanner />
     </div>
   );

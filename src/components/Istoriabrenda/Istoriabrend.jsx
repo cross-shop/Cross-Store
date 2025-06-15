@@ -116,7 +116,7 @@ function Istoriabrend() {
                 <div className="main-top190">
                   <p>Сумка Jacquemus</p>
                   <p>Le Bambidou</p>
-                  <h5>21 999₽</h5>
+                  <h5>21 999с</h5>
                 </div>
               </div>
               {/* 2 */}
@@ -132,7 +132,7 @@ function Istoriabrend() {
                 <div className="main-top190">
                   <p>Сумка Jacquemus</p>
                   <p>Le Bambidou</p>
-                  <h5>21 999₽</h5>
+                  <h5>21 999с</h5>
                 </div>
               </div>
               {/* 3 */}
@@ -148,7 +148,7 @@ function Istoriabrend() {
                 <div className="main-top190">
                   <p>Сумка Jacquemus</p>
                   <p>Le Bambidou</p>
-                  <h5>21 999₽</h5>
+                  <h5>21 999с</h5>
                 </div>
               </div>
             </div>
@@ -248,7 +248,7 @@ function Istoriabrend() {
               <div className="main-top1901">
                 <p>Сумка Jacquemus</p>
                 <p>Le Bambidou</p>
-                <h5>21 999₽</h5>
+                <h5>21 999с</h5>
               </div>
             </div>
 
@@ -264,7 +264,7 @@ function Istoriabrend() {
               <div className="main-top1901">
                 <p>Сумка Jacquemus</p>
                 <p>Le Bambidou</p>
-                <h5>21 999₽</h5>
+                <h5>21 999с</h5>
               </div>
             </div>
             <div className="istoria2-button">

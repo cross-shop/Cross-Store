@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
+import "./Products.scss";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addCart } from "../../redux/cart/cartSlice";
@@ -7,7 +8,7 @@ import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 const API = "https://66dfd7322fb67ac16f2740dd.mockapi.io/product";
 
-function HomeCom() {
+function Products() {
   const wishlist = useSelector((state) => state.wishlist.wishlist);
   const [products, setProducts] = useState([]);
   const [cartMessage, setCartMessage] = useState("");
@@ -38,7 +39,7 @@ function HomeCom() {
 
         const likedItems = JSON.parse(localStorage.getItem("likedItems")) || [];
 
-        const filtered = data.filter((item) => item.category === "food");
+        const filtered = data.filter((item) => item.category === "nike");
 
         const updatedProducts = filtered.map((item) => ({
           ...item,
@@ -137,4 +138,4 @@ function HomeCom() {
   );
 }
 
-export default HomeCom;
+export default Products;

@@ -38,7 +38,7 @@ function Products4() {
 
         const likedItems = JSON.parse(localStorage.getItem("likedItems")) || [];
 
-        const filtered = data.filter((item) => item.category === "clothing");
+        const filtered = data.filter((item) => item.category === "lining");
 
         const updatedProducts = filtered.map((item) => ({
           ...item,
@@ -84,7 +84,7 @@ function Products4() {
 
   return (
     <div className="container-wrapper container">
-      <h1>component1</h1>
+      <h1>component4</h1>
       {cartMessage && <div className="alert-cart">{cartMessage}</div>}
       {wishMessage && <div className="alert-wish">{wishMessage}</div>}
 

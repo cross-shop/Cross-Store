@@ -1,15 +1,11 @@
 import React from "react";
 import "./Zakaz.scss";
-import Like3 from "../../assets/svg/Like3.svg";
-import Magazin2 from "../../assets/svg/magazin2.svg";
-import search2 from "../../assets/svg/search2.svg";
 import slevazakaz from "../../assets/svg/slevazakaz.svg";
 import Magazin from "../../assets/svg/magazin.svg";
 import x from "../../assets/svg/x.svg";
 import Like2 from "../../assets/svg/Like2.svg";
 import kros1 from "../../assets/image/kros1.png";
 import udalit from "../../assets/svg/udalit.svg";
-import { Link } from "react-router-dom";
 import visa from "../../assets/image/visa.png";
 
 function Zakaz() {
@@ -138,7 +134,7 @@ function Zakaz() {
                     <h5>Red</h5>
                   </div>
                   <div className="c5">
-                    <h3>21 999₽</h3>
+                    <h3>21 999с</h3>
                     <img src={udalit} alt="" />
                   </div>
                 </div>
@@ -163,7 +159,7 @@ function Zakaz() {
                     <h5>Red</h5>
                   </div>
                   <div className="c5">
-                    <h3>21 999₽</h3>
+                    <h3>21 999с</h3>
                     <img src={udalit} alt="" />
                   </div>
                 </div>
@@ -172,7 +168,7 @@ function Zakaz() {
               <div className="bm">
                 <div className="bm2">
                   <h2>Итого</h2>
-                  <h2>43 998₽</h2>
+                  <h2>43 998с</h2>
                 </div>
                 <div className="btn">
                   <button>Оформить</button>

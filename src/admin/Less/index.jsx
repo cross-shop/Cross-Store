@@ -1,18 +1,21 @@
 import React, { useState } from "react";
+import "./style.css";
 
 const AddProduct = () => {
   const [name, setProductName] = useState("");
   const [avatar, setAvatar] = useState("");
   const [price, setPrice] = useState("");
+  const [category, setCategory] = useState("");
   const [message, setMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const productData = {
-      name: name,
-      avatar: avatar,
-      price: price,
+      name,
+      avatar,
+      price,
+      category,
       id: Date.now().toString(),
     };
 
@@ -21,36 +24,25 @@ const AddProduct = () => {
         "https://66dfd7322fb67ac16f2740dd.mockapi.io/product",
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify(productData),
         }
       );
 
       if (response.ok) {
-        const result = await response.json();
-        console.log("Продукт ийгиликтүү кошулду:", result);
-
         setMessage("Товар ийгиликтүү кошулду!");
-
-        setTimeout(() => {
-          setMessage("");
-        }, 5000);
-
+        setTimeout(() => setMessage(""), 5000);
         window.location.href = "/productlist";
       } else {
-        console.error("Жүктөөдө каталар болду");
         setMessage("Товарды кошууда ката болду!");
       }
     } catch (error) {
-      console.error("Жүктөөдө каталар:", error);
       setMessage("Товарды кошууда ката болду!");
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="add-product-form" onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Продукт аты"
@@ -69,8 +61,17 @@ const AddProduct = () => {
         value={price}
         onChange={(e) => setPrice(e.target.value)}
       />
+      <select
+        value={category}  
+        onChange={(e) => setCategory(e.target.value)}
+      >
+        <option value="">Категорияны тандаңыз</option>
+        <option value="nike">компонент1 nike</option>
+        <option value="puma">компонент2 puma</option>
+        <option value="jordan">компонент3 jordan</option>
+        <option value="lining">компонент4 lining</option>
+      </select>
       <button type="submit">Продукт кошуу</button>
-
       {message && <p>{message}</p>}
     </form>
   );

@@ -1,50 +1,53 @@
-.add-product-container {
+.add-product-form {
   max-width: 400px;
-  margin: 40px auto;
+  margin: 80px auto;
   padding: 24px;
-  background-color: white;
-  border-radius: 16px;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background-color: #fafafa;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-.title {
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 24px;
-  color: #333;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.input {
-  padding: 12px;
-  border: 1px solid #ddd;
+.add-product-form input {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 16px;
-  outline: none;
-  transition: 0.3s border-color ease;
+  font-family: sans-serif;
 }
 
-.input:focus {
-  border-color: #3b82f6; /* Blue */
-}
-
-.submit-button {
+.add-product-form button {
+  width: 100%;
   padding: 12px;
-  background-color: #3b82f6;
-  color: white;
-  font-weight: bold;
+  background-color: #222;
+  color: #fff;
   border: none;
   border-radius: 8px;
+  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.3s ease;
 }
 
-.submit-button:hover {
-  background-color: #2563eb;
+.add-product-form button:hover {
+  background-color: #444;
+}
+
+.add-product-form p {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 14px;
+  color: green;
+}
+
+.add-product-form select {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: sans-serif;
+  background-color: white;
 }

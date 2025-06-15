@@ -4,7 +4,6 @@ import search from "../../assets/svg/search.svg";
 import "./NasCom.scss";
 import history from "../../assets/image/history.png";
 import koloko from "../../assets/image/koloko.png";
-import { Link } from "react-router-dom";
 
 function NasCom() {
   return (
@@ -13,16 +12,13 @@ function NasCom() {
         <div className="header12 container">
           <div className="header1-img">
             <img src={Magazin} alt="" />
-
             <img src={search} alt="" />
           </div>
         </div>
-
         <div className="two">
           <div className="dealer2">
             <h1>DEALER</h1>
           </div>
-
           <div className="istoria">
             <div className="surot">
               <img src={history} alt="" />
@@ -53,7 +49,6 @@ function NasCom() {
               </p>
             </div>
           </div>
-
           <div className="texts">
             <img src={koloko} alt="" />
             <div className="text1">

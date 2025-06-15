@@ -1,61 +1,83 @@
-import React, { useState, useEffect } from "react";
-import "./Search.scss";
-import Like2 from "../../assets/svg/Like2.svg";
-import search3 from "../../assets/svg/search3.svg";
+import React, { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addCart } from "../../redux/cart/cartSlice";
+import { addWish, removeWish } from "../../redux/wish2/wishSlice";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
+import "./Search.scss";
 
 const API = "https://66dfd7322fb67ac16f2740dd.mockapi.io/product";
 
 function SearchCom() {
+  const dispatch = useDispatch();
+  const wishlist = useSelector((state) => state.wishlist.wishlist);
+
   const [searchProducts, setSearchProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [minPrice, setMinPrice] = useState(32780);
-  const [maxPrice, setMaxPrice] = useState(82780);
+  const [minPrice, setMinPrice] = useState(0);
+  const [maxPrice, setMaxPrice] = useState(100000);
+
+  const [sortOrder, setSortOrder] = useState("asc");
+
+  const [cartMessage, setCartMessage] = useState("");
+  const [wishMessage, setWishMessage] = useState("");
+
+  const wishlistIds = useMemo(
+    () => new Set(wishlist.map((item) => item.id)),
+    [wishlist]
+  );
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const res = await fetch(API);
         const data = await res.json();
+
         setSearchProducts(data);
       } catch (error) {
         console.error("Ошибка при загрузке данных:", error);
       }
     };
-
     fetchProducts();
   }, []);
 
-  const clearSearch = () => setSearchTerm("");
-
   const handleMinChange = (e) => setMinPrice(Number(e.target.value));
   const handleMaxChange = (e) => setMaxPrice(Number(e.target.value));
+  const handleSortChange = (e) => setSortOrder(e.target.value);
 
-  // Фильтрация по поиску жана цене
-  const filteredProducts = searchProducts.filter(
-    (item) =>
-      item.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-      item.price >= minPrice &&
-      item.price <= maxPrice
-  );
+  const handleAddToCart = (item) => {
+    dispatch(addCart(item));
+    setCartMessage("Товар добавлен в корзину");
+    setTimeout(() => setCartMessage(""), 2000);
+  };
+
+  const handleToggleWish = (item) => {
+    if (wishlistIds.has(item.id)) {
+      dispatch(removeWish(item.id));
+    } else {
+      dispatch(addWish(item));
+      setWishMessage("Товар добавлен в избранное");
+      setTimeout(() => setWishMessage(""), 2000);
+    }
+  };
+
+  const filteredSortedProducts = searchProducts
+    .filter(
+      (item) =>
+        item.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+        item.price >= minPrice &&
+        item.price <= maxPrice
+    )
+    .sort((a, b) =>
+      sortOrder === "asc" ? a.price - b.price : b.price - a.price
+    );
 
   return (
     <div>
-      <div className="main3-input3 container">
-        <div className="input-3">
-          <div className="input3-search">
-            <img src={search3} alt="Search Icon" />
-            <input
-              type="text"
-              placeholder="Мне повезёт"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
-          <button onClick={clearSearch}>Очистить</button>
-        </div>
-        <p className="close-btn">Закрыть</p>
-      </div>
+      <div className="main3-input3 container"></div>
+
+      {cartMessage && <div className="alert-cart">{cartMessage}</div>}
+      {wishMessage && <div className="alert-wish">{wishMessage}</div>}
 
       <div className="search-two container">
         <div className="catalog-1">
@@ -84,25 +106,52 @@ function SearchCom() {
               <input type="text" value={minPrice.toLocaleString()} readOnly />
               <span>–</span>
               <input type="text" value={maxPrice.toLocaleString()} readOnly />
-              <span>₽</span>
+              <span></span>
             </div>
+          </div>
+
+          <div style={{ marginTop: "15px" }}>
+            <label>Сортировка по цене:</label>
+            <select value={sortOrder} onChange={handleSortChange}>
+              <option value="asc">По возрастанию</option>
+              <option value="desc">По убыванию</option>
+            </select>
           </div>
         </div>
 
         <div className="catalog-2">
-          {filteredProducts.length > 0 ? (
-            filteredProducts.map((item) => (
-              <div key={item.id} className="kros19">
-                <div className="mm9">
-                  <img src={item.avatar} alt={item.name} />
+          {filteredSortedProducts.length > 0 ? (
+            filteredSortedProducts.map((item) => (
+              <div key={item.id} className="product-card">
+                <div className="image-box">
+                  <Link
+                    to={`/obuv/${item.id}`}
+                    state={{ selectedProduct: item }}
+                  >
+                    <img src={item.avatar} alt={item.name} />
+                  </Link>
                 </div>
-                <div className="pp9">NEW</div>
-                <div className="pw19">
-                  <img src={Like2} alt="like" />
-                </div>
-                <div className="main-top19">
+                <div className="product-info">
                   <p>{item.name}</p>
-                  <h5>{item.price.toLocaleString()} ₽</h5>
+                  <h5>{item.price.toLocaleString()}с</h5>
+                </div>
+                <div className="card-footer">
+                  <button
+                    className="action-button"
+                    onClick={() => handleAddToCart(item)}
+                  >
+                    Add to cart
+                  </button>
+                  <div
+                    className="icon-like"
+                    onClick={() => handleToggleWish(item)}
+                  >
+                    {wishlistIds.has(item.id) ? (
+                      <FaHeart color="red" size={24} />
+                    ) : (
+                      <FaRegHeart color="gray" size={24} />
+                    )}
+                  </div>
                 </div>
               </div>
             ))

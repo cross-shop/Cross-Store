@@ -10,8 +10,12 @@ function ObuvCom() {
   const location = useLocation();
   const locationProduct = location.state?.selectedProduct || null;
 
+  const [sameCategoryProducts, setSameCategoryProducts] = useState([]);
+
   const [selectedProduct, setSelectedProduct] = useState(locationProduct);
-  const [selectedImage, setSelectedImage] = useState(locationProduct?.avatar || null);
+  const [selectedImage, setSelectedImage] = useState(
+    locationProduct?.avatar || null
+  );
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -19,18 +23,34 @@ function ObuvCom() {
       try {
         const res = await fetch(API);
         const data = await res.json();
-        setProducts(data);
+        setProducts(data); 
 
-        // Эгерде state аркылуу продукт жок болсо – URL'ден ID менен тап
+        let product;
+
         if (!locationProduct) {
-          const foundProduct = data.find((item) => item.id === id);
-          setSelectedProduct(foundProduct);
-          setSelectedImage(foundProduct?.avatar || null);
+          product = data.find((item) => item.id === id);
+          setSelectedProduct(product);
+          setSelectedImage(product?.avatar || null);
+        } else {
+          product = locationProduct;
+          setSelectedProduct(locationProduct);
+          setSelectedImage(locationProduct.avatar);
+        }
+
+        if (product) {
+          const sameCategory = data
+            .filter(
+              (item) =>
+                item.category === product.category && item.id !== product.id
+            )
+            .slice(0, 8);
+          setSameCategoryProducts(sameCategory);
         }
       } catch (error) {
         console.error("Failed to fetch product:", error);
       }
     };
+
     fetchProducts();
   }, [id, locationProduct]);
 
@@ -58,7 +78,7 @@ function ObuvCom() {
             <img src={selectedImage} alt="Main product" />
           </div>
           <div className="obuv-2img">
-            {products.map((product, index) => (
+            {sameCategoryProducts.map((product, index) => (
               <img
                 key={index}
                 src={product.avatar}
@@ -76,11 +96,11 @@ function ObuvCom() {
             </div>
 
             <div className="price">
-              <p>${selectedProduct.price}</p>
+              <p>{selectedProduct.price}с</p>
             </div>
 
             <div className="nike-button">
-              <Link to={`/oferzakaz`}>
+              <Link to={`/payment`}>
                 <button>Быстрая покупка</button>
               </Link>
               <button>Добавить в корзину</button>

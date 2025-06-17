@@ -1,205 +1,296 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  padding-top: 70px;
-}
-
 .header {
-  width: 100%;
   position: fixed;
   top: 0;
-  left: 0;
-  background: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  z-index: 999;
+  width: 100%;
+  background-color: white;
+  z-index: 1000;
+}
 
-  .header-top {
+.header-top {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.header-middle {
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .middle-svg {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    pointer-events: all;
-    height: 40px;
-    color: white;
-    text-align: center;
-    padding-top: 5px;
-    background: black;
-    overflow: hidden;
 
-    .ticker-text {
-      display: inline-block;
-      white-space: nowrap;
-      padding-left: 100%;
-      animation: ticker-scroll 20s linear infinite;
-      font-size: 0.714286rem;
-      font-family: "Proxima Nova", "Helvetica Neue", Verdana, Arial, sans-serif;
-      letter-spacing: 0.0714286rem;
-      line-height: 18px;
-      font-weight: 600;
-      text-transform: uppercase;
-      color: inherit;
+    .logo-img img {
+      width: 50px;
+      height: auto;
     }
 
-    @keyframes ticker-scroll {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
-    }
-  }
-
-  .header-middle {
-    .middle-svg {
-      height: 70px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      .logo-img img {
-        width: 60px;
-        height: 60px;
-        object-fit: cover;
-      }
-
-      .logo a {
-        color: black;
+    .logo {
+      margin-left: 10px;
+      font-size: 30px;
+      font-weight: bold;
+      margin-top: 10px;
+      a {
         text-decoration: none;
-        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-        font-size: 30px;
-        letter-spacing: 0.0814588rem;
-        font-weight: 600;
+        color: black;
+      }
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      img {
+        width: 22px;
+        height: 22px;
+        cursor: pointer;
       }
 
-      .icons {
-        display: flex;
-        align-items: center;
-        gap: 15px;
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 24px;
+        height: 18px;
+        margin-left: 16px;
+        cursor: pointer;
 
-        img {
-          width: 20px;
-          height: 20px;
+        .bar {
+          height: 3px;
+          background-color: #333;
+          border-radius: 2px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        img:not(.menu-toggle) {
+          display: none;
         }
       }
     }
   }
+}
 
-  .header-end {
-    position: relative;
+
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #ddd;
+
+  h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .close-btn {
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+}
+
+.header-end {
+  position: fixed;
+  top: 110px;
+  background-color: white;
+  height: 50px;
+  padding: 0;
+  width: 100%;  
+  border-top: 1px solid rgb(199, 195, 195);
+
+  .menu-header {
+    display: none;
+  }
+
+  .navbar {
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding-top: 20px;
-    height: 46px;
-    background-color: white;
-    border-top: 1px solid rgb(242, 242, 242);
 
-    .navbar {
+    ul {
+      list-style: none;
+      width: 100%;
       display: flex;
       justify-content: center;
-      flex-grow: 1;
-      margin: 0 auto;
+      align-items: center;
+      gap: 40px;
 
-      ul {
-        display: flex;
-        list-style: none;
-        gap: 50px;
+      li {
 
-        li a {
+        a {
           text-decoration: none;
-          color: rgb(61, 58, 58);
+          color: #333;
+          font-weight: 600;
           font-size: 16px;
 
           &:hover {
-            color: black;
+            color: #f00;
           }
         }
       }
     }
   }
+}
 
-  .icon-counter {
-    position: relative;
-    display: inline-block;
+.text-menu{
+  display: none;
+}
 
-    img {
-      width: 20px;
-      height: 20px;
-    }
+// ----------------------------------------------------------------------------- 
 
-    .counter {
-      position: absolute;
-      top: -8px;
-      right: -8px;
-      background: red;
-      color: white;
-      font-size: 12px;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+@media (max-width: 768px) {
+  .header-middle {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px;
+
+    .middle-svg {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+
+      .icons {
+        .menu-toggle {
+          display: flex;
+        }
+
+        img {
+          margin-left: 12px;
+        }
+      }
     }
   }
-
-  .menu-toggle {
+  .logo-img {
     display: none;
-    cursor: pointer;
-
-    .bar {
-      width: 25px;
-      height: 3px;
-      background-color: black;
-      margin: 4px 0;
+  }
+  .header-end {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+    z-index: 1500;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  
+    &.active {
+      left: 0;
     }
 
-    @media (max-width: 768px) {
-      display: flex;
-      flex-direction: column;
+  .text-menu{
+    display: block;
+  }
+  .navbar{
+    padding: 0;
+    border-top: 1px solid black;
+  }
+  .navbar ul{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 0 20px;
+    margin-top: 15px;
+    gap: 15px;
+  }
+  .navbar ul li{
+    padding: 0;
+    margin: 0;
+  }
+  .menu-header {
+    display: flex;
+    margin: 0;
+    height: 70px;
+    h2 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .close-btn {
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      background: none;
     }
   }
-
-  @media (max-width: 768px) {
-    .header-end {
-      display: none;
-      position: static;
-      top: auto;
-      padding-top: 10px;
-    }
-
-    .header-end.active {
-      display: block;
-    }
-
-    .menu-toggle {
-      display: flex;
-      text-align: left;
-      margin-left: -50px;
-    }
-    .icons img {
-      display: none;
-    }
-    .counter {
-      display: none;
-    }
   }
 
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .header {
-      flex-direction: column;
-      text-align: center;
-    }
 
-    .navbar ul {
-      justify-content: center;
-      align-items: center;
-    }
+}
+
+// @media (max-width: 480px) {
+//   .header-middle {
+//     .middle-svg {
+//       .logo {
+//         font-size: 16px;
+//       }
+
+//       .icons {
+//         img {
+//           width: 20px;
+//           height: 20px;
+//         }
+
+//         .menu-toggle {
+//           width: 20px;
+//           height: 14px;
+//         }
+//       }
+//     }
+//   }
+//   .header-top {
+//     font-size: 12px;
+//     padding: 6px 0;
+//   }
+
+//   .logo-img {
+//     display: none;
+//   }
+
+//   .text-menu{
+//     display: block;
+//   }
+// }
+
+// ----------------------------------------------------------------------------- 
+
+.ticker-text {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: ticker-scroll 20s linear infinite;
+  font-size: 0.714286rem;
+  font-family: "Proxima Nova", "Helvetica Neue", Verdana, Arial, sans-serif;
+  letter-spacing: 0.0714286rem;
+  line-height: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: inherit;
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0%);
   }
-  .counter {
-    display: none;
+  100% {
+    transform: translateX(-100%);
   }
 }

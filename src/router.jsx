@@ -22,6 +22,7 @@ import Bags from "./pages/Bags";
 import AddProduct from "./admin/Less";
 import ProductList from "./admin/View";
 import Profile from "./components/Profile";
+import ProtectedRoute from "./admin/Login/ProtectedRoute"; 
 
 export const myRouter = createBrowserRouter([
   {
@@ -48,8 +49,28 @@ export const myRouter = createBrowserRouter([
     ],
   },
   { path: "/adminlogin", element: <AdminLogin /> },
-  { path: "/admin", element: <Dashboard /> },
-  { path: "/addproduct", element: <AddProduct /> },
-  { path: "/productlist", element: <ProductList /> },
-  { path: "/profile", element: <Profile /> },
+  { path: "/admin",
+    element: (
+      <ProtectedRoute>
+        <Dashboard />
+      </ProtectedRoute>
+    ),},
+  { path: "/addproduct",
+    element: (
+      <ProtectedRoute>
+        <AddProduct />
+      </ProtectedRoute>
+    ),},
+  { path: "/productlist",
+    element: (
+      <ProtectedRoute>
+        <ProductList />
+      </ProtectedRoute>
+    ),},
+  {path: "/profile",
+    element: (
+      <ProtectedRoute>
+        <Profile />
+      </ProtectedRoute>
+    ),},
 ]);

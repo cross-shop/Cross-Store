@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./Header.scss";
@@ -12,10 +12,12 @@ import { auth } from "../../firebase";
 function Header() {
   const navigate = useNavigate();
   const cartItems = useSelector((state) => state.carts.ali);
-  const wishlistItems = useSelector((state) => state.wishlist.wishlist);                                      
+  const wishlistItems = useSelector((state) => state.wishlist.wishlist);
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
+
+  const lastScroll = useRef(0);
 
   const handlePersonClick = () => {
     if (auth.currentUser) {
@@ -26,19 +28,17 @@ function Header() {
   };
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setMenuOpen((prev) => !prev);
   };
 
   useEffect(() => {
-    let lastScroll = window.scrollY;
-
     const handleScroll = () => {
-      if (window.scrollY > lastScroll && window.scrollY > 100) {
+      if (window.scrollY > lastScroll.current && window.scrollY > 100) {
         setIsHidden(true);
       } else {
         setIsHidden(false);
       }
-      lastScroll = window.scrollY;
+      lastScroll.current = window.scrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -62,7 +62,7 @@ function Header() {
           </div>
 
           <div className="logo">
-            <a href="/">CROSS STORE</a>
+            <NavLink to="/">CROSS STORE</NavLink>
           </div>
 
           <div className="icons">
@@ -97,27 +97,64 @@ function Header() {
         </div>
       </div>
 
-      <div 
-      className={`header-end ${menuOpen ? "active" : ""}`}>
+      <div className={`header-end ${menuOpen ? "active" : ""}`}>
+        <div className="menu-header">
+          <h2>Меню</h2>
+          <button className="close-btn" onClick={toggleMenu}>
+            ×
+          </button>
+        </div>
         <nav className={`navbar ${menuOpen ? "active" : ""}`}>
           <ul>
-            <li>
-              <NavLink to="/catalog">Каталог</NavLink>
+            <li className="text-menu">
+              <NavLink to="/profile" onClick={toggleMenu}>
+                Профиль
+              </NavLink>
+            </li>
+            <li className="text-menu">
+              <NavLink to="/search" onClick={toggleMenu}>
+                Поиск
+              </NavLink>
+            </li>
+            <li className="text-menu">
+              <NavLink to="/basket" onClick={toggleMenu}>
+                Корзина
+              </NavLink>
+            </li>
+            <li className="text-menu">
+              <NavLink to="/wishlist" onClick={toggleMenu}>
+                Изброное
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/accessories">Аксессуары</NavLink>
+              <NavLink to="/catalog" onClick={toggleMenu}>
+                Каталог
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/istoria">История</NavLink>
+              <NavLink to="/accessories" onClick={toggleMenu}>
+                Аксессуары
+              </NavLink>
             </li>
             <li>
-              <NavLink to="help">Поддержка</NavLink>
+              <NavLink to="/istoria" onClick={toggleMenu}>
+                История
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/about">О нас</NavLink>
+              <NavLink to="/help" onClick={toggleMenu}>
+                Поддержка
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/istoriabrenda">Бренды</NavLink>
+              <NavLink to="/about" onClick={toggleMenu}>
+                О нас
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/istoriabrenda" onClick={toggleMenu}>
+                Бренды
+              </NavLink>
             </li>
           </ul>
         </nav>

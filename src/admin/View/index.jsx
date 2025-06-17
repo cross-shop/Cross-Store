@@ -127,8 +127,11 @@ const ProductList = () => {
                 }}
               >
                 <h4>{product.name}</h4>
+                <div className="item-image">
                 <img src={product.avatar} alt={product.name} width="150" />
+                </div>
                 <p>Цена: {product.price} сом</p>
+                <div className="item-btns">
                 <button
                 className="update"
                   onClick={() => startEditing(product)}
@@ -141,6 +144,7 @@ const ProductList = () => {
                 >
                   удалить
                 </button>
+                </div>
               </li>
             ))}
           </ul>

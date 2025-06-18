@@ -107,7 +107,14 @@ function Header() {
         <nav className={`navbar ${menuOpen ? "active" : ""}`}>
           <ul>
             <li className="text-menu">
-              <NavLink to="/profile" onClick={toggleMenu}>
+              <NavLink
+                to="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handlePersonClick();
+                  toggleMenu();
+                }}
+              >
                 Профиль
               </NavLink>
             </li>

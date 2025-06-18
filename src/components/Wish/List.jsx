@@ -3,7 +3,7 @@ import "./List.css";
 import { useSelector, useDispatch } from "react-redux";
 import { removeWish } from "../../redux/wish2/wishSlice";
 import close from "../../assets/svg/x.svg";
-import { img } from "framer-motion/client";
+
 function List() {
   const wishlist = useSelector((state) => state.wishlist.wishlist);
   const dispatch = useDispatch();
@@ -18,7 +18,7 @@ function List() {
   });
 
   return (
-    <div className="wishlist-app">
+    <div className="wishlist-app container">
       <div className="app">
         <select
           className="sort-select"
@@ -34,7 +34,7 @@ function List() {
           sortedWishlist.map((item) => (
             <div className="kard" key={item.id}>
               <div
-                className="close"
+                className="closeee"
                 onClick={() => dispatch(removeWish(item.id))}
               >
                 <img src={close} alt="Удалить" />
@@ -62,5 +62,4 @@ function List() {
     </div>
   );
 }
-
 export default List;

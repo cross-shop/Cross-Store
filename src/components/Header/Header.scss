@@ -3,9 +3,8 @@
   top: 0;
   width: 100%;
   background-color: white;
-  z-index: 1000;
+  z-index: 100;
 }
-
 .header-top {
   background-color: #222;
   color: #fff;
@@ -13,7 +12,6 @@
   padding: 8px 0;
   font-size: 14px;
 }
-
 .header-middle {
   padding: 12px 20px;
   display: flex;
@@ -78,8 +76,6 @@
   }
 }
 
-
-
 .menu-header {
   display: flex;
   justify-content: space-between;
@@ -101,14 +97,13 @@
     background: none;
   }
 }
-
 .header-end {
   position: fixed;
   top: 110px;
   background-color: white;
   height: 50px;
   padding: 0;
-  width: 100%;  
+  width: 100%;
   border-top: 1px solid rgb(199, 195, 195);
 
   .menu-header {
@@ -128,12 +123,13 @@
       gap: 40px;
 
       li {
-
+        font-weight: 600;
+        font-size: 18px;
         a {
           text-decoration: none;
           color: #333;
           font-weight: 600;
-          font-size: 16px;
+          font-size: 20px;
 
           &:hover {
             color: #f00;
@@ -144,11 +140,28 @@
   }
 }
 
-.text-menu{
+.text-menu {
   display: none;
 }
-
-// ----------------------------------------------------------------------------- 
+.counter {
+  background-color: red;
+  padding: 5px;
+  border-radius: 100%;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  flex-direction: none;
+  color: white;
+  height: 20px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-counter {
+  position: relative;
+}
+// -----------------------------------------------------------------------------
 
 @media (max-width: 768px) {
   .header-middle {
@@ -189,89 +202,51 @@
     display: flex;
     flex-direction: column;
     text-align: left;
-  
+
     &.active {
       left: 0;
     }
 
-  .text-menu{
-    display: block;
-  }
-  .navbar{
-    padding: 0;
-    border-top: 1px solid black;
-  }
-  .navbar ul{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    padding: 0 20px;
-    margin-top: 15px;
-    gap: 15px;
-  }
-  .navbar ul li{
-    padding: 0;
-    margin: 0;
-  }
-  .menu-header {
-    display: flex;
-    margin: 0;
-    height: 70px;
-    h2 {
+    .text-menu {
+      display: block;
+    }
+    .navbar {
+      padding: 0;
+      border-top: 1px solid black;
+    }
+    .navbar ul {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      padding: 0 20px;
+      margin-top: 15px;
+      gap: 15px;
+    }
+    .navbar ul li {
+      padding: 0;
       margin: 0;
-      font-size: 18px;
-      font-weight: bold;
     }
+    .menu-header {
+      display: flex;
+      margin: 0;
+      height: 70px;
+      h2 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: bold;
+      }
 
-    .close-btn {
-      font-size: 24px;
-      font-weight: bold;
-      cursor: pointer;
-      border: none;
-      background: none;
+      .close-btn {
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+        border: none;
+        background: none;
+      }
     }
   }
-  }
-
-
 }
-
-// @media (max-width: 480px) {
-//   .header-middle {
-//     .middle-svg {
-//       .logo {
-//         font-size: 16px;
-//       }
-
-//       .icons {
-//         img {
-//           width: 20px;
-//           height: 20px;
-//         }
-
-//         .menu-toggle {
-//           width: 20px;
-//           height: 14px;
-//         }
-//       }
-//     }
-//   }
-//   .header-top {
-//     font-size: 12px;
-//     padding: 6px 0;
-//   }
-
-//   .logo-img {
-//     display: none;
-//   }
-
-//   .text-menu{
-//     display: block;
-//   }
-// }
-
-// ----------------------------------------------------------------------------- 
-
+// -----------------------------------------------------------------------------
 .ticker-text {
   display: inline-block;
   white-space: nowrap;

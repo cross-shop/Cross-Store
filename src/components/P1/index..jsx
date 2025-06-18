@@ -85,7 +85,7 @@ function Products() {
 
   return (
     <div className="container-wrapper container">
-      <h1>component1</h1>
+      <h1>Component Nike</h1>
       {cartMessage && <div className="alert-cart">{cartMessage}</div>}
       {wishMessage && <div className="alert-wish">{wishMessage}</div>}
 

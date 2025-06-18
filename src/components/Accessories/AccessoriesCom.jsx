@@ -1,12 +1,11 @@
 import React from "react";
 import "./Accessories.Com.scss";
-import search from "../../assets/svg/search.svg";
 import ass1 from "../../assets/image/ass1.png";
 import BrandFilter from "../BrandFilter/BrandFilter";
 
 function Accessories() {
   return (
-    <div className="acces">
+    <div className="acces container">
       <div className="top-access">
         <div className="link">
           <a href="#">Мужской /</a>

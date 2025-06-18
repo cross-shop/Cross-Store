@@ -5,7 +5,7 @@ import P1 from "../components/P1/index..jsx";
 import P2 from "../components/P2";
 import P3 from "../components/P3";
 import P4 from "../components/P4";
-import Homebrand from "../components/Homebrand/Homebrand.jsx";
+import Homebrand from "../components/Brends/Homebrand.jsx";
 import HomeBanner from "../components/HomeBanner/HomeBanner.jsx";
 
 function Home() {

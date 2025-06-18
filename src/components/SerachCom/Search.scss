@@ -107,3 +107,101 @@
     }
   }
 }
+
+
+@media (max-width: 1024px) {
+  .search-two {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    .catalog-1 {
+      width: 90%;
+      text-align: center;
+
+      .price-range1 {
+        .slider-container1 {
+          input[type="range"] {
+            width: 90%;
+          }
+        }
+
+        .price-labels1 {
+          flex-direction: row;
+          justify-content: center;
+
+          input {
+            width: 60px;
+          }
+        }
+      }
+    }
+
+    .catalog-2 {
+      grid-template-columns: repeat(2, 1fr); 
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .main3-input3 {
+    margin-top: 130px;
+  }
+
+  .search-two {
+    gap: 30px;  
+
+    .catalog-1 {
+      width: 100%;
+
+      h1 {
+        font-size: 20px;
+      }
+
+      .price-range1 {
+        label {
+          font-size: 14px;
+        }
+
+        .slider-container1 {
+          input[type="range"] {
+            width: 100%;
+          }
+        }
+
+        .price-labels1 {
+          flex-direction: column;
+          align-items: center;
+
+          input {
+            width: 100px;
+            margin-bottom: 5px;
+          }
+
+          span {
+            display: none; // экран кичинекей болгондуктан орун үнөмдөө
+          }
+        }
+      }
+    }
+
+    .catalog-2 {
+      width: 100%;
+      grid-template-columns: 1fr; // телефон үчүн 1 колонка
+    }
+  }
+
+  .kros19 {
+    padding: 15px;
+
+    .main-top19 {
+      p, h5 {
+        font-size: 14px;
+      }
+    }
+
+    .mm9 img {
+      height: 130px;
+    }
+  }
+}

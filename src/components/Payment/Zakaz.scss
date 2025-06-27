@@ -1,0 +1,325 @@
+.ofer {
+  margin-top: 180px;
+  .ofer-1 {
+    h1 {
+      color: rgb(0, 0, 0);
+      font-family: Ruberoid;
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 38px;
+      letter-spacing: -2%;
+      text-align: left;
+    }
+
+    .ofer-input {
+      display: flex;
+      align-items: center;
+      gap: 203px;
+      margin-top: 20px;
+
+      p {
+        color: rgb(0, 0, 0);
+        font-family: Inter;
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 21px;
+        letter-spacing: -2%;
+        text-align: left;
+      }
+
+      input {
+        box-sizing: border-box;
+        border: 1px solid rgb(179, 179, 179);
+        border-radius: 100px;
+
+        background: rgb(255, 255, 255);
+        width: 387px;
+        height: 55px;
+      }
+    }
+
+    .ofer-input1 {
+      display: flex;
+      align-items: center;
+      gap: 203px;
+      margin-top: 20px;
+
+      p {
+        color: rgb(0, 0, 0);
+        font-family: Inter;
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 21px;
+        letter-spacing: -2%;
+        text-align: left;
+      }
+
+      input {
+        box-sizing: border-box;
+        border: 1px solid rgb(179, 179, 179);
+        border-radius: 100px;
+
+        background: rgb(255, 255, 255);
+        width: 387px;
+        height: 55px;
+        margin-left: 20px;
+      }
+    }
+
+    .ofer-input2 {
+      display: flex;
+      align-items: center;
+      gap: 203px;
+      margin-top: 20px;
+
+      p {
+        color: rgb(0, 0, 0);
+        font-family: Inter;
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 21px;
+        letter-spacing: -2%;
+        text-align: left;
+      }
+
+      input {
+        box-sizing: border-box;
+        border: 1px solid rgb(179, 179, 179);
+        border-radius: 100px;
+
+        background: rgb(255, 255, 255);
+        width: 387px;
+        height: 55px;
+        margin-left: -20px;
+      }
+
+      button {
+        width: 200px;
+        height: 50px;
+        background-color: black;
+        color: white;
+        border-radius: 20px;
+      }
+
+      button:hover {
+        background-color: gold;
+        border: none;
+        color: black;
+      }
+    }
+
+    .dostavka {
+      margin-top: 67px;
+
+      .dostavka-input {
+        display: flex;
+        align-items: center;
+        gap: 203px;
+
+        p {
+          color: rgb(0, 0, 0);
+          font-family: Inter;
+          font-size: 17px;
+          font-weight: 400;
+          line-height: 21px;
+          letter-spacing: -2%;
+          text-align: left;
+        }
+
+        input {
+          box-sizing: border-box;
+          border: 1px solid rgb(179, 179, 179);
+          border-radius: 100px;
+
+          background: rgb(255, 255, 255);
+          width: 387px;
+          height: 55px;
+          margin-left: -90px;
+        }
+      }
+    }
+
+    .dostavka-radio {
+      display: flex;
+      align-items: center;
+      margin-top: 90px;
+      gap: 107px;
+
+      .radio-top {
+        .radio1 {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          p {
+            margin-top: 10px;
+            color: rgb(0, 0, 0);
+            font-family: Inter;
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 21px;
+            letter-spacing: -2%;
+            text-align: left;
+            padding-left: 10px;
+            margin-right: 50px;
+          }
+
+          input {
+            margin-top: -15px;
+          }
+
+          img {
+            width: 55px;
+            height: 50px;
+            margin-bottom: 8px;
+          }
+        }
+      }
+    }
+
+    .dom {
+      display: flex;
+      gap: 120px;
+
+      .dom-input {
+        input {
+          box-sizing: border-box;
+          border: 1px solid rgb(179, 179, 179);
+          border-radius: 100px;
+
+          background: rgb(255, 255, 255);
+          width: 387px;
+          height: 55px;
+        }
+
+        .dom-top {
+          display: flex;
+          gap: 9px;
+
+          .dom-2 {
+            input {
+              width: 188.5px;
+              height: 55px;
+              box-sizing: border-box;
+              border: 1px solid rgb(179, 179, 179);
+              border-radius: 100px;
+
+              background: rgb(255, 255, 255);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .ofer-2 {
+    .modal {
+      position: absolute;
+      top: 15px;
+      right: 150px;
+      width: 400px;
+      height: 550px;
+      background-color: white;
+      box-shadow: 1px 3px 6px;
+      padding: 10px;
+      border-radius: 15px;
+
+      .modal2 {
+        display: flex;
+        gap: 200px;
+
+        h2 {
+          color: rgb(0, 0, 0);
+          font-family: Ruberoid;
+          font-size: 40px;
+          font-weight: 400;
+          line-height: 54px;
+          letter-spacing: 0%;
+          text-align: left;
+        }
+      }
+
+      .m3 {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+
+        h5 {
+          color: rgb(0, 0, 0);
+          font-family: Inter;
+          font-size: 20px;
+          font-weight: 400;
+          line-height: 24px;
+          letter-spacing: 0%;
+          text-align: left;
+        }
+      }
+
+      .cart {
+        margin-top: 30px;
+        display: flex;
+        gap: 20px;
+
+        .incart1 {
+          border-radius: 10px;
+          border: 1px solid #ccc;
+
+          img {
+            width: 190px;
+            height: 120px;
+          }
+        }
+
+        .incart2 {
+          width: 170px;
+
+          .box {
+            display: flex;
+            gap: 60px;
+          }
+
+          .c3 {
+            button {
+              color: yellow;
+              background-color: black;
+              border-radius: 10px;
+              padding: 5px;
+              border: none;
+            }
+
+            button:hover {
+              background-color: gold;
+              border: none;
+              color: black;
+            }
+          }
+
+          .c4 {
+            margin: 5px 0 5px;
+          }
+
+          .c5 {
+            display: flex;
+            gap: 83px;
+          }
+        }
+      }
+
+      .bm {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+
+        .btn {
+          button {
+            margin-top: 10px;
+            background-color: black;
+            color: white;
+            border-radius: 5px;
+            padding: 15px 40px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.eror1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  font-family: "Arial", sans-serif;
+}
+
+.eror2 {
+  text-align: center;
+  background: #fff;
+  padding: 50px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+}
+
+.eror2 h1 {
+  font-size: 100px;
+  color: #ff6f61;
+  margin: 0;
+  font-weight: bold;
+}
+
+.eror2 h6 {
+  font-size: 18px;
+  color: #333;
+  margin: 10px 0 30px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}

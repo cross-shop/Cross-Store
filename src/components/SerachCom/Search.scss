@@ -1,0 +1,207 @@
+.main3-input3 {
+  margin-top: 175px;
+}
+
+.search-two {
+  display: flex;
+
+  .catalog-1 {
+    width: 230px;
+    position: sticky;
+    top: 1px;
+
+    h1 {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .price-range1 {
+      margin-top: 33px;
+
+      label {
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      .slider-container1 {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+
+        input[type="range"] {
+          width: 200px;
+          height: 2px;
+          background: #ff6f61;
+
+          &::-webkit-slider-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid black;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .price-labels1 {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+
+        input {
+          width: 70px;
+          text-align: center;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          padding: 5px;
+        }
+
+        span {
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+
+  .catalog-2 {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    .kros19 {
+      position: relative;
+      border: 1px solid #d6d6d6;
+      border-radius: 13px;
+      background: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+
+      .mm9 {
+        text-align: center;
+
+        img {
+          width: 100%;
+          max-width: 254px;
+          height: 148px;
+          object-fit: contain;
+        }
+      }
+
+      .main-top19 {
+        margin-top: 20px;
+        text-align: center;
+
+        p {
+          font-size: 15px;
+          color: #3e3e3e;
+        }
+
+        h5 {
+          font-size: 15px;
+          color: black;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .search-two {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    .catalog-1 {
+      width: 90%;
+      text-align: center;
+
+      .price-range1 {
+        .slider-container1 {
+          input[type="range"] {
+            width: 90%;
+          }
+        }
+
+        .price-labels1 {
+          flex-direction: row;
+          justify-content: center;
+
+          input {
+            width: 60px;
+          }
+        }
+      }
+    }
+
+    .catalog-2 {
+      grid-template-columns: repeat(2, 1fr); 
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .main3-input3 {
+    margin-top: 130px;
+  }
+
+  .search-two {
+    gap: 30px;  
+
+    .catalog-1 {
+      width: 100%;
+
+      h1 {
+        font-size: 20px;
+      }
+
+      .price-range1 {
+        label {
+          font-size: 14px;
+        }
+
+        .slider-container1 {
+          input[type="range"] {
+            width: 100%;
+          }
+        }
+
+        .price-labels1 {
+          flex-direction: column;
+          align-items: center;
+
+          input {
+            width: 100px;
+            margin-bottom: 5px;
+          }
+
+          span {
+            display: none; // экран кичинекей болгондуктан орун үнөмдөө
+          }
+        }
+      }
+    }
+
+    .catalog-2 {
+      width: 100%;
+      grid-template-columns: 1fr; // телефон үчүн 1 колонка
+    }
+  }
+
+  .kros19 {
+    padding: 15px;
+
+    .main-top19 {
+      p, h5 {
+        font-size: 14px;
+      }
+    }
+
+    .mm9 img {
+      height: 130px;
+    }
+  }
+}

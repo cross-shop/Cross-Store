@@ -1,0 +1,55 @@
+.form-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.add-product-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-product-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.add-product-form input,
+.add-product-form select {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.add-product-form button {
+  padding: 12px;
+  background-color: #1976d2;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-product-form button:hover {
+  background-color: #1565c0;
+}
+
+.success-message {
+  color: green;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}

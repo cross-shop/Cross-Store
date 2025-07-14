@@ -1,0 +1,132 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f7fafc 0%, #e2e8f0 100%);
+  margin-top: 0;
+  padding: 20px;
+}
+
+.auth-box {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(26, 54, 93, 0.1);
+  width: 400px;
+  text-align: center;
+}
+
+.auth-box h2 {
+  margin-bottom: 10px;
+  color: #1a365d;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.auth-subtitle {
+  color: #718096;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #2d3748;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.input-group input:focus {
+  border-color: #3182ce;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+}
+
+.auth-button {
+  width: 100%;
+  background: #3182ce;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.auth-button:hover:not(:disabled) {
+  background: #2c5282;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3);
+}
+
+.auth-button:disabled {
+  background: #a0aec0;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.toggle-text {
+  margin-top: 20px;
+  color: #3182ce;
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.toggle-text:hover {
+  color: #2c5282;
+  text-decoration: underline;
+}
+
+.auth-footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.auth-footer p {
+  color: #718096;
+  font-size: 14px;
+  margin: 0;
+}
+
+.auth-footer a {
+  color: #3182ce;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .auth-box {
+    width: 100%;
+    max-width: 350px;
+    padding: 30px 20px;
+  }
+  
+  .auth-box h2 {
+    font-size: 24px;
+  }
+}

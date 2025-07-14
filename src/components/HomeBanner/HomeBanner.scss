@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+.home-carousel,
+.item-content,
+.catalog-banner,
+.skid {
+  width: 100%;
+  max-width: 1318px;
+  margin: 100px auto 0 auto;
+  position: relative;
+
+  img {
+    width: 100%;
+    border-radius: 13px;
+    height: auto;
+    object-fit: cover;
+    height: 500px;
+  }
+}
+
+.home-carousel {
+  height: auto;
+
+  p,
+  h6 {
+    position: absolute;
+    color: white;
+    left: 5vw;
+  }
+
+  p {
+    font-size: 5vw;
+    bottom: 5vw;
+    max-width: 90%;
+  }
+
+  h6 {
+    font-size: 2vw;
+    top: 3vw;
+  }
+}
+
+.dealer {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  h2 {
+    font-size: 40px;
+    font-weight: 400;
+    font-family: Ruberoid;
+    color: #3e3e3e;
+    line-height: 54px;
+    text-align: left;
+  }
+
+  .dlr {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 42px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .dealer-img1,
+    .dealer-img2 {
+      position: relative;
+      flex: 1 1 48%;
+
+      p,
+      .ss span,
+      .ss a {
+        color: white;
+        position: absolute;
+        left: 5vw;
+      }
+
+      p {
+        top: 5vw;
+        font-size: 4vw;
+      }
+
+      .ss span {
+        top: 20vw;
+        font-size: 5vw;
+      }
+
+      .ss a {
+        top: 35vw;
+        font-size: 4vw;
+      }
+    }
+  }
+}
+
+.item-content {
+  .item-hot {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    h1 {
+      font-size: 40px;
+      font-weight: 500;
+      color: black;
+    }
+
+    .item-pereiti {
+      border: 1px solid #b3b3b3;
+      border-radius: 100px;
+      padding: 5px 15px;
+      font-weight: 500;
+    }
+  }
+
+  .item-drops {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    margin-top: 30px;
+    scroll-snap-type: x mandatory;
+
+    .item {
+      flex: 0 0 auto;
+      width: 284px;
+      height: auto;
+      border: 1px solid #d6d6d6;
+      border-radius: 13px;
+      padding: 12px;
+      position: relative;
+
+      .item-new {
+        background: black;
+        color: white;
+        padding: 10px;
+        border-radius: 13px;
+        position: absolute;
+        top: 10px;
+      }
+
+      .item-heart {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+.item-text {
+  text-align: center;
+
+  p,
+  h4 {
+    font-family: Inter;
+    font-size: 15px;
+    color: #3e3e3e;
+  }
+
+  h4 {
+    font-weight: 700;
+  }
+
+  &:hover p,
+  &:hover h4 {
+    color: blue;
+  }
+}
+
+.catalog-banner .infbanner,
+.skidban {
+  position: absolute;
+  top: 30%;
+  left: 5vw;
+  p,
+  span {
+  color: white;
+  }
+
+  button {
+    border-radius: 13px;
+    padding: 15px 20px;
+    background: linear-gradient(80.91deg, #090909 1.03%, #88837e 99.01%);
+    color: white;
+    width: 240px;
+  }
+}
+
+.skid .skidban  {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  top: auto;
+  left: 5vw;
+  position: absolute;
+  bottom: 30px;
+
+  input{
+    padding: 10px 20px;
+    border-radius: 35px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home-carousel p {
+    font-size: 24px;
+  }
+
+  .home-carousel h6,
+  .dealer .dlr .dealer-img1 p,
+  .dealer .dlr .dealer-img2 p,
+  .dealer .dlr .ss span,
+  .dealer .dlr .ss a {
+    font-size: 16px;
+  }
+
+  .item-content .item-hot h1,
+  .catalog-banner .infbanner p,
+  .skid .skidban p {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .catalog-banner .infbanner span,
+  .skid .skidban span {
+    font-size: 14px;
+  }
+
+  .item-new {
+    display: none;
+  }
+}
+
+@media (max-width: 1024) {
+  .item-new {
+    display: none;
+  }
+}
